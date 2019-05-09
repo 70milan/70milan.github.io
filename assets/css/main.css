@@ -101,6 +101,7 @@
             
             background: #1b1f22;
         }
+        
 
             body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 
@@ -204,15 +205,44 @@
 		}
 
        
-         #r{
-              color: #00fa53;
+         .raw{
+              color: #F0816B;
+             
+         }
+         .wwww{
+              text-align: center;
+         }
+         .myskills {
+             text-align: center;
          }
 
+        .myskills span{
+                display: block;
+                color: #251e1e  ;
+                transform: skewX(-25deg) !important;
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                cursor: default;
+    
+        }
+        .myskills  li {
+   
+                display: inline-block;
+                font-size: 1rem;
+                padding: 4px 11px;
+                margin-bottom: 1rem;
+                background-color: rgb(102, 130, 151);
+                margin-right: .5rem;
+                transform: skew(25deg);
 
-		#major:hover{
+        }
+    
+   
 
-			color: #00fa53; 
-		}
 		.www {
 
 			border-radius: 50%;
@@ -221,12 +251,17 @@
 
         h1, h2, h3, h4, h5, h6 {
 		   
-			color: #949A94;
+			color: #b5dbdf;
             font-weight: 600;
             line-height: 1.5;
             margin: 0 0 1rem 0;
             text-transform: uppercase;
             letter-spacing: 0.2rem;
+        }
+         h1:hover , h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
+		   
+			color: #F0816B;
+           
         }
 
             h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -334,7 +369,7 @@
             }
 
         .textalign{
-			color: #949A94;
+			color: #EEE;
             text-align: center;
             font-family: 
 		}
