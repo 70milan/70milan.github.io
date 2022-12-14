@@ -135,7 +135,7 @@
 
 
 			.textalign{
-                text-align: center;
+                text-align: justify;
                 font-family: 'Hind', sans-serif;
 			}
 			
@@ -371,7 +371,7 @@
 
         .textalign{
 			color: #EEE;
-            text-align: center;
+            text-align:  justify;
             font-family: 
 		}
 		
