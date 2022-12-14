@@ -135,7 +135,7 @@
 
 
 			.textalign{
-                text-align: justify;
+                text-align: center;
                 font-family: 'Hind', sans-serif;
 			}
 			
@@ -201,7 +201,7 @@
 		#major{
 
 			text-align: center;
-            color: rgb(30, 244, 30);
+            color: rgb(241, 35, 69);
 			
 		}
 
@@ -369,9 +369,16 @@
                 overflow-x: auto;
             }
 
+        .textalign1{
+            color: rgb(225, 229, 233);
+            text-align: center;
+            font-family:
+
+        }
+
         .textalign{
-			color: rgb(188, 245, 214);
-            text-align:  left;
+			color: rgb(159, 216, 255);;
+            text-align: left;
             font-family: 
 		}
 		
