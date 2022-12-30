@@ -54,12 +54,12 @@
 
 
 						<a href="https://github.com/70milan/spotifynolib" target="_blank"><span class="image main"><img src="images/sp_2.png" alt="" /></span></a>
-						<p class="textalign">The python app, using spotify api, fetches user's "saved songs" that have been "liked" over the years.  Specific attributes are collected to further explore the brand-new "audio-features" released by spotify recently. <br>ELT Pipeline deveoped using Python and Postgres which fetches the 
-						spotify data using python's REST API and stages it to the postgres server
+						<p class="textalign">ELT Pipeline deveoped using Python and Postgres which fetches the user's
+						music data using python's REST API and stages it to the postgres server
 						 where several transformations are performed to derive meaningful data
 						 which would eventually be used for PowerBI Vizualization and Dashboard creation.
 						The job can be automated using Airflow which will run on the monthly basis. The 
-						idea of the project is to analyze below params and detemine user's music preference each month.
+						idea of the project is to analyze specific attributes such as the new "audio-features" released by spotify recently, and detemine user's music preference each month.
 						(down the line, also planning to implement ML measures order to develop a recommendation system which 
 						will provide a recommended list of music at the end of each month based on the user's music preferences for that particular month.)
 						<br><br><b>python/libraries:</b> Pandas, plotly, urllib, pandasql, request. 
