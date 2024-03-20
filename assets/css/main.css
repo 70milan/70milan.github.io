@@ -135,11 +135,34 @@ input, select, textarea {
 
 
         .textalign{
-            color: rgb(183, 208, 232);
-            text-align: justified;
+            color: rgb(244, 247, 249);
+            text-align: left;
             font-family: 'Hind', sans-serif;
+            transition: transform 0.3s; 
         }
         
+        .textalign:hover{
+            text-align: center;
+            color: rgb(255, 246, 252);
+            transform: scale(1.05) rotateY(5deg); 
+        
+        }
+
+
+        .transparent-box {
+            background-color: rgba(0, 0, 0, 0.5); /* Set transparent background color */
+            padding: 20px; /* Adjust padding as needed */
+            border-radius: 10px; /* Add border radius for rounded corners */
+            transition: background-color 0.3s; /* Add transition for smoother color change */
+        }
+        
+        /* Hover effect for the transparent box */
+        .transparent-box:hover {
+            background-color: rgba(0, 0, 0, 0.7); /* Darken the background color on hover */
+            transform: scale(1.1) rotateY(10deg); 
+
+        }
+
 
         @media screen and (max-width: 736px) {
 
@@ -202,15 +225,30 @@ input, select, textarea {
     #major{
 
         text-align: center;
-        color: rgb(55, 255, 29);
+        color: rgb(179, 216, 174);
+
         
     }
-
    
-     .raw{
-          color: #F0816B;
-         
-     }
+    #major:hover{
+
+        text-align: center;
+        color: rgb(55, 255, 29);
+        transform: scale(1.2) translateZ(0);
+    }
+   
+    #resume {
+        color: #f30000;
+        transition: transform 0.5s;
+    }
+    
+    #resume:hover {
+        color: #cd4b4b;
+        transform: scale(1.2);
+        transform-origin: center; /* Set the transform origin to the center */
+    }
+
+
      .wwww{
           text-align: center;
      }
