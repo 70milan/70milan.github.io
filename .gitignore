@@ -1,0 +1,3 @@
+.gemini/
+*.log
+node_modules/
