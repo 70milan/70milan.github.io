@@ -1985,11 +1985,13 @@ body.is-preload #footer {
     }
 }
 
-.myskills li {
+.myskills li,
+.myskills li * {
     transition: transform 0.5s ease, box-shadow 0.3s ease;
     background: linear-gradient(90deg, transparent, rgba(72, 240, 176, 0.05), transparent);
     background-size: 200% 100%;
     transform-style: preserve-3d;
+    color: #ffffff !important;
 }
 
 .myskills li:hover {
