@@ -217,7 +217,7 @@
                     <h2 id="major">About me.</h2>
                 </a>
                 <div class="transparent-box">
-                    <p class="textalign">I am a Data Engineer with 6 years of experience specializing in the
+                    <p class="textalign">I am a Data Engineer with 6+ years of experience specializing in the
                         architecture and maintenance of high-stakes data pipelines within the healthcare, real estate,
                         and telecom sectors. My expertise lies in bridging the gap between legacy infrastructure—like
                         the complex EDI and CMS workflows I managed at Blue Cross Blue Shield—and modern cloud-native
@@ -234,20 +234,8 @@
 
                 </div>
                 <br><br><br>
-                <ul class="myskills">
-                    <li><span><b>Business Intelligence Tools:</b> Power BI, SSRS, SSIS</span></li>
-                    <li><span><b>Programming Languages:</b> SQL, Python (pandas, pyspark, matplotlib, etc.), JavaScript,
-                            CSS, HTML</span></li>
-                    <li><span><b>Databases/Data Warehouse:</b> MS SQL, PostgreSQL</span></li>
-                    <li><span><b>Big Data Tech:</b> Apache Spark</span></li>
-                    <li><span><b>Web Frameworks & APIs:</b> FastAPI, React, Electron, RESTful APIs, OAuth</span></li>
-                    <li><span><b>Cloud Computing Frameworks:</b> Azure Cloud services (Data Factory), Amazon Web
-                            Services (AWS), Databricks</span></li>
-                    <li><span><b>Workflow Tools & Integration Services:</b> GIT, Jenkins, Dagster, Uvicorn, Airflow,
-                            Jira, ActiveBatch, Confluence, MS Office Suite</span></li>
-                    <li><span><b>AI & Large Language Models:</b> OpenAI API, GPT3.5t, 4+, 5 (Mini & Nano), GPT-4o,
-                            GPT-3.5, Whisper (Speech-to-Text)</span></li>
-                </ul>
+                <!-- Skills: neon tetris tech tiles (tech only) -->
+                <div id="tech-tetris" class="tech-tetris" aria-label="Technology tiles"></div>
             </article><!-- Contact --><!-- Elements -->
             <article id="elements">
                 <h2 class="major">Elements</h2>
@@ -532,13 +520,107 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
             <script>var scroll = new SmoothScroll('a[href*="#"]');</script>
 
             <!-- 2026 Custom UI Interaction Script -->
-            <script>
-                document.addEventListener('DOMContentLoaded', () => {
-                    // 1. Create Cursor Elements
-                    const cursor = document.createElement('div');
-                    cursor.className = 'custom-cursor';
-                    const cursorFluid = document.createElement('div');
-                    cursorFluid.className = 'custom-cursor-fluid';
+             <script>
+                 document.addEventListener('DOMContentLoaded', () => {
+                     // Allow decorative animations even if OS/browser reduced-motion is enabled
+                     // (requested for the Tech Tetris effect in About).
+                     document.documentElement.classList.add('force-motion');
+
+                     // 0. Tech Tetris (About): tech-only neon tiles that fall in and snap into a tight mosaic.
+                     //    Re-shuffles each time the About article is opened.
+                     const techTetrisRoot = document.getElementById('tech-tetris');
+                     const techItems = [
+                         'Power BI', 'SSRS', 'SSIS',
+                         'SQL', 'Python (pandas, pyspark, matplotlib, etc.)', 'JavaScript', 'CSS', 'HTML',
+                         'MS SQL', 'PostgreSQL',
+                         'Apache Spark',
+                         'FastAPI', 'React', 'Electron', 'RESTful APIs', 'OAuth',
+                         'Azure Data Factory', 'AWS', 'Databricks',
+                         'GIT', 'Jenkins', 'Dagster', 'Uvicorn', 'Airflow', 'Jira', 'ActiveBatch', 'Confluence',
+                         'MS Office Suite',
+                         'OpenAI API', 'GPT-3.5', 'GPT-4+', 'GPT-5 (Mini & Nano)', 'GPT-4o', 'Whisper (Speech-to-Text)'
+                     ];
+
+                     function shuffleInPlace(arr) {
+                         for (let i = arr.length - 1; i > 0; i--) {
+                             const j = Math.floor(Math.random() * (i + 1));
+                             [arr[i], arr[j]] = [arr[j], arr[i]];
+                         }
+                         return arr;
+                     }
+
+                     function buildTechTiles() {
+                         if (!techTetrisRoot) return;
+                         // Ensure tiles render in their "pre-drop" state before we trigger drop.
+                         techTetrisRoot.classList.remove('drop-in');
+                         techTetrisRoot.innerHTML = '';
+
+                         const items = shuffleInPlace([...techItems]);
+                         items.forEach((label, idx) => {
+                             const tile = document.createElement('div');
+                             tile.className = 'tech-tile';
+                             tile.setAttribute('tabindex', '0');
+                             tile.setAttribute('role', 'button');
+                             tile.setAttribute('aria-label', label);
+                             tile.style.setProperty('--drop-delay', `${(idx % 14) * 35}ms`);
+                             tile.style.setProperty('--hue', `${(idx * 33) % 360}`);
+                             // Inline pre-drop guarantees a visible transition even if other CSS overrides exist.
+                             tile.style.transform = 'translateY(-120vh)';
+                             tile.style.opacity = '0';
+                             tile.textContent = label;
+                             techTetrisRoot.appendChild(tile);
+                         });
+                     }
+
+                     function playTechDrop() {
+                         if (!techTetrisRoot) return;
+                         // Restart animation by toggling a class (must happen when About is visible).
+                         techTetrisRoot.classList.remove('drop-in');
+                         // Force reflow
+                         void techTetrisRoot.offsetWidth;
+                         // Apply on next frames so transitions reliably fire.
+                         requestAnimationFrame(() => {
+                             requestAnimationFrame(() => techTetrisRoot.classList.add('drop-in'));
+                         });
+                     }
+
+                     function whenAboutActive(cb) {
+                         const about = document.getElementById('about');
+                         if (!about) return;
+                         const start = performance.now();
+
+                         const tick = () => {
+                             // main.js activates the article after a short delay; wait for it.
+                             if (about.classList.contains('active') && about.offsetParent !== null) {
+                                 cb();
+                                 return;
+                             }
+                             if (performance.now() - start > 2500) return;
+                             requestAnimationFrame(tick);
+                         };
+
+                         requestAnimationFrame(tick);
+                     }
+
+                     // Initial build (in case About is the initial hash)
+                     buildTechTiles();
+                     if (location.hash === '#about') {
+                         whenAboutActive(playTechDrop);
+                     }
+
+                     // Rebuild + re-drop each time About opens
+                     window.addEventListener('hashchange', () => {
+                         if (location.hash === '#about') {
+                             buildTechTiles();
+                             whenAboutActive(playTechDrop);
+                         }
+                     });
+
+                     // 1. Create Cursor Elements
+                     const cursor = document.createElement('div');
+                     cursor.className = 'custom-cursor';
+                     const cursorFluid = document.createElement('div');
+                     cursorFluid.className = 'custom-cursor-fluid';
                     document.body.appendChild(cursor);
                     document.body.appendChild(cursorFluid);
 
