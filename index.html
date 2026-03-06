@@ -55,7 +55,6 @@
 
 
 
-
             <!-- Project 1 -->
 
 
@@ -107,7 +106,8 @@
 
 
                 <div class="transparent-box">
-                    <p class="textalign">The “Monthly Music Sync” project is designed with the goal of synchronizing a
+                    <p class="textalign">The &#8220;Monthly Music Sync&#8221; project is designed with the goal of
+                        synchronizing a
                         user's liked songs between YouTube Music and Spotify platforms using Python and relevant APIs.
                         The ELT pipeline is built using Python, AWS S3, YouTube Data API, Spotify API, and integrates
                         with third-party libraries such as spotipy and youtube_dl. The project retrieves music data from
@@ -142,7 +142,7 @@
 
 
                 <a href="https://github.com/70milan/spotifynolib" target="_blank">
-                    <h2 id="major">Spotify User's "Liked Songs" Data exploration & visualization</h2>
+                    <h2 id="major">Spotify User's "Liked Songs" Data exploration &amp; visualization</h2>
                 </a>
                 <span class="image main"><img src="images/flowchart.jpg" alt="" /></span>
 
@@ -178,7 +178,7 @@
                     <p class="textalign">Developed using web development essentials such as
                         <b style="color: rgb(250, 77, 95)">HTML, PostCSS</b>
                         and
-                        <b style="color: rgb(250, 77, 95)">JavaScript (Babel & Webpack) and Node.js.</b><br>
+                        <b style="color: rgb(250, 77, 95)">JavaScript (Babel &amp; Webpack) and Node.js.</b><br>
                         The website was developed as per the "mobile-first" design approach such that the devices
                         downloads only the data that is appropriate for the current device, thereby providing faster
                         loading/reloading time.
@@ -197,11 +197,12 @@
                 </a>
                 <span class="image main"><img src="images/1.png" alt="" /></span>
                 <div class="transparent-box">
-                    <p class="textalign">An interactive “University” website clone developed using using
+                    <p class="textalign">An interactive &#8220;University&#8221; website clone developed using using
                         <b>PHP, JavaScript, WordPress theming</b>
-                        & the WordPress
+                        &amp; the WordPress
                         <b>REST API</b>.<br>
-                        <br>Created “like” feature, “Live/on the fly” search functionality, WordPress custom field Post
+                        <br>Created &#8220;like&#8221; feature, &#8220;Live/on the fly&#8221; search functionality,
+                        WordPress custom field Post
                         types using JavaScript and JQuery which was then connected to the backend using JSON and
                         WordPress
                         Rest APIs and created raw JSON data.
@@ -219,11 +220,13 @@
                 <div class="transparent-box">
                     <p class="textalign">I am a Data Engineer with 6+ years of experience specializing in the
                         architecture and maintenance of high-stakes data pipelines within the healthcare, real estate,
-                        and telecom sectors. My expertise lies in bridging the gap between legacy infrastructure—like
-                        the complex EDI and CMS workflows I managed at Blue Cross Blue Shield—and modern cloud-native
+                        and telecom sectors. My expertise lies in bridging the gap between legacy
+                        infrastructure&#8212;like
+                        the complex EDI and CMS workflows I managed at Blue Cross Blue Shield&#8212;and modern
+                        cloud-native
                         solutions using Azure Databricks and LLM orchestration.</p>
                     <p class="textalign">I am a hands-on builder who values operational stability as much as innovation.
-                        I’ve led offshore teams through high-pressure recovery efforts and managed over 30 production
+                        I've led offshore teams through high-pressure recovery efforts and managed over 30 production
                         deployments in environments where data accuracy is a regulatory requirement. I approach
                         engineering with a product-focused mindset, recently developing custom AI-driven applications
                         that utilize low-latency streaming and RSA security to solve real-world efficiency gaps.</p>
@@ -516,111 +519,18 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
             <script src="assets/js/breakpoints.min.js"></script>
             <script src="assets/js/util.js"></script>
             <script src="assets/js/main.js"></script>
+            <script src="assets/js/tetris.js"></script>
             <!--smooth scroll-->
             <script>var scroll = new SmoothScroll('a[href*="#"]');</script>
 
             <!-- 2026 Custom UI Interaction Script -->
-             <script>
-                 document.addEventListener('DOMContentLoaded', () => {
-                     // Allow decorative animations even if OS/browser reduced-motion is enabled
-                     // (requested for the Tech Tetris effect in About).
-                     document.documentElement.classList.add('force-motion');
-
-                     // 0. Tech Tetris (About): tech-only neon tiles that fall in and snap into a tight mosaic.
-                     //    Re-shuffles each time the About article is opened.
-                     const techTetrisRoot = document.getElementById('tech-tetris');
-                     const techItems = [
-                         'Power BI', 'SSRS', 'SSIS',
-                         'SQL', 'Python (pandas, pyspark, matplotlib, etc.)', 'JavaScript', 'CSS', 'HTML',
-                         'MS SQL', 'PostgreSQL',
-                         'Apache Spark',
-                         'FastAPI', 'React', 'Electron', 'RESTful APIs', 'OAuth',
-                         'Azure Data Factory', 'AWS', 'Databricks',
-                         'GIT', 'Jenkins', 'Dagster', 'Uvicorn', 'Airflow', 'Jira', 'ActiveBatch', 'Confluence',
-                         'MS Office Suite',
-                         'OpenAI API', 'GPT-3.5', 'GPT-4+', 'GPT-5 (Mini & Nano)', 'GPT-4o', 'Whisper (Speech-to-Text)'
-                     ];
-
-                     function shuffleInPlace(arr) {
-                         for (let i = arr.length - 1; i > 0; i--) {
-                             const j = Math.floor(Math.random() * (i + 1));
-                             [arr[i], arr[j]] = [arr[j], arr[i]];
-                         }
-                         return arr;
-                     }
-
-                     function buildTechTiles() {
-                         if (!techTetrisRoot) return;
-                         // Ensure tiles render in their "pre-drop" state before we trigger drop.
-                         techTetrisRoot.classList.remove('drop-in');
-                         techTetrisRoot.innerHTML = '';
-
-                         const items = shuffleInPlace([...techItems]);
-                         items.forEach((label, idx) => {
-                             const tile = document.createElement('div');
-                             tile.className = 'tech-tile';
-                             tile.setAttribute('tabindex', '0');
-                             tile.setAttribute('role', 'button');
-                             tile.setAttribute('aria-label', label);
-                             tile.style.setProperty('--drop-delay', `${(idx % 14) * 35}ms`);
-                             tile.style.setProperty('--hue', `${(idx * 33) % 360}`);
-                             // Inline pre-drop guarantees a visible transition even if other CSS overrides exist.
-                             tile.style.transform = 'translateY(-120vh)';
-                             tile.style.opacity = '0';
-                             tile.textContent = label;
-                             techTetrisRoot.appendChild(tile);
-                         });
-                     }
-
-                     function playTechDrop() {
-                         if (!techTetrisRoot) return;
-                         // Restart animation by toggling a class (must happen when About is visible).
-                         techTetrisRoot.classList.remove('drop-in');
-                         // Force reflow
-                         void techTetrisRoot.offsetWidth;
-                         // Apply on next frames so transitions reliably fire.
-                         requestAnimationFrame(() => {
-                             requestAnimationFrame(() => techTetrisRoot.classList.add('drop-in'));
-                         });
-                     }
-
-                     function whenAboutActive(cb) {
-                         const about = document.getElementById('about');
-                         if (!about) return;
-                         const start = performance.now();
-
-                         const tick = () => {
-                             // main.js activates the article after a short delay; wait for it.
-                             if (about.classList.contains('active') && about.offsetParent !== null) {
-                                 cb();
-                                 return;
-                             }
-                             if (performance.now() - start > 2500) return;
-                             requestAnimationFrame(tick);
-                         };
-
-                         requestAnimationFrame(tick);
-                     }
-
-                     // Initial build (in case About is the initial hash)
-                     buildTechTiles();
-                     if (location.hash === '#about') {
-                         whenAboutActive(playTechDrop);
-                     }
-
-                     // Rebuild + re-drop each time About opens
-                     window.addEventListener('hashchange', () => {
-                         if (location.hash === '#about') {
-                             buildTechTiles();
-                             whenAboutActive(playTechDrop);
-                         }
-                     });
-
-                     // 1. Create Cursor Elements
-                     const cursor = document.createElement('div');
-                     cursor.className = 'custom-cursor';
-                     const cursorFluid = document.createElement('div');
-                     cursorFluid.className = 'custom-cursor-fluid';
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    // 1. Create Cursor Elements
+                    const cursor = document.createElement('div');
+                    cursor.className = 'custom-cursor';
+                    const cursorFluid = document.createElement('div');
+                    cursorFluid.className = 'custom-cursor-fluid';
                     document.body.appendChild(cursor);
                     document.body.appendChild(cursorFluid);
 
@@ -659,8 +569,6 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                         feedback.style.left = `${e.clientX}px`;
                         feedback.style.top = `${e.clientY}px`;
                         document.body.appendChild(feedback);
-
-                        // Remove after animation
                         setTimeout(() => feedback.remove(), 400);
                     });
 

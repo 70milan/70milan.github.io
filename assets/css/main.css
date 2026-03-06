@@ -1985,21 +1985,66 @@ body.is-preload #footer {
     }
 }
 
-.myskills li,
-.myskills li * {
+/* Skills (About) baseline: keep transitions on the pill, don't force backgrounds on all descendants */
+.myskills li {
     transition: transform 0.5s ease, box-shadow 0.3s ease;
-    background: linear-gradient(90deg, transparent, rgba(72, 240, 176, 0.05), transparent);
-    background-size: 200% 100%;
     transform-style: preserve-3d;
-    color: #ffffff !important;
+}
+
+/* About skills list: minimal modern pill layout (no skew) */
+#about .myskills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.65rem;
+}
+
+#about .myskills li {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 16px;
+    margin: 0;
+    border-radius: 16px;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(2px);
+    transform: none;
+    max-width: 100%;
+}
+
+/* Keep each skill on one line; if too long, allow it to wrap but avoid mid-word weirdness */
+#about .myskills li {
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 736px) {
+    #about .myskills li {
+        white-space: normal;
+    }
+}
+
+#about .myskills span {
+    display: inline-flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    transform: none !important;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.92);
+}
+
+#about .myskills span b {
+    color: #ffffff;
 }
 
 .myskills li:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* Deprecated 2026: disable old pulse to avoid conflict with new sweep */
 .pulse-active li {
-    animation: skill-pulse 4s infinite linear;
+    animation: none !important;
 }
 
 /* Hide default cursor on desktop */
@@ -2012,5 +2057,256 @@ body.is-preload #footer {
     #major,
     .image {
         cursor: none !important;
+    }
+}
+
+/* 2026 Tech Tetris (About)
+   - Tech-only neon tiles (individual technologies)
+   - CSS Grid dense packing (Tetris-like mosaic)
+   - @keyframes drop animation: tiles fall from above and land with a bounce
+*/
+
+#about .tech-tetris {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(45px, 1fr));
+    grid-auto-rows: 45px;
+    grid-auto-flow: dense;
+    gap: 4px;
+    /* Classic Tetris spacing */
+    margin-top: 1.25rem;
+    /* Removed the transparent-box background which created the illusion of a broken jagged rectangle */
+    overflow: visible;
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+/* Different Block Shapes */
+.shape-1x1 {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.shape-2x1 {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.shape-1x2 {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.shape-2x2 {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.shape-3x1 {
+    grid-column: span 3;
+    grid-row: span 1;
+}
+
+.shape-3x2 {
+    grid-column: span 3;
+    grid-row: span 2;
+}
+
+.shape-4x1 {
+    grid-column: span 4;
+    grid-row: span 1;
+}
+
+.shape-4x2 {
+    grid-column: span 4;
+    grid-row: span 2;
+}
+
+.shape-1x3 {
+    grid-column: span 1;
+    grid-row: span 3;
+}
+
+.shape-1x4 {
+    grid-column: span 1;
+    grid-row: span 4;
+}
+
+.shape-2x3 {
+    grid-column: span 2;
+    grid-row: span 3;
+}
+
+.shape-3x3 {
+    grid-column: span 3;
+    grid-row: span 3;
+}
+
+.shape-5x1 {
+    grid-column: span 5;
+    grid-row: span 1;
+}
+
+.shape-5x2 {
+    grid-column: span 5;
+    grid-row: span 2;
+}
+
+.shape-6x1 {
+    grid-column: span 6;
+    grid-row: span 1;
+}
+
+.shape-6x2 {
+    grid-column: span 6;
+    grid-row: span 2;
+}
+
+#about .tech-tile {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 6px;
+    margin: 0;
+    border-radius: 4px;
+    /* Tetris block rounded corners */
+    border: none;
+    font-family: 'Hind', sans-serif;
+    font-weight: 800;
+    font-size: 0.70rem;
+    letter-spacing: 0.02em;
+    line-height: 1.2;
+    white-space: normal;
+    text-align: center;
+    overflow: hidden;
+    user-select: none;
+    will-change: transform, opacity;
+
+    /* Neon solid color based on hue, milder by 30% (70% saturation instead of 100%) */
+    background: hsl(var(--hue, 200) 70% 55%);
+    color: rgba(10, 10, 12, 0.95);
+    /* 3D beveled glass effect for true Tetris blocks */
+    box-shadow: inset 0 3px 0 rgba(255, 255, 255, 0.4), inset 0 -3px 0 rgba(0, 0, 0, 0.25), inset 3px 0 0 rgba(255, 255, 255, 0.3), inset -3px 0 0 rgba(0, 0, 0, 0.25);
+
+    /* Default: hidden above (pre-animation state) */
+    transform: translateY(-600px);
+    opacity: 0;
+}
+
+/* The actual drop-in keyframe animation */
+@keyframes tetrisDrop {
+    0% {
+        transform: translateY(-600px);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    70% {
+        transform: translateY(8px);
+    }
+
+    85% {
+        transform: translateY(-3px);
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* When .drop-in is added, each tile plays the drop animation */
+#about .tech-tetris.drop-in .tech-tile {
+    animation: tetrisDrop 1500ms cubic-bezier(.2, .8, .3, 1) forwards;
+    animation-delay: var(--drop-delay, 0ms);
+}
+
+/* Hover: brighten and give a neon outline */
+#about .tech-tile:hover,
+#about .tech-tile:focus {
+    filter: saturate(1.12) contrast(1.05);
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.35), 0 0 18px rgba(255, 255, 255, 0.10);
+    outline: none;
+}
+
+/* If the user prefers reduced motion, disable drop unless we explicitly force it */
+@media (prefers-reduced-motion: reduce) {
+    html:not(.force-motion) #about .tech-tile {
+        transform: none;
+        opacity: 1;
+    }
+
+    html:not(.force-motion) #about .tech-tetris.drop-in .tech-tile {
+        animation: none !important;
+    }
+}
+
+
+
+/* (old duplicate rules cleaned up) */
+
+/* end of file */
+
+.shape-2x1 {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.shape-1x2 {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.shape-2x2 {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.shape-3x1 {
+    grid-column: span 3;
+    grid-row: span 1;
+}
+
+.shape-3x2 {
+    grid-column: span 3;
+    grid-row: span 2;
+}
+
+.shape-4x1 {
+    grid-column: span 4;
+    grid-row: span 1;
+}
+
+.shape-4x2 {
+    grid-column: span 4;
+    grid-row: span 2;
+}
+
+/* (old .tech-tile block removed – handled by new @keyframes above) */
+
+/* (old drop-in/hover/reducedMotion blocks removed – handled by new @keyframes above) */
+
+/* Mobile responsiveness for Tetris tiles */
+@media screen and (max-width: 480px) {
+    #about .tech-tetris {
+        /* Shrink grid cell size on mobile so wide shapes still fit without horizontal scrolling */
+        grid-template-columns: repeat(auto-fill, minmax(35px, 1fr));
+        grid-auto-rows: 35px;
+    }
+
+    #about .tech-tile {
+        font-size: 0.65rem;
+        padding: 3px 5px;
+    }
+
+    /* Safety caps to ensure nothing ever forces the grid wider than the screen */
+    .shape-5x1,
+    .shape-5x2,
+    .shape-6x1,
+    .shape-6x2 {
+        grid-column: span 4;
     }
 }
