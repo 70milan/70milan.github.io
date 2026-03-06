@@ -84,6 +84,9 @@
 
         function playTechDrop() {
             if (!techTetrisRoot) return;
+            var labelEl = document.getElementById('tech-tetris-label');
+            if (labelEl) labelEl.classList.remove('show');
+
             // Remove drop-in to reset, force reflow, then add it back
             techTetrisRoot.classList.remove('drop-in');
             void techTetrisRoot.offsetWidth; // force reflow
@@ -91,6 +94,14 @@
             requestAnimationFrame(function () {
                 requestAnimationFrame(function () {
                     techTetrisRoot.classList.add('drop-in');
+
+                    // Show label after all nested tiles have dropped
+                    if (labelEl) {
+                        var totalTime = (techItems.length * 150) + 1500;
+                        setTimeout(function () {
+                            labelEl.classList.add('show');
+                        }, totalTime);
+                    }
                 });
             });
         }
