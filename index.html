@@ -27,14 +27,17 @@
 
             <div class="content">
                 <div class="inner">
-                    <h1 id="namee">Milan Barot</h1>
+                    <h1 id="namee" style="cursor: pointer; user-select: none;">Milan Barot</h1>
 
                     <p><br />
-                        Data Engineer</p>
+                        <span id="job-title" style="cursor: pointer; user-select: none;">Data Engineer</span>
+                    </p>
                 </div>
                 <p>
                     <i class="fa fa-map-marker" aria-hidden="true"></i>
-                    Washington Metropolitan Area
+                    <span id="location-text">
+                        Washington Metropolitan Area
+                    </span>
                 </p>
             </div>
             <nav>
@@ -571,6 +574,26 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                         document.body.appendChild(feedback);
                         setTimeout(() => feedback.remove(), 400);
                     });
+
+                    // 5. Header Interactive Elements
+                    const nameEl = document.getElementById('namee');
+                    const titleEl = document.getElementById('job-title');
+                    const locationEl = document.getElementById('location-text');
+                    const mapPopup = document.getElementById('gta-map-popup');
+
+                    if (nameEl) {
+                        nameEl.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            nameEl.textContent = nameEl.textContent === 'Milan Barot' ? 'Barot Milan' : 'Milan Barot';
+                        });
+                    }
+
+                    if (titleEl) {
+                        titleEl.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            titleEl.textContent = titleEl.textContent === 'Data Engineer' ? 'Big Data Engineer, SQL Server Developer, ETL Developer' : 'Data Engineer';
+                        });
+                    }
 
                     // 5. Holographic Skills Section Pulse Trigger
                     const aboutBtn = document.querySelector('a[href="#about"]');
