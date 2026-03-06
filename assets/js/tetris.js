@@ -61,55 +61,10 @@
             return 'shape-3x3'; // chunky square, packs better than 6x2 planks
         }
 
-        // Ordered list of shapes to cycle through when user presses arrow keys
-        var shapeCycle = [
-            'shape-1x1', 'shape-2x1', 'shape-1x2', 'shape-2x2',
-            'shape-3x1', 'shape-1x3', 'shape-3x2', 'shape-2x3',
-            'shape-4x1', 'shape-1x4', 'shape-4x2', 'shape-3x3'
-        ];
-
-        // Track which tiles are currently in the middle of their fall animation
-        var activelyDroppingTiles = [];
-
-        // Global listener for Arrow keys to interact with the currently dropping piece
-        document.addEventListener('keydown', function (e) {
-            if (activeDroppingTiles.length === 0) return;
-            var isUpRight = e.key === 'ArrowUp' || e.key === 'ArrowRight';
-            var isDownLeft = e.key === 'ArrowDown' || e.key === 'ArrowLeft';
-
-            if (isUpRight || isDownLeft) {
-                // Prevent scrolling the page while playing Tetris
-                e.preventDefault();
-
-                // Get the most recently dropped tile that is still falling
-                var activeTile = activeDroppingTiles[activeDroppingTiles.length - 1];
-
-                // Find its current shape
-                var currentShape = shapeCycle[0];
-                shapeCycle.forEach(function (s) {
-                    if (activeTile.classList.contains(s)) currentShape = s;
-                });
-
-                var currentIndex = shapeCycle.indexOf(currentShape);
-                var nextIndex = currentIndex;
-
-                if (isUpRight) {
-                    nextIndex = (currentIndex + 1) % shapeCycle.length;
-                } else {
-                    nextIndex = (currentIndex - 1 + shapeCycle.length) % shapeCycle.length;
-                }
-
-                // Swap the class to force the grid to visually reshape the dropping piece
-                activeTile.classList.remove(currentShape);
-                activeTile.classList.add(shapeCycle[nextIndex]);
-            }
-        }, { passive: false });
-
         function buildTechTiles() {
             if (!techTetrisRoot) return;
             techTetrisRoot.innerHTML = '';
             techTetrisRoot.classList.remove('drop-in');
-            activeDroppingTiles = []; // reset active tiles on rebuild
 
             var items = shuffleArray(techItems.slice());
             items.forEach(function (label, idx) {
@@ -119,23 +74,10 @@
                 tile.setAttribute('tabindex', '0');
                 tile.setAttribute('role', 'button');
                 tile.setAttribute('aria-label', label);
-
-                // Very slow stagger delay so pieces drop one by one, giving user time to "play"
-                tile.style.setProperty('--drop-delay', (idx * 1400) + 'ms');
+                // Significantly increased stagger delay for a much slower effect
+                tile.style.setProperty('--drop-delay', (idx * 150) + 'ms');
                 tile.style.setProperty('--hue', ((idx * 33) % 360).toString());
                 tile.textContent = label;
-
-                // Listeners to track when this piece is falling so arrow keys can control it
-                tile.addEventListener('animationstart', function (e) {
-                    if (e.animationName === 'tetrisDrop') activeDroppingTiles.push(tile);
-                });
-                tile.addEventListener('animationend', function (e) {
-                    if (e.animationName === 'tetrisDrop') {
-                        var index = activeDroppingTiles.indexOf(tile);
-                        if (index > -1) activeDroppingTiles.splice(index, 1);
-                    }
-                });
-
                 techTetrisRoot.appendChild(tile);
             });
         }

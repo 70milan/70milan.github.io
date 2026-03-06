@@ -2220,7 +2220,7 @@ body.is-preload #footer {
 
 /* When .drop-in is added, each tile plays the drop animation */
 #about .tech-tetris.drop-in .tech-tile {
-    animation: tetrisDrop 6000ms cubic-bezier(.2, .8, .3, 1) forwards;
+    animation: tetrisDrop 1500ms cubic-bezier(.2, .8, .3, 1) forwards;
     animation-delay: var(--drop-delay, 0ms);
 }
 
