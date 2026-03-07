@@ -609,18 +609,28 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                     var viewportMeta = document.querySelector('meta[name="viewport"]');
                     var originalViewport = viewportMeta ? viewportMeta.content : '';
 
+                    // Desktop pan/zoom state variables
+                    var deskScale = 1, deskX = 0, deskY = 0;
+                    var isPanning = false, panStart = { x: 0, y: 0 };
+                    var isDragging = false; // To distinguish clicks from pans
+
                     // Open
                     function openLightbox(src) {
                         if (isOpen) return;
                         isOpen = true;
+
+                        deskScale = 1; deskX = 0; deskY = 0;
+                        lbImg.style.transition = 'transform 0.3s cubic-bezier(0.175,0.885,0.32,1.275)';
+
                         lbImg.src = src;
                         overlay.style.display = 'flex';
                         void overlay.offsetWidth;
                         overlay.style.opacity = '1';
-                        lbImg.style.transform = 'scale(1)';
+                        lbImg.style.transform = 'translate(' + deskX + 'px, ' + deskY + 'px) scale(' + deskScale + ')';
+
                         // Prevent background scrolling
                         document.body.style.overflow = 'hidden';
-                        // Enable pinch-to-zoom
+                        // Enable pinch-to-zoom (Mobile)
                         if (viewportMeta) {
                             viewportMeta.content = 'width=device-width, initial-scale=1, maximum-scale=5.0, user-scalable=yes';
                         }
@@ -635,7 +645,8 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                         }
                         isOpen = false;
                         overlay.style.opacity = '0';
-                        lbImg.style.transform = 'scale(0.92)';
+                        lbImg.style.transition = 'transform 0.3s cubic-bezier(0.175,0.885,0.32,1.275)';
+                        lbImg.style.transform = 'translate(0px, 0px) scale(0.92)';
                         document.body.style.overflow = '';
                         // Restore original viewport (disable zoom)
                         if (viewportMeta) {
@@ -647,8 +658,53 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                         }, 300);
                     }
 
-                    // Close on click (works on both desktop and mobile)
-                    overlay.addEventListener('click', closeLightbox, true);
+                    // Close on click (prevent closing if dragging on desktop)
+                    overlay.addEventListener('click', function (e) {
+                        if (isDragging) {
+                            e.preventDefault(); e.stopImmediatePropagation();
+                            isDragging = false;
+                            return;
+                        }
+                        closeLightbox(e);
+                    }, true);
+
+                    // --- Desktop Mouse Pan & Zoom ---
+                    overlay.addEventListener('wheel', function (e) {
+                        if (!isOpen) return;
+                        e.preventDefault(); // Stop native page scrolling
+                        var delta = Math.sign(e.deltaY) * -0.15;
+                        var newScale = deskScale + delta;
+                        deskScale = Math.max(1, Math.min(newScale, 5));
+                        if (deskScale === 1) { deskX = 0; deskY = 0; } // Reset pan
+                        lbImg.style.transition = 'none'; // Instant zoom
+                        lbImg.style.transform = 'translate(' + deskX + 'px, ' + deskY + 'px) scale(' + deskScale + ')';
+                    }, { passive: false });
+
+                    overlay.addEventListener('mousedown', function (e) {
+                        if (deskScale <= 1 || !isOpen || e.button !== 0) return; // Only pan if zoomed in and left click
+                        e.preventDefault();
+                        panStart = { x: e.clientX - deskX, y: e.clientY - deskY };
+                        isPanning = true;
+                        isDragging = false;
+                        overlay.style.cursor = 'grabbing';
+                    });
+
+                    window.addEventListener('mouseup', function () {
+                        if (!isPanning) return;
+                        isPanning = false;
+                        overlay.style.cursor = 'zoom-out';
+                        setTimeout(function () { isDragging = false; }, 50);
+                    });
+
+                    window.addEventListener('mousemove', function (e) {
+                        if (!isPanning || !isOpen) return;
+                        isDragging = true;
+                        e.preventDefault();
+                        deskX = (e.clientX - panStart.x);
+                        deskY = (e.clientY - panStart.y);
+                        lbImg.style.transition = 'none'; // Instant pan
+                        lbImg.style.transform = 'translate(' + deskX + 'px, ' + deskY + 'px) scale(' + deskScale + ')';
+                    }, { passive: false });
 
                     // Attach ONLY click listeners to project images
                     // Mobile browsers synthesize click from tap - no need for touchend
