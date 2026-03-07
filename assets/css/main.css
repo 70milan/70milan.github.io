@@ -2333,44 +2333,6 @@ body.is-preload #footer {
     transform: translateY(0);
 }
 
-/* ----------------------------------------- */
-/* Lightbox / 'Exaggerate' Image CSS         */
-/* ----------------------------------------- */
-#lightbox-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.9);
-    z-index: 10000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-}
-
-#lightbox-overlay.active {
-    opacity: 1;
-    pointer-events: auto;
-    cursor: zoom-out;
-}
-
-#lightbox-img {
-    max-width: 90vw;
-    max-height: 90vh;
-    border-radius: 8px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
-    transform: scale(0.9);
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    object-fit: contain;
-}
-
-#lightbox-overlay.active #lightbox-img {
-    transform: scale(1);
-}
 
 /* Make source images look clickable */
 .image.main img {
