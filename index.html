@@ -592,37 +592,67 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                 });
             </script>
 
-            <!-- Lightbox Overlay Container -->
-            <div id="lightbox-overlay">
-                <img id="lightbox-img" src="" alt="Enlarged Project Image">
-            </div>
-
+            <!-- Lightbox: fully self-contained, no external CSS needed -->
             <script>
-                // 6. Image Exaggeration (Lightbox) Feature
-                document.addEventListener('DOMContentLoaded', () => {
-                    const lightbox = document.getElementById('lightbox-overlay');
-                    const lightboxImg = document.getElementById('lightbox-img');
+                (function () {
+                    // Create the overlay element with inline styles
+                    var overlay = document.createElement('div');
+                    overlay.id = 'lightbox-overlay';
+                    overlay.style.cssText = 'position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.92);z-index:99999;display:none;justify-content:center;align-items:center;cursor:zoom-out;transition:opacity 0.3s ease;opacity:0;';
+                    var lbImg = document.createElement('img');
+                    lbImg.id = 'lightbox-img';
+                    lbImg.style.cssText = 'max-width:90vw;max-height:90vh;border-radius:8px;box-shadow:0 0 40px rgba(0,0,0,0.9);object-fit:contain;transform:scale(0.92);transition:transform 0.3s cubic-bezier(0.175,0.885,0.32,1.275);';
+                    overlay.appendChild(lbImg);
+                    document.body.appendChild(overlay);
 
-                    if (lightbox && lightboxImg) {
-                        // Use event delegation on the body to catch clicks even if template moved the images
-                        document.body.addEventListener('click', (e) => {
-                            // Find closest image that has class 'image main' on its parent
-                            if (e.target && e.target.tagName === 'IMG' && e.target.closest('.image.main')) {
+                    // Open lightbox
+                    function openLightbox(src) {
+                        lbImg.src = src;
+                        overlay.style.display = 'flex';
+                        // Force reflow then animate in
+                        void overlay.offsetWidth;
+                        overlay.style.opacity = '1';
+                        lbImg.style.transform = 'scale(1)';
+                    }
+
+                    // Close lightbox
+                    function closeLightbox() {
+                        overlay.style.opacity = '0';
+                        lbImg.style.transform = 'scale(0.92)';
+                        setTimeout(function () {
+                            overlay.style.display = 'none';
+                            lbImg.src = '';
+                        }, 300);
+                    }
+
+                    overlay.addEventListener('click', closeLightbox);
+
+                    // Attach click listeners to all project images
+                    function attachToImages() {
+                        var imgs = document.querySelectorAll('#work img, #work .image img, .image.main img');
+                        imgs.forEach(function (img) {
+                            if (img.dataset.lbAttached) return; // skip already-attached
+                            img.dataset.lbAttached = '1';
+                            img.style.cursor = 'zoom-in';
+                            img.addEventListener('click', function (e) {
                                 e.preventDefault();
-                                e.stopPropagation();
-                                lightboxImg.src = e.target.src;
-                                lightbox.classList.add('active');
-                            }
-                        });
-
-                        // Click anywhere on the overlay to close it
-                        lightbox.addEventListener('click', () => {
-                            lightbox.classList.remove('active'); // Fade and scale out
-                            // Clear source after animation to prevent flashing old image on next open
-                            setTimeout(() => { lightboxImg.src = ''; }, 300);
+                                e.stopImmediatePropagation();
+                                openLightbox(this.src);
+                            }, true); // capture phase
                         });
                     }
-                });
+
+                    // Run on DOM ready
+                    if (document.readyState === 'loading') {
+                        document.addEventListener('DOMContentLoaded', attachToImages);
+                    } else {
+                        attachToImages();
+                    }
+
+                    // Also re-attach whenever the DOM changes (template may show/hide articles)
+                    var observer = new MutationObserver(function () { attachToImages(); });
+                    observer.observe(document.body, { childList: true, subtree: true });
+                })();
             </script>
 </body>
 
