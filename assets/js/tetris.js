@@ -15,9 +15,7 @@
             'Apache Spark',
             'FastAPI', 'React', 'Electron', 'RESTful APIs', 'OAuth',
             'Azure Data Factory', 'AWS', 'Databricks',
-            'GIT', 'Jenkins', 'Dagster', 'Uvicorn', 'Airflow', 'Jira', 'ActiveBatch', 'Confluence',
-            'MS Office Suite',
-            'OpenAI API', 'GPT-3.5', 'GPT-4+', 'GPT-5 (Mini & Nano)', 'GPT-4o', 'Whisper (Speech-to-Text)'
+            'GIT', 'Jenkins', 'Dagster', 'Uvicorn', 'Airflow', 'Jira', 'ActiveBatch', 'OpenAI/Claude API', 'GPT-4+,5+', 'Claude Sonnet', 'Whisper (Speech-to-Text)'
         ];
 
         function shuffleArray(arr) {
