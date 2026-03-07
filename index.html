@@ -592,35 +592,40 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                 });
             </script>
 
-            <!-- Lightbox: fully self-contained, no external CSS needed -->
+            <!-- Lightbox: fully self-contained, mobile + desktop -->
             <script>
                 (function () {
                     // Create the overlay element with inline styles
                     var overlay = document.createElement('div');
                     overlay.id = 'lightbox-overlay';
-                    overlay.style.cssText = 'position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.92);z-index:99999;display:none;justify-content:center;align-items:center;cursor:zoom-out;transition:opacity 0.3s ease;opacity:0;';
+                    overlay.style.cssText = 'position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.92);z-index:99999;display:none;justify-content:center;align-items:center;cursor:zoom-out;transition:opacity 0.3s ease;opacity:0;-webkit-tap-highlight-color:transparent;';
                     var lbImg = document.createElement('img');
                     lbImg.id = 'lightbox-img';
-                    lbImg.style.cssText = 'max-width:90vw;max-height:90vh;border-radius:8px;box-shadow:0 0 40px rgba(0,0,0,0.9);object-fit:contain;transform:scale(0.92);transition:transform 0.3s cubic-bezier(0.175,0.885,0.32,1.275);';
+                    lbImg.style.cssText = 'max-width:90vw;max-height:90vh;border-radius:8px;box-shadow:0 0 40px rgba(0,0,0,0.9);object-fit:contain;transform:scale(0.92);transition:transform 0.3s cubic-bezier(0.175,0.885,0.32,1.275);-webkit-user-select:none;user-select:none;';
                     overlay.appendChild(lbImg);
                     document.body.appendChild(overlay);
 
+                    var isOpen = false;
+
                     // Open lightbox
                     function openLightbox(src) {
+                        if (isOpen) return;
+                        isOpen = true;
                         lbImg.src = src;
                         overlay.style.display = 'flex';
-                        // Force reflow then animate in
-                        void overlay.offsetWidth;
+                        void overlay.offsetWidth; // force reflow
                         overlay.style.opacity = '1';
                         lbImg.style.transform = 'scale(1)';
                     }
 
                     // Close lightbox
                     function closeLightbox(e) {
+                        if (!isOpen) return;
                         if (e) {
                             e.preventDefault();
                             e.stopImmediatePropagation();
                         }
+                        isOpen = false;
                         overlay.style.opacity = '0';
                         lbImg.style.transform = 'scale(0.92)';
                         setTimeout(function () {
@@ -629,24 +634,39 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                         }, 300);
                     }
 
-                    overlay.addEventListener('click', closeLightbox, true); // capture phase so it fires before jQuery's body handler
+                    // Close on click AND touch (for mobile)
+                    overlay.addEventListener('click', closeLightbox, true);
+                    overlay.addEventListener('touchend', function (e) {
+                        if (isOpen) {
+                            e.preventDefault();
+                            e.stopImmediatePropagation();
+                            closeLightbox();
+                        }
+                    }, true);
 
-                    // Attach click listeners to all project images
+                    // Attach click + touch listeners to all project images
                     function attachToImages() {
-                        var imgs = document.querySelectorAll('#work img, #work .image img, .image.main img');
+                        var imgs = document.querySelectorAll('#work img, .image.main img');
                         imgs.forEach(function (img) {
-                            if (img.dataset.lbAttached) return; // skip already-attached
+                            if (img.dataset.lbAttached) return;
                             img.dataset.lbAttached = '1';
                             img.style.cursor = 'zoom-in';
+                            // Desktop click
                             img.addEventListener('click', function (e) {
                                 e.preventDefault();
                                 e.stopImmediatePropagation();
                                 openLightbox(this.src);
-                            }, true); // capture phase
+                            }, true);
+                            // Mobile touch
+                            img.addEventListener('touchend', function (e) {
+                                e.preventDefault();
+                                e.stopImmediatePropagation();
+                                openLightbox(this.src);
+                            }, true);
                         });
                     }
 
-                    // Run on DOM ready
+                    // Run immediately
                     if (document.readyState === 'loading') {
                         document.addEventListener('DOMContentLoaded', attachToImages);
                     } else {
