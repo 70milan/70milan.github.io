@@ -92,7 +92,8 @@
                         later review.
                     </p>
                     <br><b style="color: rgb(250, 77, 95)">tech/tools:</b>
-                    Python, Electron, glassmorphism UI, GPT-4, GPT-5 (nano, mini), OpenAI API, Hardware-locked
+                    Python, JavaScript, HTML5, CSS/SASS, Electron, glassmorphism UI, GPT-4, GPT-5 (nano, mini), OpenAI
+                    API, Hardware-locked
                     licensing, Markdown export.
                 </div>
 
@@ -105,6 +106,7 @@
                     <h2 id="major">Cross-Platform Music Synchronization: A Monthly Automated Pipeline</h2>
                 </a>
 
+                <span class="image main"><img src="images/yt_sp.png" alt="yt_sp" /></span>
                 <span class="image main"><img src="images/aa.JPG" alt="" /></span>
 
 
@@ -148,7 +150,7 @@
                 <a href="https://github.com/70milan/spotifynolib" target="_blank">
                     <h2 id="major">Spotify User's "Liked Songs" Data exploration &amp; visualization</h2>
                 </a>
-                <span class="image main"><img src="images/flowchart.jpg" alt="" /></span>
+                <span class="image main"><img src="images/spotify_pipeline.png" alt="" /></span>
 
                 <span class="image main"><img src="images/sp_1.png" alt="" /></span>
 
@@ -170,29 +172,7 @@
                 </div>
                 </p>
 
-                <br><br>
                 <!-- Project 3 -->
-
-                <a href="https://github.com/70milan/travelSite" target="_blank">
-                    <h2 id="major">A responsive "Travel website" clone developed using the "mobile-first" design
-                        approach</h2>
-                </a>
-                <span class="image main"><img src="images/5.png" alt="" /></span>
-                <div class="transparent-box">
-                    <p class="textalign">Developed using web development essentials such as
-                        <b style="color: rgb(250, 77, 95)">HTML, PostCSS</b>
-                        and
-                        <b style="color: rgb(250, 77, 95)">JavaScript (Babel &amp; Webpack) and Node.js.</b><br>
-                        The website was developed as per the "mobile-first" design approach such that the devices
-                        downloads only the data that is appropriate for the current device, thereby providing faster
-                        loading/reloading time.
-                    </p>
-                    </p>
-                </div>
-                <br><br>
-
-
-                <!-- Project 4 -->
 
 
                 <a href="https://github.com/70milan/WordPressUniversity" target="_blank">
@@ -606,6 +586,40 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                         aboutBtn.addEventListener('click', () => {
                             const skillsList = document.querySelector('.myskills');
                             if (skillsList) skillsList.classList.add('pulse-active');
+                        });
+                    }
+
+                });
+            </script>
+
+            <!-- Lightbox Overlay Container -->
+            <div id="lightbox-overlay">
+                <img id="lightbox-img" src="" alt="Enlarged Project Image">
+            </div>
+
+            <script>
+                // 6. Image Exaggeration (Lightbox) Feature
+                document.addEventListener('DOMContentLoaded', () => {
+                    const lightbox = document.getElementById('lightbox-overlay');
+                    const lightboxImg = document.getElementById('lightbox-img');
+
+                    if (lightbox && lightboxImg) {
+                        // Use event delegation on the body to catch clicks even if template moved the images
+                        document.body.addEventListener('click', (e) => {
+                            // Find closest image that has class 'image main' on its parent
+                            if (e.target && e.target.tagName === 'IMG' && e.target.closest('.image.main')) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                lightboxImg.src = e.target.src;
+                                lightbox.classList.add('active');
+                            }
+                        });
+
+                        // Click anywhere on the overlay to close it
+                        lightbox.addEventListener('click', () => {
+                            lightbox.classList.remove('active'); // Fade and scale out
+                            // Clear source after animation to prevent flashing old image on next open
+                            setTimeout(() => { lightboxImg.src = ''; }, 300);
                         });
                     }
                 });
