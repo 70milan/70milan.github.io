@@ -592,13 +592,13 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                 });
             </script>
 
-            <!-- Lightbox: fully self-contained, mobile + desktop -->
+            <!-- Lightbox: fully self-contained, mobile + desktop with zoom -->
             <script>
                 (function () {
-                    // Create overlay
+                    // Create overlay without touch-action:none so pinch-zoom works
                     var overlay = document.createElement('div');
                     overlay.id = 'lightbox-overlay';
-                    overlay.style.cssText = 'position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.92);z-index:99999;display:none;justify-content:center;align-items:center;cursor:zoom-out;transition:opacity 0.3s ease;opacity:0;-webkit-tap-highlight-color:transparent;touch-action:none;';
+                    overlay.style.cssText = 'position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.92);z-index:99999;display:none;justify-content:center;align-items:center;cursor:zoom-out;transition:opacity 0.3s ease;opacity:0;-webkit-tap-highlight-color:transparent;';
                     var lbImg = document.createElement('img');
                     lbImg.id = 'lightbox-img';
                     lbImg.style.cssText = 'max-width:90vw;max-height:90vh;border-radius:8px;box-shadow:0 0 40px rgba(0,0,0,0.9);object-fit:contain;transform:scale(0.92);transition:transform 0.3s cubic-bezier(0.175,0.885,0.32,1.275);-webkit-user-select:none;user-select:none;pointer-events:none;';
@@ -606,6 +606,8 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                     document.body.appendChild(overlay);
 
                     var isOpen = false;
+                    var viewportMeta = document.querySelector('meta[name="viewport"]');
+                    var originalViewport = viewportMeta ? viewportMeta.content : '';
 
                     // Open
                     function openLightbox(src) {
@@ -616,8 +618,12 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                         void overlay.offsetWidth;
                         overlay.style.opacity = '1';
                         lbImg.style.transform = 'scale(1)';
-                        // Prevent body scrolling on mobile while lightbox is open
+                        // Prevent background scrolling
                         document.body.style.overflow = 'hidden';
+                        // Enable pinch-to-zoom
+                        if (viewportMeta) {
+                            viewportMeta.content = 'width=device-width, initial-scale=1, maximum-scale=5.0, user-scalable=yes';
+                        }
                     }
 
                     // Close
@@ -631,6 +637,10 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                         overlay.style.opacity = '0';
                         lbImg.style.transform = 'scale(0.92)';
                         document.body.style.overflow = '';
+                        // Restore original viewport (disable zoom)
+                        if (viewportMeta) {
+                            viewportMeta.content = originalViewport;
+                        }
                         setTimeout(function () {
                             overlay.style.display = 'none';
                             lbImg.src = '';
