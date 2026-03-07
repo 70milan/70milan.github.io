@@ -150,7 +150,7 @@
                 <a href="https://github.com/70milan/spotifynolib" target="_blank">
                     <h2 id="major">Spotify User's "Liked Songs" Data exploration &amp; visualization</h2>
                 </a>
-                <span class="image main"><img src="images/spotify_pipeline.png" alt="" /></span>
+                <span class="image main"><img src="images/Spotify_Pipeline.png" alt="" /></span>
 
                 <span class="image main"><img src="images/sp_1.png" alt="" /></span>
 
@@ -595,30 +595,32 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
             <!-- Lightbox: fully self-contained, mobile + desktop -->
             <script>
                 (function () {
-                    // Create the overlay element with inline styles
+                    // Create overlay
                     var overlay = document.createElement('div');
                     overlay.id = 'lightbox-overlay';
-                    overlay.style.cssText = 'position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.92);z-index:99999;display:none;justify-content:center;align-items:center;cursor:zoom-out;transition:opacity 0.3s ease;opacity:0;-webkit-tap-highlight-color:transparent;';
+                    overlay.style.cssText = 'position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.92);z-index:99999;display:none;justify-content:center;align-items:center;cursor:zoom-out;transition:opacity 0.3s ease;opacity:0;-webkit-tap-highlight-color:transparent;touch-action:none;';
                     var lbImg = document.createElement('img');
                     lbImg.id = 'lightbox-img';
-                    lbImg.style.cssText = 'max-width:90vw;max-height:90vh;border-radius:8px;box-shadow:0 0 40px rgba(0,0,0,0.9);object-fit:contain;transform:scale(0.92);transition:transform 0.3s cubic-bezier(0.175,0.885,0.32,1.275);-webkit-user-select:none;user-select:none;';
+                    lbImg.style.cssText = 'max-width:90vw;max-height:90vh;border-radius:8px;box-shadow:0 0 40px rgba(0,0,0,0.9);object-fit:contain;transform:scale(0.92);transition:transform 0.3s cubic-bezier(0.175,0.885,0.32,1.275);-webkit-user-select:none;user-select:none;pointer-events:none;';
                     overlay.appendChild(lbImg);
                     document.body.appendChild(overlay);
 
                     var isOpen = false;
 
-                    // Open lightbox
+                    // Open
                     function openLightbox(src) {
                         if (isOpen) return;
                         isOpen = true;
                         lbImg.src = src;
                         overlay.style.display = 'flex';
-                        void overlay.offsetWidth; // force reflow
+                        void overlay.offsetWidth;
                         overlay.style.opacity = '1';
                         lbImg.style.transform = 'scale(1)';
+                        // Prevent body scrolling on mobile while lightbox is open
+                        document.body.style.overflow = 'hidden';
                     }
 
-                    // Close lightbox
+                    // Close
                     function closeLightbox(e) {
                         if (!isOpen) return;
                         if (e) {
@@ -628,37 +630,25 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                         isOpen = false;
                         overlay.style.opacity = '0';
                         lbImg.style.transform = 'scale(0.92)';
+                        document.body.style.overflow = '';
                         setTimeout(function () {
                             overlay.style.display = 'none';
                             lbImg.src = '';
                         }, 300);
                     }
 
-                    // Close on click AND touch (for mobile)
+                    // Close on click (works on both desktop and mobile)
                     overlay.addEventListener('click', closeLightbox, true);
-                    overlay.addEventListener('touchend', function (e) {
-                        if (isOpen) {
-                            e.preventDefault();
-                            e.stopImmediatePropagation();
-                            closeLightbox();
-                        }
-                    }, true);
 
-                    // Attach click + touch listeners to all project images
+                    // Attach ONLY click listeners to project images
+                    // Mobile browsers synthesize click from tap - no need for touchend
                     function attachToImages() {
                         var imgs = document.querySelectorAll('#work img, .image.main img');
                         imgs.forEach(function (img) {
                             if (img.dataset.lbAttached) return;
                             img.dataset.lbAttached = '1';
                             img.style.cursor = 'zoom-in';
-                            // Desktop click
                             img.addEventListener('click', function (e) {
-                                e.preventDefault();
-                                e.stopImmediatePropagation();
-                                openLightbox(this.src);
-                            }, true);
-                            // Mobile touch
-                            img.addEventListener('touchend', function (e) {
                                 e.preventDefault();
                                 e.stopImmediatePropagation();
                                 openLightbox(this.src);
@@ -673,16 +663,12 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                         attachToImages();
                     }
 
-                    // Re-attach on hash change (when template shows/hides articles)
+                    // Re-attach when articles show/hide
                     window.addEventListener('hashchange', function () {
                         setTimeout(attachToImages, 400);
                     });
-
-                    // MutationObserver: watch for child AND attribute changes
                     var observer = new MutationObserver(function () { attachToImages(); });
                     observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['style', 'class'] });
-
-                    // Polling fallback: check every 500ms for 10 seconds
                     var pollCount = 0;
                     var poller = setInterval(function () {
                         attachToImages();
