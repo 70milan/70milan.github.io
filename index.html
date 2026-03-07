@@ -67,7 +67,7 @@
                 <a href="https://github.com/70milan/RealTime_Context_Engine" target="_blank">
                     <h2 id="major">RealTime Context Engine</h2>
                 </a>
-                <span class="image main"><img src="images/System_Architecture.jpg" alt="System_Architecture" /></span>
+                <span class="image main"><img src="images/System_Architecture.png" alt="System_Architecture" /></span>
                 <span class="image main"><img src="images/interview_assistant_main_interface.png"
                         alt="RealTime_Context_Engine" /></span>
                 <div class="transparent-box">
@@ -616,7 +616,11 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                     }
 
                     // Close lightbox
-                    function closeLightbox() {
+                    function closeLightbox(e) {
+                        if (e) {
+                            e.preventDefault();
+                            e.stopImmediatePropagation();
+                        }
                         overlay.style.opacity = '0';
                         lbImg.style.transform = 'scale(0.92)';
                         setTimeout(function () {
@@ -625,7 +629,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                         }, 300);
                     }
 
-                    overlay.addEventListener('click', closeLightbox);
+                    overlay.addEventListener('click', closeLightbox, true); // capture phase so it fires before jQuery's body handler
 
                     // Attach click listeners to all project images
                     function attachToImages() {
@@ -649,9 +653,22 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                         attachToImages();
                     }
 
-                    // Also re-attach whenever the DOM changes (template may show/hide articles)
+                    // Re-attach on hash change (when template shows/hides articles)
+                    window.addEventListener('hashchange', function () {
+                        setTimeout(attachToImages, 400);
+                    });
+
+                    // MutationObserver: watch for child AND attribute changes
                     var observer = new MutationObserver(function () { attachToImages(); });
-                    observer.observe(document.body, { childList: true, subtree: true });
+                    observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['style', 'class'] });
+
+                    // Polling fallback: check every 500ms for 10 seconds
+                    var pollCount = 0;
+                    var poller = setInterval(function () {
+                        attachToImages();
+                        pollCount++;
+                        if (pollCount > 20) clearInterval(poller);
+                    }, 500);
                 })();
             </script>
 </body>
