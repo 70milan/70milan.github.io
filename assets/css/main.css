@@ -2468,7 +2468,18 @@ body.is-preload #footer {
         grid-template-columns: repeat(2, 1fr);
         gap: 4rem 3rem;
         /* vertical, horizontal */
-        align-items: start;
+        align-items: stretch;
+    }
+
+    /* Assure project titles take up matching vertical space for top-alignment */
+    .projects-grid .project-section-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 4.5em;
+        /* Approximately 3 lines of text */
+        margin-bottom: 2rem;
     }
 
     /* Hide the horizontal dividers since the grid gap provides clean empty space */
@@ -2644,4 +2655,13 @@ body.is-preload #footer {
 
 .image.main img:hover {
     filter: brightness(1.1);
+}
+
+/* Base Dimension SPA Visibility Toggles */
+#main {
+    display: none;
+}
+
+#main article {
+    display: none;
 }
