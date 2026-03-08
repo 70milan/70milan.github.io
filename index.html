@@ -11,6 +11,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <noscript>
         <link rel="stylesheet" href="assets/css/noscript.css" />
     </noscript>
@@ -64,48 +65,75 @@
             <article id="work" style="background-color: #272d31">
 
                 <!-- RealTime_Context_Engine -->
-                <a href="https://github.com/70milan/RealTime_Context_Engine" target="_blank">
-                    <h2 id="major">RealTime Context Engine</h2>
-                </a>
+                <h2 id="major"
+                    style="display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap;">
+                    <a href="https://github.com/70milan/RealTime_Context_Engine" target="_blank"
+                        style="border-bottom: none;">RealTime Context Engine</a>
+                    <a href="https://github.com/70milan/RealTime_Context_Engine" target="_blank"
+                        style="border-bottom: none;"><i class="fa fa-github"></i></a>
+                </h2>
                 <span class="image main"><img src="images/system_architecture_opt.jpg"
                         alt="system_architecture" /></span>
                 <span class="image main"><img src="images/interview_assistant_main_interface.png"
                         alt="RealTime_Context_Engine" /></span>
                 <div class="transparent-box">
-                    <p class="textalign">The Interview Assistant (originally developed as Job Bandit) is a premium,
-                        desktop-oriented productivity application designed to provide real-time AI support for job
-                        seekers during technical interviews and preparation. Built with a "stealth-first" philosophy,
-                        the app presents itself as a "Windows Runtime Host" in the Task Manager and features a modern,
-                        high-performance interface with glassmorphism aesthetics and smooth transitions. It serves as a
-                        sophisticated bridge between the user and advanced Large Language Models, leveraging specialized
-                        configurations for GPT-4 and GPT-5 (nano, mini) and next-generation reasoning models to deliver
-                        tailored,
-                        context-aware assistance based on the user's uploaded resume and specific job
-                        descriptions.<br><br>
-                        Functionally, the application automates the interview workflow by offering robust session
-                        management, detailed performance tracking (including Time-to-First-Token metrics), and
-                        high-accuracy screenshot analysis for visual queries. Users can initiate timed sessions that
-                        securely ground AI responses in their professional profile, while features like "Mini Mode"
-                        (activated via Ctrl+Q) and window transparency allow for an inconspicuous, low-profile presence
-                        during high-stakes evaluations. The system also includes a secure, hardware-locked licensing
-                        mechanism, searchable historical session logs with syntax-highlighted code blocks, and the
-                        ability to export entire conversation transcripts to elegantly formatted markdown files for
-                        later review.
-                    </p>
-                    <br><b style="color: rgb(250, 77, 95)">tech/tools:</b>
-                    Python, JavaScript, HTML5, CSS/SASS, Electron, glassmorphism UI, GPT-4, GPT-5 (nano, mini), OpenAI
-                    API, Hardware-locked
-                    licensing, Markdown export.
+                    <div class="desc-container">
+                        <p class="textalign desc-text" id="desc1">The Interview Assistant (originally developed as Job
+                            Bandit) is a premium,
+                            desktop-oriented productivity application designed to provide real-time AI support for job
+                            seekers during technical interviews and preparation. Built with a "stealth-first"
+                            philosophy,
+                            the app presents itself as a "Windows Runtime Host" in the Task Manager and features a
+                            modern,
+                            high-performance interface with glassmorphism aesthetics and smooth transitions. It serves
+                            as a
+                            sophisticated bridge between the user and advanced Large Language Models, leveraging
+                            specialized
+                            configurations for GPT-4 and GPT-5 (nano, mini) and next-generation reasoning models to
+                            deliver
+                            tailored,
+                            context-aware assistance based on the user's uploaded resume and specific job
+                            descriptions.<br><br>
+                            Functionally, the application automates the interview workflow by offering robust session
+                            management, detailed performance tracking (including Time-to-First-Token metrics), and
+                            high-accuracy screenshot analysis for visual queries. Users can initiate timed sessions that
+                            securely ground AI responses in their professional profile, while features like "Mini Mode"
+                            (activated via Ctrl+Q) and window transparency allow for an inconspicuous, low-profile
+                            presence
+                            during high-stakes evaluations. The system also includes a secure, hardware-locked licensing
+                            mechanism, searchable historical session logs with syntax-highlighted code blocks, and the
+                            ability to export entire conversation transcripts to elegantly formatted markdown files for
+                            later review.<button class="read-more-btn" onclick="toggleReadMore('desc1', this)">Read
+                                more...</button>
+                        </p>
+                    </div>
+
+                    <div class="tech-stack-container" style="margin-top: 15px;">
+                        <span class="tech-pill"><i class="devicon-python-plain"></i> Python</span>
+                        <span class="tech-pill"><i class="devicon-javascript-plain"></i> JavaScript</span>
+                        <span class="tech-pill"><i class="devicon-html5-plain"></i> HTML5</span>
+                        <span class="tech-pill"><i class="devicon-css3-plain"></i> CSS</span>
+                        <span class="tech-pill"><i class="devicon-sass-original"></i> SASS</span>
+                        <span class="tech-pill"><i class="devicon-electron-original"></i> Electron</span>
+                        <span class="tech-pill"><i class="fa fa-paint-brush"></i> Glassmorphism UI</span>
+                        <span class="tech-pill"><i class="fa fa-robot"></i> GPT-4</span>
+                        <span class="tech-pill"><i class="fa fa-robot"></i> GPT-5</span>
+                        <span class="tech-pill"><i class="fa fa-cogs"></i> OpenAI API</span>
+                        <span class="tech-pill"><i class="fa fa-lock"></i> Hardware Licensing</span>
+                        <span class="tech-pill"><i class="devicon-markdown-original"></i> Markdown</span>
+                    </div>
                 </div>
 
                 <br><br>
 
-                <!-- Project 1 -->
-
-
-                <a href="https://github.com/70milan/youtube_spotify_monthly_LMSYNC" target="_blank">
-                    <h2 id="major">Cross-Platform Music Synchronization: A Monthly Automated Pipeline</h2>
-                </a>
+                <h2 id="major"
+                    style="display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap;">
+                    <a href="https://github.com/70milan/Youtube_Spotify_Syncronization_Dagster" target="_blank"
+                        style="border-bottom: none;">Cross-Platform Music Synchronization: A Monthly Automated
+                        Pipeline</a>
+                    <a href="https://github.com/70milan/Youtube_Spotify_Syncronization_Dagster" target="_blank"
+                        style="border-bottom: none;"><i class="fa fa-github"></i></a>
+                </h2>
 
                 <span class="image main"><img src="images/yt_sp_opt.jpg" alt="yt_sp" /></span>
                 <span class="image main"><img src="images/aa.JPG" alt="" /></span>
@@ -113,22 +141,41 @@
 
 
                 <div class="transparent-box">
-                    <p class="textalign">The &#8220;Monthly Music Sync&#8221; project is designed with the goal of
-                        synchronizing a
-                        user's liked songs between YouTube Music and Spotify platforms using Python and relevant APIs.
-                        The ELT pipeline is built using Python, AWS S3, YouTube Data API, Spotify API, and integrates
-                        with third-party libraries such as spotipy and youtube_dl. The project retrieves music data from
-                        YouTube Music and Spotify using their respective APIs and processes this data by extracting
-                        metadata and searching for corresponding tracks on Spotify. The processed data, specifically
-                        YouTube video IDs, are stored in an AWS S3 bucket for tracking synchronized songs.<br>
-                        The pipeline is automated to run monthly via Apache Airflow, ensuring periodic synchronization
-                        of liked songs.<br>
-                        Future enhancements include further integration with Apache Airflow for automation, development
-                        of a React App for a user-friendly interface, and enhanced error handling mechanisms.<br>
-                        <br><b style="color: rgb(250, 77, 95)">python/libraries:</b>
-                        spotipy, youtube_dl, Pandas, plotly.
-                        <br><b style="color: rgb(250, 77, 95)">tech/tools:</b>
-                        Python, AWS S3, YouTube Data API, Spotify API, Apache Airflow, React (for future enhancements)
+                    <div class="desc-container">
+                        <p class="textalign desc-text" id="desc2">The &#8220;Monthly Music Sync&#8221; project is
+                            designed with the goal of
+                            synchronizing a
+                            user's liked songs between YouTube Music and Spotify platforms using Python and relevant
+                            APIs.
+                            The ELT pipeline is built using Python, AWS S3, YouTube Data API, Spotify API, and
+                            integrates
+                            with third-party libraries such as spotipy and youtube_dl. The project retrieves music data
+                            from
+                            YouTube Music and Spotify using their respective APIs and processes this data by extracting
+                            metadata and searching for corresponding tracks on Spotify. The processed data, specifically
+                            YouTube video IDs, are stored in an AWS S3 bucket for tracking synchronized songs.<br>
+                            The pipeline is automated to run monthly via Apache Airflow, ensuring periodic
+                            synchronization
+                            of liked songs.<br>
+                            Future enhancements include further integration with Apache Airflow for automation,
+                            development
+                            of a React App for a user-friendly interface, and enhanced error handling mechanisms.<button
+                                class="read-more-btn" onclick="toggleReadMore('desc2', this)">Read more...</button>
+                        </p>
+                    </div>
+
+                    <div class="tech-stack-container" style="margin-top: 15px;">
+                        <span class="tech-pill"><i class="fa fa-music"></i> Spotipy</span>
+                        <span class="tech-pill"><i class="fa fa-youtube-play"></i> youtube_dl</span>
+                        <span class="tech-pill"><i class="devicon-pandas-original"></i> Pandas</span>
+                        <span class="tech-pill"><i class="devicon-plotly-plain"></i> Plotly</span>
+                        <span class="tech-pill"><i class="devicon-python-plain"></i> Python</span>
+                        <span class="tech-pill"><i class="devicon-amazonwebservices-original"></i> AWS S3</span>
+                        <span class="tech-pill"><i class="fa fa-youtube"></i> YouTube API</span>
+                        <span class="tech-pill"><i class="fa fa-spotify"></i> Spotify API</span>
+                        <span class="tech-pill"><i class="devicon-apacheairflow-plain"></i> Apache Airflow</span>
+                        <span class="tech-pill"><i class="devicon-react-original"></i> React</span>
+                    </div>
 
                 </div>
                 </p>
@@ -148,54 +195,93 @@
 
 
 
-                <a href="https://github.com/70milan/spotifynolib" target="_blank">
-                    <h2 id="major">Spotify User's "Liked Songs" Data exploration &amp; visualization</h2>
-                </a>
+                <h2 id="major"
+                    style="display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap;">
+                    <a href="https://github.com/70milan/spotifynolib" target="_blank"
+                        style="border-bottom: none;">Spotify User's "Liked Songs" Data exploration &amp;
+                        visualization</a>
+                    <a href="https://github.com/70milan/spotifynolib" target="_blank" style="border-bottom: none;"><i
+                            class="fa fa-github"></i></a>
+                </h2>
                 <span class="image main"><img src="images/spotify_pipeline_opt.jpg" alt="" /></span>
 
                 <span class="image main"><img src="images/sp_1.png" alt="" /></span>
 
                 <div class="transparent-box">
-                    <p class="textalign">With the aim of retrieving the user's music data via Python's REST API and
-                        staging it to the Postgres server, the ELT pipeline has been designed using a combination of
-                        Python, Postgres database, Dagster for automation, docker for containerization, and Power BI for
-                        visualization.
-                        The data is transformed in a number of ways using pandas to produce useful insights that can be
-                        used to build PowerBI dashboards and visualizations.
-                        With Dagster, the pipeline is automated to run every month.
-                        The project's ultimate objective is to discover the user's monthly music preferences by
-                        analyzing particular characteristics, such as the recently released "audio-features" by
-                        Spotify.<br>
-                        <br><b style="color: rgb(250, 77, 95)">python/libraries:</b>
-                        Pandas, plotly, urllib, pandasql, request.
-                        <br><b style="color: rgb(250, 77, 95)">tech/tools:</b>
-                        Dagster, Docker containers, Power BI
+                    <div class="desc-container">
+                        <p class="textalign desc-text" id="desc3">With the aim of retrieving the user's music data via
+                            Python's REST API and
+                            staging it to the Postgres server, the ELT pipeline has been designed using a combination of
+                            Python, Postgres database, Dagster for automation, docker for containerization, and Power BI
+                            for
+                            visualization.
+                            The data is transformed in a number of ways using pandas to produce useful insights that can
+                            be
+                            used to build PowerBI dashboards and visualizations.
+                            With Dagster, the pipeline is automated to run every month.
+                            The project's ultimate objective is to discover the user's monthly music preferences by
+                            analyzing particular characteristics, such as the recently released "audio-features" by
+                            Spotify.<button class="read-more-btn" onclick="toggleReadMore('desc3', this)">Read
+                                more</button>
+                        </p>
+                    </div>
+
+                    <div class="tech-stack-container" style="margin-top: 15px;">
+                        <span class="tech-pill"><i class="devicon-pandas-original"></i> Pandas</span>
+                        <span class="tech-pill"><i class="devicon-plotly-plain"></i> Plotly</span>
+                        <span class="tech-pill"><i class="fa fa-link"></i> urllib</span>
+                        <span class="tech-pill"><i class="fa fa-database"></i> pandasql</span>
+                        <span class="tech-pill"><i class="fa fa-exchange"></i> request</span>
+                        <span class="tech-pill"><i class="fa fa-cubes"></i> Dagster</span>
+                        <span class="tech-pill"><i class="devicon-docker-plain"></i> Docker Container</span>
+                        <span class="tech-pill"><i class="fa fa-bar-chart"></i> Power BI</span>
+                    </div>
                 </div>
                 </p>
 
                 <!-- Project 3 -->
 
 
-                <a href="https://github.com/70milan/WordPressUniversity" target="_blank">
-                    <h2 id="major">A WordPress powered interactive Univeristy website</h2>
-                </a><a href="https://milanb1.sgedu.site" target="_blank">
-                </a>
+                <h2 id="major"
+                    style="display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap;">
+                    <a href="https://github.com/70milan/WordPressUniversity" target="_blank"
+                        style="border-bottom: none;">A WordPress powered interactive Univeristy website</a>
+                    <a href="https://github.com/70milan/WordPressUniversity" target="_blank"
+                        style="border-bottom: none;"><i class="fa fa-github"></i></a>
+                </h2>
+                <a href="https://milanb1.sgedu.site" target="_blank"
+                    style="display: block; text-align: center; margin-bottom: 1em; color: rgb(72, 240, 176); border-bottom: none; font-size: 0.9em;">(Live
+                    Site)</a>
                 <span class="image main"><img src="images/1_opt.jpg" alt="" /></span>
                 <div class="transparent-box">
-                    <p class="textalign">An interactive &#8220;University&#8221; website clone developed using using
-                        <b>PHP, JavaScript, WordPress theming</b>
-                        &amp; the WordPress
-                        <b>REST API</b>.<br>
-                        <br>Created &#8220;like&#8221; feature, &#8220;Live/on the fly&#8221; search functionality,
-                        WordPress custom field Post
-                        types using JavaScript and JQuery which was then connected to the backend using JSON and
-                        WordPress
-                        Rest APIs and created raw JSON data.
-                        <br><b style="color: rgb(250, 77, 95)">libraries:</b>
-                        Gulp, JQuery, Bootstrap, WordPress RestAPI, Font Awesome
-                        <br><b style="color: rgb(250, 77, 95)">tech/tools:</b>
-                        HTML, SASS, JavaScript, PHP, WordPress, Git
-                    </p>
+                    <div class="desc-container">
+                        <p class="textalign desc-text" id="desc4">An interactive &#8220;University&#8221; website clone
+                            developed using using
+                            <b>PHP, JavaScript, WordPress theming</b>
+                            &amp; the WordPress
+                            <b>REST API</b>.<br>
+                            Created &#8220;like&#8221; feature, &#8220;Live/on the fly&#8221; search functionality,
+                            WordPress custom field Post
+                            types using JavaScript and JQuery which was then connected to the backend using JSON and
+                            WordPress
+                            Rest APIs and created raw JSON data.<button class="read-more-btn"
+                                onclick="toggleReadMore('desc4', this)">Read more</button>
+                        </p>
+                    </div>
+
+                    <div class="tech-stack-container" style="margin-top: 15px;">
+                        <span class="tech-pill"><i class="devicon-gulp-plain"></i> Gulp</span>
+                        <span class="tech-pill"><i class="devicon-jquery-plain"></i> JQuery</span>
+                        <span class="tech-pill"><i class="devicon-bootstrap-plain"></i> Bootstrap</span>
+                        <span class="tech-pill"><i class="devicon-wordpress-plain"></i> WP RestAPI</span>
+                        <span class="tech-pill"><i class="fa fa-flag"></i> Font Awesome</span>
+                        <span class="tech-pill"><i class="devicon-html5-plain"></i> HTML</span>
+                        <span class="tech-pill"><i class="devicon-sass-original"></i> SASS</span>
+                        <span class="tech-pill"><i class="devicon-javascript-plain"></i> JavaScript</span>
+                        <span class="tech-pill"><i class="devicon-php-plain"></i> PHP</span>
+                        <span class="tech-pill"><i class="devicon-wordpress-plain"></i> WordPress</span>
+                        <span class="tech-pill"><i class="devicon-git-plain"></i> Git</span>
+                    </div>
                 </div>
             </article><!-- About -->
             <article id="about" style="background-color: #272d31">
@@ -511,6 +597,18 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
             <script src="assets/js/tetris.js"></script>
             <!--smooth scroll-->
             <script>var scroll = new SmoothScroll('a[href*="#"]');</script>
+            <script>
+                function toggleReadMore(descId, btn) {
+                    const desc = document.getElementById(descId);
+                    if (desc.classList.contains('expanded')) {
+                        desc.classList.remove('expanded');
+                        btn.textContent = 'Read more';
+                    } else {
+                        desc.classList.add('expanded');
+                        btn.textContent = 'Read less';
+                    }
+                }
+            </script>
 
             <!-- 2026 Custom UI Interaction Script -->
             <script>

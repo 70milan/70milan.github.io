@@ -230,9 +230,75 @@ html {
 
 .textalign {
     color: rgb(244, 247, 249);
-    text-align: left;
+    text-align: justify;
     font-family: 'Hind', sans-serif;
     transition: transform 0.3s;
+}
+
+.desc-container {
+    position: relative;
+}
+
+.desc-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.desc-text.expanded {
+    -webkit-line-clamp: 999;
+    line-clamp: 999;
+}
+
+.read-more-btn {
+    background: transparent;
+    border: none;
+    color: rgb(72, 240, 176);
+    cursor: pointer;
+    padding: 0;
+    font-size: 0.85em;
+    font-family: inherit;
+    margin-top: 5px;
+    display: block;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.read-more-btn:hover {
+    color: #ffffff;
+}
+
+.tech-stack-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tech-pill {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 4px 10px;
+    font-size: 0.8em;
+    color: #e0e0e0;
+    transition: background 0.2s, transform 0.2s;
+    font-family: 'Hind', sans-serif;
+    line-height: 1.5;
+}
+
+.tech-pill:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-2px);
+}
+
+.tech-pill i {
+    margin-right: 6px;
+    font-size: 1.1em;
 }
 
 
