@@ -730,6 +730,14 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                 });
 
                 function scrollToProject(id) {
+                    if (id === 'project-1') {
+                        // Scrolling to the h2 cuts off the article padding and close button, scroll to the article top instead
+                        const workEl = document.getElementById('work');
+                        if (workEl) {
+                            workEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                        return;
+                    }
                     const el = document.getElementById(id);
                     if (el) {
                         el.scrollIntoView({ behavior: 'smooth', block: 'start' });
