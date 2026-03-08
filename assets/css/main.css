@@ -2286,18 +2286,7 @@ body.is-preload #footer {
     animation: none !important;
 }
 
-/* Hide default cursor on desktop */
-@media screen and (min-width: 737px) {
 
-    body,
-    a,
-    button,
-    .button,
-    #major,
-    .image {
-        cursor: none !important;
-    }
-}
 
 /* 2026 Tech Tetris (About)
    - Tech-only neon tiles (individual technologies)
@@ -2698,4 +2687,27 @@ body.is-preload #footer {
     transform: scale(1.2);
     animation: none;
     /* Let them pause it by hovering so they click peacefully */
+}
+
+/* Portfolio Refactor Utilities */
+.interactive-header {
+    cursor: pointer;
+    user-select: none;
+}
+
+.dark-article {
+    background-color: #272d31 !important;
+}
+
+.project-section-header {
+    text-align: center;
+    line-height: 1.4;
+}
+
+.no-border-link {
+    border-bottom: none !important;
+}
+
+.tech-stack-container.mt-15 {
+    margin-top: 15px;
 }

@@ -398,4 +398,127 @@
 			$main._show(location.hash.substr(1), true);
 		});
 
+
+	// Portfolio Refactor: Event Handlers
+	window.toggleReadMore = function (descId, btn) {
+		const desc = document.getElementById(descId);
+		if (desc.classList.contains('expanded')) {
+			desc.classList.remove('expanded');
+			btn.innerHTML = '<i class="fa fa-chevron-down"></i>';
+		} else {
+			desc.classList.add('expanded');
+			btn.innerHTML = '<i class="fa fa-chevron-up"></i>';
+		}
+	};
+
+	window.cycleDeck = function (deck, direction = 1) {
+		const cards = Array.from(deck.querySelectorAll('.image.main'));
+		if (cards.length <= 1) return;
+
+		let currentIndex = cards.findIndex(c => c.classList.contains('active'));
+		if (currentIndex === -1) currentIndex = 0;
+
+		let nextIndex = (currentIndex + direction) % cards.length;
+		if (nextIndex < 0) nextIndex = cards.length - 1;
+
+		const behindIndex = (nextIndex + 1) % cards.length;
+
+		cards.forEach(c => c.classList.remove('active', 'behind'));
+
+		cards[nextIndex].classList.add('active');
+		if (cards.length > 1) {
+			cards[behindIndex].classList.add('behind');
+		}
+	};
+
+	window.scrollToProject = function (id) {
+		if (id === 'project-1') {
+			const workEl = document.getElementById('work');
+			if (workEl) {
+				workEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			}
+			return;
+		}
+		const el = document.getElementById(id);
+		if (el) {
+			el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+		}
+	};
+
+	$(function () {
+		// Initialize image decks
+		$('.image-deck').each(function () {
+			const $deck = $(this);
+			const cards = $deck.find('.image.main');
+			if (cards.length > 0) {
+				$(cards[0]).addClass('active');
+				if (cards.length > 1) {
+					$(cards[1]).addClass('behind');
+				}
+			}
+
+			// Swipe handling
+			let touchstartX = 0;
+			let touchendX = 0;
+
+			this.addEventListener('touchstart', e => {
+				touchstartX = e.changedTouches[0].screenX;
+			}, { passive: true });
+
+			this.addEventListener('touchend', e => {
+				touchendX = e.changedTouches[0].screenX;
+				if (touchendX < touchstartX - 50) window.cycleDeck(this, 1);
+				if (touchendX > touchstartX + 50) window.cycleDeck(this, -1);
+			}, { passive: true });
+		});
+
+		// Mobile Navigator Intersection Observer
+		if (window.innerWidth <= 736) {
+			const observerOptions = {
+				root: null,
+				rootMargin: '-20% 0px -60% 0px',
+				threshold: 0
+			};
+
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting) {
+						document.querySelectorAll('.mobile-nav-dot').forEach(dot => {
+							dot.classList.remove('active');
+							if (dot.getAttribute('data-target') === entry.target.id) {
+								dot.classList.add('active');
+							}
+						});
+					}
+				});
+			}, observerOptions);
+
+			document.querySelectorAll('.project-section-header').forEach(header => {
+				observer.observe(header);
+			});
+		}
+
+		// Click handlers for refactored elements
+		$('.read-more-btn').on('click', function () {
+			const targetId = $(this).data('target');
+			window.toggleReadMore(targetId, this);
+		});
+
+		$('.deck-nav.prev').on('click', function (e) {
+			e.stopPropagation();
+			window.cycleDeck(this.parentElement, -1);
+		});
+
+		$('.deck-nav.next').on('click', function (e) {
+			e.stopPropagation();
+			window.cycleDeck(this.parentElement, 1);
+		});
+
+		$('.mobile-nav-dot').on('click', function (e) {
+			e.stopPropagation();
+			const targetId = $(this).data('target');
+			window.scrollToProject(targetId);
+		});
+	});
+
 })(jQuery);

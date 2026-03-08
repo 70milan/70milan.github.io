@@ -28,10 +28,10 @@
 
             <div class="content">
                 <div class="inner">
-                    <h1 id="namee" style="cursor: pointer; user-select: none;">Milan Barot</h1>
+                    <h1 id="namee" class="interactive-header">Milan Barot</h1>
 
                     <p><br />
-                        <span id="job-title" style="cursor: pointer; user-select: none;">Data Engineer</span>
+                        <span id="job-title" class="interactive-header">Data Engineer</span>
                     </p>
                 </div>
                 <p>
@@ -57,34 +57,26 @@
         <div id="main">
 
             <!-- Mobile Project Navigator -->
-            <div class="mobile-nav" onclick="event.stopPropagation()">
-                <div class="mobile-nav-dot active" data-target="project-1"
-                    onclick="event.stopPropagation(); scrollToProject('project-1')">1</div>
-                <div class="mobile-nav-dot" data-target="project-2"
-                    onclick="event.stopPropagation(); scrollToProject('project-2')">2</div>
-                <div class="mobile-nav-dot" data-target="project-3"
-                    onclick="event.stopPropagation(); scrollToProject('project-3')">3</div>
-
+            <div class="mobile-nav">
+                <div class="mobile-nav-dot active" data-target="project-1">1</div>
+                <div class="mobile-nav-dot" data-target="project-2">2</div>
+                <div class="mobile-nav-dot" data-target="project-3">3</div>
             </div>
             <!-- Project 1 -->
 
 
-            <article id="work" style="background-color: #272d31">
+            <article id="work" class="dark-article">
                 <div class="projects-grid">
                     <!-- Project 1 -->
                     <div class="project-item">
-                        <h2 id="project-1" class="project-section-header" style="text-align: center; line-height: 1.4;">
+                        <h2 id="project-1" class="project-section-header">
                             <a href="https://github.com/70milan/RealTime_Context_Engine" target="_blank"
-                                style="border-bottom: none;">RealTime Context Engine&nbsp;&nbsp;<i
+                                class="no-border-link">RealTime Context Engine&nbsp;&nbsp;<i
                                     class="fa fa-github"></i></a>
                         </h2>
                         <div class="image-deck">
-                            <div class="deck-nav prev"
-                                onclick="event.stopPropagation(); cycleDeck(this.parentElement, -1)"><i
-                                    class="fa fa-chevron-left"></i></div>
-                            <div class="deck-nav next"
-                                onclick="event.stopPropagation(); cycleDeck(this.parentElement, 1)"><i
-                                    class="fa fa-chevron-right"></i></div>
+                            <div class="deck-nav prev"><i class="fa fa-chevron-left"></i></div>
+                            <div class="deck-nav next"><i class="fa fa-chevron-right"></i></div>
                             <span class="image main"><img src="images/system_architecture_opt.jpg"
                                     alt="system_architecture" /></span>
                             <span class="image main"><img src="images/interview_assistant_main_interface.png"
@@ -92,36 +84,40 @@
                         </div>
                         <div class="transparent-box">
                             <div class="desc-container">
-                                <p class="textalign desc-text" id="desc1">Interview Assistant (aka Job Bandit) is a
-                                    desktop productivity application designed to help engineers prepare for technical
-                                    interviews through AI-assisted practice and contextual guidance. The application
-                                    provides a streamlined interface for interacting with modern large language models,
-                                    allowing users to explore coding problems, system design scenarios, and technical
-                                    concepts while grounding responses in their personal resume and target job
-                                    descriptions.<br><br>
-                                    Built with Electron and a local FastAPI backend, the system acts as an orchestration
-                                    layer between the user and advanced LLM APIs such as OpenAI and Claude. The
-                                    application synthesizes prompts dynamically by combining conversation context,
-                                    uploaded professional background, and job requirements to produce more relevant
-                                    responses. Streaming API integrations allow responses to be delivered in real time
-                                    while tracking metrics such as time-to-first-token latency and session
-                                    performance.<br><br>
-                                    The platform includes structured session management, searchable conversation history
-                                    with syntax-highlighted code blocks, and exportable transcripts for later review. It
-                                    also supports visual queries through screenshot analysis and provides configurable
-                                    interface modes that allow users to keep the assistant accessible while practicing
-                                    coding problems or reviewing system design scenarios.<br><br>
-                                    Additional features include secure local storage, hardware-based licensing
-                                    validation, and an extensible architecture designed to support multiple AI providers
-                                    and future model integrations. The goal of the project is to explore how modern AI
-                                    systems can augment technical learning workflows and provide a more interactive
-                                    approach to interview preparation.
+                                <p class="textalign desc-text" id="desc1">Interview Assistant (aka Job Bandit) is an
+                                    end-to-end orchestration and experience layer designed for the high-stakes
+                                    environment of technical interviews. Engineered with a Data Engineering first
+                                    mindset, the application manages the entire lifecycle of interview data—from
+                                    real-time screen/audio ingestion and high-fidelity RAG (Retrieval-Augmented
+                                    Generation) context enrichment to the delivery of optimized, low-latency streaming
+                                    responses.<br><br>
+                                    <b>Orchestration</b>: A seamless bridge between a versatile Electron desktop shell
+                                    and a high-performance FastAPI backend, ensuring local compute efficiency and secure
+                                    model interaction.<br><br>
+                                    <b>Advanced RAG Pipeline</b>: Dynamically grounds AI responses in user-specific
+                                    professional contexts by injecting resume data and real-time job requirements into
+                                    the LLM context window via automated data-layer mapping.<br><br>
+                                    <b>Unified Data Persistence</b>: Features a resilient session management system,
+                                    automated export pipelines for post-interview synthesis, and searchable historical
+                                    logs with MDX support for complex system design review.<br><br>
+                                    <b>Secure Licensing Layer</b>: Includes an integrated RSA-backed licensing system
+                                    that ensures professional-grade accessibility control and secure software
+                                    deployment.<br><br>
+                                    <b>The "Convo Tab" Experience</b>: A floating glassmorphism window provides
+                                    live-streaming AI insights, comprehensive performance telemetry (TTFT, token usage),
+                                    and cumulative cost tracking for total transparency.<br><br>
+                                    <b>Seamless Human-AI Interaction</b>: Adopts a minimalist, dark-mode-first aesthetic
+                                    with an intuitive "Snip-and-Solve" interaction model (Ctrl+K/S), enabling
+                                    instantaneous screen-based problem solving without breaking the user's flow.<br><br>
+                                    <b>High-Fidelity Feedback Loops</b>: Tracks live metrics such as Time-To-First-Token
+                                    (TTFT) to ensure the interface feels alive and responsive, aligning with the
+                                    precision required for complex engineering and product design interviews.
                                 </p>
-                                <button class="read-more-btn" onclick="toggleReadMore('desc1', this)"><i
+                                <button class="read-more-btn" data-target="desc1"><i
                                         class="fa fa-chevron-down"></i></button>
                             </div>
 
-                            <div class="tech-stack-container" style="margin-top: 15px;">
+                            <div class="tech-stack-container mt-15">
                                 <span class="tech-pill"><i class="devicon-python-plain"></i> Python</span>
                                 <span class="tech-pill"><i class="devicon-javascript-plain"></i> JavaScript</span>
                                 <span class="tech-pill"><i class="devicon-html5-plain"></i> HTML5</span>
@@ -142,19 +138,15 @@
 
                     <!-- Project 2 -->
                     <div class="project-item">
-                        <h2 id="project-2" class="project-section-header" style="text-align: center; line-height: 1.4;">
+                        <h2 id="project-2" class="project-section-header">
                             <a href="https://github.com/70milan/Youtube_Spotify_Syncronization_Dagster" target="_blank"
-                                style="border-bottom: none;">Cross-Platform Music Synchronization&nbsp;&nbsp;<i
+                                class="no-border-link">Cross-Platform Music Synchronization&nbsp;&nbsp;<i
                                     class="fa fa-github"></i></a>
                         </h2>
 
                         <div class="image-deck">
-                            <div class="deck-nav prev"
-                                onclick="event.stopPropagation(); cycleDeck(this.parentElement, -1)"><i
-                                    class="fa fa-chevron-left"></i></div>
-                            <div class="deck-nav next"
-                                onclick="event.stopPropagation(); cycleDeck(this.parentElement, 1)"><i
-                                    class="fa fa-chevron-right"></i></div>
+                            <div class="deck-nav prev"><i class="fa fa-chevron-left"></i></div>
+                            <div class="deck-nav next"><i class="fa fa-chevron-right"></i></div>
                             <span class="image main"><img src="images/aa.JPG" alt="" /></span>
                             <span class="image main"><img src="images/yt_sp_opt.jpg" alt="yt_sp" /></span>
                         </div>
@@ -187,11 +179,11 @@
                                     of a React App for a user-friendly interface, and enhanced error handling
                                     mechanisms.
                                 </p>
-                                <button class="read-more-btn" onclick="toggleReadMore('desc2', this)"><i
+                                <button class="read-more-btn" data-target="desc2"><i
                                         class="fa fa-chevron-down"></i></button>
                             </div>
 
-                            <div class="tech-stack-container" style="margin-top: 15px;">
+                            <div class="tech-stack-container mt-15">
                                 <span class="tech-pill"><i class="fa fa-music"></i> Spotipy</span>
                                 <span class="tech-pill"><i class="fa fa-youtube-play"></i> youtube_dl</span>
                                 <span class="tech-pill"><i class="devicon-pandas-original"></i> Pandas</span>
@@ -211,18 +203,14 @@
 
                     <!-- Project 3 -->
                     <div class="project-item">
-                        <h2 id="project-3" class="project-section-header" style="text-align: center; line-height: 1.4;">
+                        <h2 id="project-3" class="project-section-header">
                             <a href="https://github.com/70milan/spotifynolib" target="_blank"
-                                style="border-bottom: none;">Spotify User's "Liked Songs" Data exploration &amp;
+                                class="no-border-link">Spotify User's "Liked Songs" Data exploration &amp;
                                 visualization&nbsp;&nbsp;<i class="fa fa-github"></i></a>
                         </h2>
                         <div class="image-deck">
-                            <div class="deck-nav prev"
-                                onclick="event.stopPropagation(); cycleDeck(this.parentElement, -1)"><i
-                                    class="fa fa-chevron-left"></i></div>
-                            <div class="deck-nav next"
-                                onclick="event.stopPropagation(); cycleDeck(this.parentElement, 1)"><i
-                                    class="fa fa-chevron-right"></i></div>
+                            <div class="deck-nav prev"><i class="fa fa-chevron-left"></i></div>
+                            <div class="deck-nav next"><i class="fa fa-chevron-right"></i></div>
                             <span class="image main"><img src="images/sp_1.png" alt="" /></span>
                             <span class="image main"><img src="images/spotify_pipeline_opt.jpg" alt="" /></span>
                         </div>
@@ -249,11 +237,11 @@
                                     by
                                     Spotify.
                                 </p>
-                                <button class="read-more-btn" onclick="toggleReadMore('desc3', this)"><i
+                                <button class="read-more-btn" data-target="desc3"><i
                                         class="fa fa-chevron-down"></i></button>
                             </div>
 
-                            <div class="tech-stack-container" style="margin-top: 15px;">
+                            <div class="tech-stack-container mt-15">
                                 <span class="tech-pill"><i class="devicon-pandas-original"></i> Pandas</span>
                                 <span class="tech-pill"><i class="devicon-plotly-plain"></i> Plotly</span>
                                 <span class="tech-pill"><i class="fa fa-link"></i> urllib</span>
@@ -269,7 +257,7 @@
 
                 </div>
             </article><!-- About -->
-            <article id="about" style="background-color: #272d31">
+            <article id="about" class="dark-article">
                 <a href="https://www.linkedin.com/in/7mb16/" target="_blank">
                     <h2 id="major">About me.</h2>
                 </a>
@@ -581,187 +569,9 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
             <script src="assets/js/main.js"></script>
             <script src="assets/js/tetris.js"></script>
             <!--smooth scroll removed-->
-            <script>
-                function toggleReadMore(descId, btn) {
-                    const desc = document.getElementById(descId);
-                    if (desc.classList.contains('expanded')) {
-                        desc.classList.remove('expanded');
-                        btn.innerHTML = '<i class="fa fa-chevron-down"></i>';
-                    } else {
-                        desc.classList.add('expanded');
-                        btn.innerHTML = '<i class="fa fa-chevron-up"></i>';
-                    }
-                }
 
-                function cycleDeck(deck, direction = 1) {
-                    const cards = Array.from(deck.querySelectorAll('.image.main'));
-                    if (cards.length <= 1) return;
 
-                    let currentIndex = cards.findIndex(c => c.classList.contains('active'));
-                    if (currentIndex === -1) currentIndex = 0;
 
-                    let nextIndex = (currentIndex + direction) % cards.length;
-                    if (nextIndex < 0) nextIndex = cards.length - 1;
-
-                    const behindIndex = (nextIndex + 1) % cards.length;
-
-                    cards.forEach(c => c.classList.remove('active', 'behind'));
-
-                    cards[nextIndex].classList.add('active');
-                    if (cards.length > 1) {
-                        cards[behindIndex].classList.add('behind');
-                    }
-                }
-
-                // Global swipe handling and initialization
-                document.addEventListener('DOMContentLoaded', () => {
-                    let touchstartX = 0;
-                    let touchendX = 0;
-
-                    document.querySelectorAll('.image-deck').forEach(deck => {
-                        // Initialize first card
-                        const cards = deck.querySelectorAll('.image.main');
-                        if (cards.length > 0) {
-                            cards[0].classList.add('active');
-                            if (cards.length > 1) {
-                                cards[1].classList.add('behind');
-                            }
-                        }
-
-                        deck.addEventListener('touchstart', e => {
-                            touchstartX = e.changedTouches[0].screenX;
-                        }, { passive: true });
-
-                        deck.addEventListener('touchend', e => {
-                            touchendX = e.changedTouches[0].screenX;
-                            if (touchendX < touchstartX - 50) cycleDeck(deck, 1); // Swipe left -> next
-                            if (touchendX > touchstartX + 50) cycleDeck(deck, -1); // Swipe right -> prev
-                        }, { passive: true });
-                    });
-
-                    // Mobile Navigator Intersection Observer
-                    if (window.innerWidth <= 736) {
-                        const observerOptions = {
-                            root: null,
-                            rootMargin: '-20% 0px -60% 0px',
-                            threshold: 0
-                        };
-
-                        const observer = new IntersectionObserver((entries) => {
-                            entries.forEach(entry => {
-                                if (entry.isIntersecting) {
-                                    document.querySelectorAll('.mobile-nav-dot').forEach(dot => {
-                                        dot.classList.remove('active');
-                                        if (dot.getAttribute('data-target') === entry.target.id) {
-                                            dot.classList.add('active');
-                                        }
-                                    });
-                                }
-                            });
-                        }, observerOptions);
-
-                        document.querySelectorAll('.project-section-header').forEach(header => {
-                            observer.observe(header);
-                        });
-                    }
-                });
-
-                function scrollToProject(id) {
-                    if (id === 'project-1') {
-                        // Scrolling to the h2 cuts off the article padding and close button, scroll to the article top instead
-                        const workEl = document.getElementById('work');
-                        if (workEl) {
-                            workEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                        }
-                        return;
-                    }
-                    const el = document.getElementById(id);
-                    if (el) {
-                        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                }
-            </script>
-
-            <!-- 2026 Custom UI Interaction Script -->
-            <script>
-                document.addEventListener('DOMContentLoaded', () => {
-                    // 1. Create Cursor Elements
-                    const cursor = document.createElement('div');
-                    cursor.className = 'custom-cursor';
-                    const cursorFluid = document.createElement('div');
-                    cursorFluid.className = 'custom-cursor-fluid';
-                    document.body.appendChild(cursor);
-                    document.body.appendChild(cursorFluid);
-
-                    // 2. Cursor Tracking with Inertia
-                    let mouseX = 0, mouseY = 0;
-                    let fluidX = 0, fluidY = 0;
-
-                    document.addEventListener('mousemove', (e) => {
-                        mouseX = e.clientX;
-                        mouseY = e.clientY;
-                        cursor.style.left = `${mouseX}px`;
-                        cursor.style.top = `${mouseY}px`;
-                    });
-
-                    function animateCursor() {
-                        const easing = 0.15;
-                        fluidX += (mouseX - fluidX) * easing;
-                        fluidY += (mouseY - fluidY) * easing;
-                        cursorFluid.style.left = `${fluidX}px`;
-                        cursorFluid.style.top = `${fluidY}px`;
-                        requestAnimationFrame(animateCursor);
-                    }
-                    animateCursor();
-
-                    // 3. Magnetic Focus Effect
-                    const focusElements = document.querySelectorAll('a, button, .button, #major, .image');
-                    focusElements.forEach(el => {
-                        el.addEventListener('mouseenter', () => cursorFluid.classList.add('cursor-focus'));
-                        el.addEventListener('mouseleave', () => cursorFluid.classList.remove('cursor-focus'));
-                    });
-
-                    // 4. Click Feedback (Funky Hand)
-                    document.addEventListener('click', (e) => {
-                        const feedback = document.createElement('div');
-                        feedback.className = 'click-feedback animate-click';
-                        feedback.style.left = `${e.clientX}px`;
-                        feedback.style.top = `${e.clientY}px`;
-                        document.body.appendChild(feedback);
-                        setTimeout(() => feedback.remove(), 400);
-                    });
-
-                    // 5. Header Interactive Elements
-                    const nameEl = document.getElementById('namee');
-                    const titleEl = document.getElementById('job-title');
-                    const locationEl = document.getElementById('location-text');
-                    const mapPopup = document.getElementById('gta-map-popup');
-
-                    if (nameEl) {
-                        nameEl.addEventListener('click', (e) => {
-                            e.preventDefault();
-                            nameEl.textContent = nameEl.textContent === 'Milan Barot' ? 'Barot Milan' : 'Milan Barot';
-                        });
-                    }
-
-                    if (titleEl) {
-                        titleEl.addEventListener('click', (e) => {
-                            e.preventDefault();
-                            titleEl.textContent = titleEl.textContent === 'Data Engineer' ? 'Big Data Engineer, SQL Server Developer, ETL Developer' : 'Data Engineer';
-                        });
-                    }
-
-                    // 5. Holographic Skills Section Pulse Trigger
-                    const aboutBtn = document.querySelector('a[href="#about"]');
-                    if (aboutBtn) {
-                        aboutBtn.addEventListener('click', () => {
-                            const skillsList = document.querySelector('.myskills');
-                            if (skillsList) skillsList.classList.add('pulse-active');
-                        });
-                    }
-
-                });
-            </script>
 
             <!-- Lightbox: fully self-contained, mobile + desktop with zoom -->
             <script>
