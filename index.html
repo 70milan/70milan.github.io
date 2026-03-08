@@ -103,9 +103,10 @@
                             during high-stakes evaluations. The system also includes a secure, hardware-locked licensing
                             mechanism, searchable historical session logs with syntax-highlighted code blocks, and the
                             ability to export entire conversation transcripts to elegantly formatted markdown files for
-                            later review.<button class="read-more-btn" onclick="toggleReadMore('desc1', this)">Read
-                                more...</button>
+                            later review.
                         </p>
+                        <button class="read-more-btn" onclick="toggleReadMore('desc1', this)"><i
+                                class="fa fa-chevron-down"></i></button>
                     </div>
 
                     <div class="tech-stack-container" style="margin-top: 15px;">
@@ -159,9 +160,10 @@
                             of liked songs.<br>
                             Future enhancements include further integration with Apache Airflow for automation,
                             development
-                            of a React App for a user-friendly interface, and enhanced error handling mechanisms.<button
-                                class="read-more-btn" onclick="toggleReadMore('desc2', this)">Read more...</button>
+                            of a React App for a user-friendly interface, and enhanced error handling mechanisms.
                         </p>
+                        <button class="read-more-btn" onclick="toggleReadMore('desc2', this)"><i
+                                class="fa fa-chevron-down"></i></button>
                     </div>
 
                     <div class="tech-stack-container" style="margin-top: 15px;">
@@ -221,9 +223,10 @@
                             With Dagster, the pipeline is automated to run every month.
                             The project's ultimate objective is to discover the user's monthly music preferences by
                             analyzing particular characteristics, such as the recently released "audio-features" by
-                            Spotify.<button class="read-more-btn" onclick="toggleReadMore('desc3', this)">Read
-                                more</button>
+                            Spotify.
                         </p>
+                        <button class="read-more-btn" onclick="toggleReadMore('desc3', this)"><i
+                                class="fa fa-chevron-down"></i></button>
                     </div>
 
                     <div class="tech-stack-container" style="margin-top: 15px;">
@@ -264,9 +267,10 @@
                             WordPress custom field Post
                             types using JavaScript and JQuery which was then connected to the backend using JSON and
                             WordPress
-                            Rest APIs and created raw JSON data.<button class="read-more-btn"
-                                onclick="toggleReadMore('desc4', this)">Read more</button>
+                            Rest APIs and created raw JSON data.
                         </p>
+                        <button class="read-more-btn" onclick="toggleReadMore('desc4', this)"><i
+                                class="fa fa-chevron-down"></i></button>
                     </div>
 
                     <div class="tech-stack-container" style="margin-top: 15px;">
@@ -602,10 +606,10 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                     const desc = document.getElementById(descId);
                     if (desc.classList.contains('expanded')) {
                         desc.classList.remove('expanded');
-                        btn.textContent = 'Read more';
+                        btn.innerHTML = '<i class="fa fa-chevron-down"></i>';
                     } else {
                         desc.classList.add('expanded');
-                        btn.textContent = 'Read less';
+                        btn.innerHTML = '<i class="fa fa-chevron-up"></i>';
                     }
                 }
             </script>
