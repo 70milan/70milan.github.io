@@ -64,8 +64,7 @@
                     onclick="event.stopPropagation(); scrollToProject('project-2')">2</div>
                 <div class="mobile-nav-dot" data-target="project-3"
                     onclick="event.stopPropagation(); scrollToProject('project-3')">3</div>
-                <div class="mobile-nav-dot" data-target="project-4"
-                    onclick="event.stopPropagation(); scrollToProject('project-4')">4</div>
+
             </div>
             <!-- Project 1 -->
 
@@ -93,45 +92,30 @@
                         </div>
                         <div class="transparent-box">
                             <div class="desc-container">
-                                <p class="textalign desc-text" id="desc1">The Interview Assistant (originally developed
-                                    as Job
-                                    Bandit) is a premium,
-                                    desktop-oriented productivity application designed to provide real-time AI support
-                                    for job
-                                    seekers during technical interviews and preparation. Built with a "stealth-first"
-                                    philosophy,
-                                    the app presents itself as a "Windows Runtime Host" in the Task Manager and features
-                                    a
-                                    modern,
-                                    high-performance interface with glassmorphism aesthetics and smooth transitions. It
-                                    serves
-                                    as a
-                                    sophisticated bridge between the user and advanced Large Language Models, leveraging
-                                    specialized
-                                    configurations for GPT-4 and GPT-5 (nano, mini) and next-generation reasoning models
-                                    to
-                                    deliver
-                                    tailored,
-                                    context-aware assistance based on the user's uploaded resume and specific job
+                                <p class="textalign desc-text" id="desc1">Interview Assistant (aka Job Bandit) is a
+                                    desktop productivity application designed to help engineers prepare for technical
+                                    interviews through AI-assisted practice and contextual guidance. The application
+                                    provides a streamlined interface for interacting with modern large language models,
+                                    allowing users to explore coding problems, system design scenarios, and technical
+                                    concepts while grounding responses in their personal resume and target job
                                     descriptions.<br><br>
-                                    Functionally, the application automates the interview workflow by offering robust
-                                    session
-                                    management, detailed performance tracking (including Time-to-First-Token metrics),
-                                    and
-                                    high-accuracy screenshot analysis for visual queries. Users can initiate timed
-                                    sessions that
-                                    securely ground AI responses in their professional profile, while features like
-                                    "Mini Mode"
-                                    (activated via Ctrl+Q) and window transparency allow for an inconspicuous,
-                                    low-profile
-                                    presence
-                                    during high-stakes evaluations. The system also includes a secure, hardware-locked
-                                    licensing
-                                    mechanism, searchable historical session logs with syntax-highlighted code blocks,
-                                    and the
-                                    ability to export entire conversation transcripts to elegantly formatted markdown
-                                    files for
-                                    later review.
+                                    Built with Electron and a local FastAPI backend, the system acts as an orchestration
+                                    layer between the user and advanced LLM APIs such as OpenAI and Claude. The
+                                    application synthesizes prompts dynamically by combining conversation context,
+                                    uploaded professional background, and job requirements to produce more relevant
+                                    responses. Streaming API integrations allow responses to be delivered in real time
+                                    while tracking metrics such as time-to-first-token latency and session
+                                    performance.<br><br>
+                                    The platform includes structured session management, searchable conversation history
+                                    with syntax-highlighted code blocks, and exportable transcripts for later review. It
+                                    also supports visual queries through screenshot analysis and provides configurable
+                                    interface modes that allow users to keep the assistant accessible while practicing
+                                    coding problems or reviewing system design scenarios.<br><br>
+                                    Additional features include secure local storage, hardware-based licensing
+                                    validation, and an extensible architecture designed to support multiple AI providers
+                                    and future model integrations. The goal of the project is to explore how modern AI
+                                    systems can augment technical learning workflows and provide a more interactive
+                                    approach to interview preparation.
                                 </p>
                                 <button class="read-more-btn" onclick="toggleReadMore('desc1', this)"><i
                                         class="fa fa-chevron-down"></i></button>
@@ -282,54 +266,7 @@
                         </div>
                     </div>
 
-                    <div class="project-divider"></div>
 
-                    <!-- Project 4 -->
-                    <div class="project-item">
-                        <h2 id="project-4" class="project-section-header" style="text-align: center; line-height: 1.4;">
-                            <a href="https://github.com/70milan/WordPressUniversity" target="_blank"
-                                style="border-bottom: none;">A WordPress powered interactive Univeristy
-                                website&nbsp;&nbsp;<i class="fa fa-github"></i></a>
-                        </h2>
-                        <div class="image-deck">
-                            <span class="image main"><img src="images/1_opt.jpg" alt="" /></span>
-                        </div>
-                        <div class="transparent-box">
-                            <div class="desc-container">
-                                <p class="textalign desc-text" id="desc4">An interactive &#8220;University&#8221;
-                                    website
-                                    clone
-                                    developed using using
-                                    <b>PHP, JavaScript, WordPress theming</b>
-                                    &amp; the WordPress
-                                    <b>REST API</b>.<br>
-                                    Created &#8220;like&#8221; feature, &#8220;Live/on the fly&#8221; search
-                                    functionality,
-                                    WordPress custom field Post
-                                    types using JavaScript and JQuery which was then connected to the backend using JSON
-                                    and
-                                    WordPress
-                                    Rest APIs and created raw JSON data.
-                                </p>
-                                <button class="read-more-btn" onclick="toggleReadMore('desc4', this)"><i
-                                        class="fa fa-chevron-down"></i></button>
-                            </div>
-
-                            <div class="tech-stack-container" style="margin-top: 15px;">
-                                <span class="tech-pill"><i class="devicon-gulp-plain"></i> Gulp</span>
-                                <span class="tech-pill"><i class="devicon-jquery-plain"></i> JQuery</span>
-                                <span class="tech-pill"><i class="devicon-bootstrap-plain"></i> Bootstrap</span>
-                                <span class="tech-pill"><i class="devicon-wordpress-plain"></i> WP RestAPI</span>
-                                <span class="tech-pill"><i class="fa fa-flag"></i> Font Awesome</span>
-                                <span class="tech-pill"><i class="devicon-html5-plain"></i> HTML</span>
-                                <span class="tech-pill"><i class="devicon-sass-original"></i> SASS</span>
-                                <span class="tech-pill"><i class="devicon-javascript-plain"></i> JavaScript</span>
-                                <span class="tech-pill"><i class="devicon-php-plain"></i> PHP</span>
-                                <span class="tech-pill"><i class="devicon-wordpress-plain"></i> WordPress</span>
-                                <span class="tech-pill"><i class="devicon-git-plain"></i> Git</span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </article><!-- About -->
             <article id="about" style="background-color: #272d31">
