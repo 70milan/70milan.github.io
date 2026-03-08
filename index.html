@@ -56,26 +56,37 @@
 
         <div id="main">
 
-
-
-
+            <!-- Mobile Project Navigator -->
+            <div class="mobile-nav">
+                <div class="mobile-nav-dot active" data-target="project-1" onclick="scrollToProject('project-1')">1
+                </div>
+                <div class="mobile-nav-dot" data-target="project-2" onclick="scrollToProject('project-2')">2</div>
+                <div class="mobile-nav-dot" data-target="project-3" onclick="scrollToProject('project-3')">3</div>
+                <div class="mobile-nav-dot" data-target="project-4" onclick="scrollToProject('project-4')">4</div>
+            </div>
             <!-- Project 1 -->
 
 
             <article id="work" style="background-color: #272d31">
 
                 <!-- RealTime_Context_Engine -->
-                <h2 id="major"
+                <h2 id="project-1" class="project-section-header"
                     style="display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap;">
                     <a href="https://github.com/70milan/RealTime_Context_Engine" target="_blank"
                         style="border-bottom: none;">RealTime Context Engine</a>
                     <a href="https://github.com/70milan/RealTime_Context_Engine" target="_blank"
                         style="border-bottom: none;"><i class="fa fa-github"></i></a>
                 </h2>
-                <span class="image main"><img src="images/system_architecture_opt.jpg"
-                        alt="system_architecture" /></span>
-                <span class="image main"><img src="images/interview_assistant_main_interface.png"
-                        alt="RealTime_Context_Engine" /></span>
+                <div class="image-deck">
+                    <div class="deck-nav prev" onclick="event.stopPropagation(); cycleDeck(this.parentElement, -1)"><i
+                            class="fa fa-chevron-left"></i></div>
+                    <div class="deck-nav next" onclick="event.stopPropagation(); cycleDeck(this.parentElement, 1)"><i
+                            class="fa fa-chevron-right"></i></div>
+                    <span class="image main"><img src="images/system_architecture_opt.jpg"
+                            alt="system_architecture" /></span>
+                    <span class="image main"><img src="images/interview_assistant_main_interface.png"
+                            alt="RealTime_Context_Engine" /></span>
+                </div>
                 <div class="transparent-box">
                     <div class="desc-container">
                         <p class="textalign desc-text" id="desc1">The Interview Assistant (originally developed as Job
@@ -125,9 +136,9 @@
                     </div>
                 </div>
 
-                <br><br>
+                <div class="project-divider"></div>
 
-                <h2 id="major"
+                <h2 id="project-2" class="project-section-header"
                     style="display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap;">
                     <a href="https://github.com/70milan/Youtube_Spotify_Syncronization_Dagster" target="_blank"
                         style="border-bottom: none;">Cross-Platform Music Synchronization: A Monthly Automated
@@ -136,8 +147,14 @@
                         style="border-bottom: none;"><i class="fa fa-github"></i></a>
                 </h2>
 
-                <span class="image main"><img src="images/yt_sp_opt.jpg" alt="yt_sp" /></span>
-                <span class="image main"><img src="images/aa.JPG" alt="" /></span>
+                <div class="image-deck">
+                    <div class="deck-nav prev" onclick="event.stopPropagation(); cycleDeck(this.parentElement, -1)"><i
+                            class="fa fa-chevron-left"></i></div>
+                    <div class="deck-nav next" onclick="event.stopPropagation(); cycleDeck(this.parentElement, 1)"><i
+                            class="fa fa-chevron-right"></i></div>
+                    <span class="image main"><img src="images/yt_sp_opt.jpg" alt="yt_sp" /></span>
+                    <span class="image main"><img src="images/aa.JPG" alt="" /></span>
+                </div>
 
 
 
@@ -178,26 +195,15 @@
                         <span class="tech-pill"><i class="devicon-apacheairflow-plain"></i> Apache Airflow</span>
                         <span class="tech-pill"><i class="devicon-react-original"></i> React</span>
                     </div>
-
                 </div>
-                </p>
 
-                <br><br>
-
-
-
-
-
-
-
-
-
+                <div class="project-divider"></div>
 
                 <!-- Project 2 -->
 
 
 
-                <h2 id="major"
+                <h2 id="project-3" class="project-section-header"
                     style="display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap;">
                     <a href="https://github.com/70milan/spotifynolib" target="_blank"
                         style="border-bottom: none;">Spotify User's "Liked Songs" Data exploration &amp;
@@ -205,9 +211,14 @@
                     <a href="https://github.com/70milan/spotifynolib" target="_blank" style="border-bottom: none;"><i
                             class="fa fa-github"></i></a>
                 </h2>
-                <span class="image main"><img src="images/spotify_pipeline_opt.jpg" alt="" /></span>
-
-                <span class="image main"><img src="images/sp_1.png" alt="" /></span>
+                <div class="image-deck">
+                    <div class="deck-nav prev" onclick="event.stopPropagation(); cycleDeck(this.parentElement, -1)"><i
+                            class="fa fa-chevron-left"></i></div>
+                    <div class="deck-nav next" onclick="event.stopPropagation(); cycleDeck(this.parentElement, 1)"><i
+                            class="fa fa-chevron-right"></i></div>
+                    <span class="image main"><img src="images/sp_1.png" alt="" /></span>
+                    <span class="image main"><img src="images/spotify_pipeline_opt.jpg" alt="" /></span>
+                </div>
 
                 <div class="transparent-box">
                     <div class="desc-container">
@@ -239,54 +250,56 @@
                         <span class="tech-pill"><i class="devicon-docker-plain"></i> Docker Container</span>
                         <span class="tech-pill"><i class="fa fa-bar-chart"></i> Power BI</span>
                     </div>
-                </div>
-                </p>
+                    <div class="project-divider"></div>
 
-                <!-- Project 3 -->
+                    <!-- Project 3 -->
 
 
-                <h2 id="major"
-                    style="display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap;">
-                    <a href="https://github.com/70milan/WordPressUniversity" target="_blank"
-                        style="border-bottom: none;">A WordPress powered interactive Univeristy website</a>
-                    <a href="https://github.com/70milan/WordPressUniversity" target="_blank"
-                        style="border-bottom: none;"><i class="fa fa-github"></i></a>
-                </h2>
-                <a href="https://milanb1.sgedu.site" target="_blank"
-                    style="display: block; text-align: center; margin-bottom: 1em; color: rgb(72, 240, 176); border-bottom: none; font-size: 0.9em;">(Live
-                    Site)</a>
-                <span class="image main"><img src="images/1_opt.jpg" alt="" /></span>
-                <div class="transparent-box">
-                    <div class="desc-container">
-                        <p class="textalign desc-text" id="desc4">An interactive &#8220;University&#8221; website clone
-                            developed using using
-                            <b>PHP, JavaScript, WordPress theming</b>
-                            &amp; the WordPress
-                            <b>REST API</b>.<br>
-                            Created &#8220;like&#8221; feature, &#8220;Live/on the fly&#8221; search functionality,
-                            WordPress custom field Post
-                            types using JavaScript and JQuery which was then connected to the backend using JSON and
-                            WordPress
-                            Rest APIs and created raw JSON data.
-                        </p>
-                        <button class="read-more-btn" onclick="toggleReadMore('desc4', this)"><i
-                                class="fa fa-chevron-down"></i></button>
+                    <h2 id="project-4" class="project-section-header"
+                        style="display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap;">
+                        <a href="https://github.com/70milan/WordPressUniversity" target="_blank"
+                            style="border-bottom: none;">A WordPress powered interactive Univeristy website</a>
+                        <a href="https://github.com/70milan/WordPressUniversity" target="_blank"
+                            style="border-bottom: none;"><i class="fa fa-github"></i></a>
+                    </h2>
+                    <a href="https://milanb1.sgedu.site" target="_blank"
+                        style="display: block; text-align: center; margin-bottom: 1em; color: rgb(72, 240, 176); border-bottom: none; font-size: 0.9em;">(Live
+                        Site)</a>
+                    <div class="image-deck">
+                        <span class="image main"><img src="images/1_opt.jpg" alt="" /></span>
                     </div>
+                    <div class="transparent-box">
+                        <div class="desc-container">
+                            <p class="textalign desc-text" id="desc4">An interactive &#8220;University&#8221; website
+                                clone
+                                developed using using
+                                <b>PHP, JavaScript, WordPress theming</b>
+                                &amp; the WordPress
+                                <b>REST API</b>.<br>
+                                Created &#8220;like&#8221; feature, &#8220;Live/on the fly&#8221; search functionality,
+                                WordPress custom field Post
+                                types using JavaScript and JQuery which was then connected to the backend using JSON and
+                                WordPress
+                                Rest APIs and created raw JSON data.
+                            </p>
+                            <button class="read-more-btn" onclick="toggleReadMore('desc4', this)"><i
+                                    class="fa fa-chevron-down"></i></button>
+                        </div>
 
-                    <div class="tech-stack-container" style="margin-top: 15px;">
-                        <span class="tech-pill"><i class="devicon-gulp-plain"></i> Gulp</span>
-                        <span class="tech-pill"><i class="devicon-jquery-plain"></i> JQuery</span>
-                        <span class="tech-pill"><i class="devicon-bootstrap-plain"></i> Bootstrap</span>
-                        <span class="tech-pill"><i class="devicon-wordpress-plain"></i> WP RestAPI</span>
-                        <span class="tech-pill"><i class="fa fa-flag"></i> Font Awesome</span>
-                        <span class="tech-pill"><i class="devicon-html5-plain"></i> HTML</span>
-                        <span class="tech-pill"><i class="devicon-sass-original"></i> SASS</span>
-                        <span class="tech-pill"><i class="devicon-javascript-plain"></i> JavaScript</span>
-                        <span class="tech-pill"><i class="devicon-php-plain"></i> PHP</span>
-                        <span class="tech-pill"><i class="devicon-wordpress-plain"></i> WordPress</span>
-                        <span class="tech-pill"><i class="devicon-git-plain"></i> Git</span>
+                        <div class="tech-stack-container" style="margin-top: 15px;">
+                            <span class="tech-pill"><i class="devicon-gulp-plain"></i> Gulp</span>
+                            <span class="tech-pill"><i class="devicon-jquery-plain"></i> JQuery</span>
+                            <span class="tech-pill"><i class="devicon-bootstrap-plain"></i> Bootstrap</span>
+                            <span class="tech-pill"><i class="devicon-wordpress-plain"></i> WP RestAPI</span>
+                            <span class="tech-pill"><i class="fa fa-flag"></i> Font Awesome</span>
+                            <span class="tech-pill"><i class="devicon-html5-plain"></i> HTML</span>
+                            <span class="tech-pill"><i class="devicon-sass-original"></i> SASS</span>
+                            <span class="tech-pill"><i class="devicon-javascript-plain"></i> JavaScript</span>
+                            <span class="tech-pill"><i class="devicon-php-plain"></i> PHP</span>
+                            <span class="tech-pill"><i class="devicon-wordpress-plain"></i> WordPress</span>
+                            <span class="tech-pill"><i class="devicon-git-plain"></i> Git</span>
+                        </div>
                     </div>
-                </div>
             </article><!-- About -->
             <article id="about" style="background-color: #272d31">
                 <a href="https://www.linkedin.com/in/7mb16/" target="_blank">
@@ -600,7 +613,20 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
             <script src="assets/js/main.js"></script>
             <script src="assets/js/tetris.js"></script>
             <!--smooth scroll-->
-            <script>var scroll = new SmoothScroll('a[href*="#"]');</script>
+            <script>
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href').substring(1);
+                        const targetElement = document.getElementById(targetId);
+                        if (targetElement) {
+                            targetElement.scrollIntoView({
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+            </script>
             <script>
                 function toggleReadMore(descId, btn) {
                     const desc = document.getElementById(descId);
@@ -610,6 +636,86 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
                     } else {
                         desc.classList.add('expanded');
                         btn.innerHTML = '<i class="fa fa-chevron-up"></i>';
+                    }
+                }
+
+                function cycleDeck(deck, direction = 1) {
+                    const cards = Array.from(deck.querySelectorAll('.image.main'));
+                    if (cards.length <= 1) return;
+
+                    let currentIndex = cards.findIndex(c => c.classList.contains('active'));
+                    if (currentIndex === -1) currentIndex = 0;
+
+                    let nextIndex = (currentIndex + direction) % cards.length;
+                    if (nextIndex < 0) nextIndex = cards.length - 1;
+
+                    const behindIndex = (nextIndex + 1) % cards.length;
+
+                    cards.forEach(c => c.classList.remove('active', 'behind'));
+
+                    cards[nextIndex].classList.add('active');
+                    if (cards.length > 1) {
+                        cards[behindIndex].classList.add('behind');
+                    }
+                }
+
+                // Global swipe handling and initialization
+                document.addEventListener('DOMContentLoaded', () => {
+                    let touchstartX = 0;
+                    let touchendX = 0;
+
+                    document.querySelectorAll('.image-deck').forEach(deck => {
+                        // Initialize first card
+                        const cards = deck.querySelectorAll('.image.main');
+                        if (cards.length > 0) {
+                            cards[0].classList.add('active');
+                            if (cards.length > 1) {
+                                cards[1].classList.add('behind');
+                            }
+                        }
+
+                        deck.addEventListener('touchstart', e => {
+                            touchstartX = e.changedTouches[0].screenX;
+                        }, { passive: true });
+
+                        deck.addEventListener('touchend', e => {
+                            touchendX = e.changedTouches[0].screenX;
+                            if (touchendX < touchstartX - 50) cycleDeck(deck, 1); // Swipe left -> next
+                            if (touchendX > touchstartX + 50) cycleDeck(deck, -1); // Swipe right -> prev
+                        }, { passive: true });
+                    });
+
+                    // Mobile Navigator Intersection Observer
+                    if (window.innerWidth <= 736) {
+                        const observerOptions = {
+                            root: null,
+                            rootMargin: '-20% 0px -60% 0px',
+                            threshold: 0
+                        };
+
+                        const observer = new IntersectionObserver((entries) => {
+                            entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    document.querySelectorAll('.mobile-nav-dot').forEach(dot => {
+                                        dot.classList.remove('active');
+                                        if (dot.getAttribute('data-target') === entry.target.id) {
+                                            dot.classList.add('active');
+                                        }
+                                    });
+                                }
+                            });
+                        }, observerOptions);
+
+                        document.querySelectorAll('.project-section-header').forEach(header => {
+                            observer.observe(header);
+                        });
+                    }
+                });
+
+                function scrollToProject(id) {
+                    const el = document.getElementById(id);
+                    if (el) {
+                        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     }
                 }
             </script>

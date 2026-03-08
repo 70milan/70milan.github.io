@@ -98,6 +98,10 @@ video {
     vertical-align: baseline;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 article,
 aside,
 details,
@@ -304,6 +308,159 @@ html {
 .tech-pill i {
     margin-right: 6px;
     font-size: 1.1em;
+}
+
+/* Image Deck / Card Stack */
+.image-deck {
+    position: relative;
+    width: 100%;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+/* Maintain aspect ratio / placeholder for absolute children */
+.image-deck::before {
+    content: "";
+    display: block;
+    padding-top: 66.66%;
+    /* Adjust to your image ratio, e.g., 3:2 */
+}
+
+.image-deck .image.main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 0;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    opacity: 0;
+    transform: scale(0.85) translateY(40px) rotateX(-5deg);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.image-deck .image.main.active {
+    opacity: 1;
+    transform: scale(1) translateY(0) rotateX(0);
+    z-index: 3;
+    pointer-events: auto;
+}
+
+.image-deck .image.main.behind {
+    opacity: 0.5;
+    transform: scale(0.92) translateY(-20px) rotateX(2deg);
+    z-index: 1;
+    display: block !important;
+}
+
+.image-deck .image.main img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.image-deck:hover .image.main.behind {
+    transform: scale(0.94) translateY(-30px) rotateX(4deg);
+    opacity: 0.7;
+}
+
+.deck-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    z-index: 10;
+    opacity: 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.image-deck:hover .deck-nav {
+    opacity: 1;
+}
+
+.deck-nav:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: white;
+}
+
+.deck-nav.prev {
+    left: 10px;
+}
+
+.deck-nav.next {
+    right: 10px;
+}
+
+/* Stylish Minimal Divider */
+.project-divider {
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, rgb(72, 240, 176), transparent);
+    margin: 4rem auto;
+    border-radius: 2px;
+    opacity: 0.6;
+    box-shadow: 0 0 10px rgba(72, 240, 176, 0.3);
+}
+
+/* Mobile Nav (Hidden on Desktop) */
+.mobile-nav {
+    display: none;
+}
+
+@media screen and (max-width: 736px) {
+    .deck-nav {
+        display: none;
+        /* Swipe is primary on mobile */
+    }
+
+    /* Floating Project Navigator */
+    .mobile-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        position: fixed;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1000;
+        background: rgba(0, 0, 0, 0.4);
+        padding: 10px 8px;
+        border-radius: 20px;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-nav-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.3);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0;
+        /* Hide numbers by default or make them tiny */
+    }
+
+    .mobile-nav-dot.active {
+        background-color: rgb(72, 240, 176);
+        transform: scale(1.2);
+        box-shadow: none;
+    }
 }
 
 
