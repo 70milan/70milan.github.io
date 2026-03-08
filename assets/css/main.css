@@ -2432,6 +2432,69 @@ body.is-preload #footer {
     opacity: 0;
 }
 
+/* Pulse animation for social dots (optional desktop effect) */
+@keyframes softPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(72, 240, 176, 0.4);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(72, 240, 176, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(72, 240, 176, 0);
+    }
+}
+
+/* 2026 Projects 2x2 Grid Layout */
+.projects-grid {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 737px) {
+
+    /* Expand the article specifically for the projects grid to fit 2 columns cleanly */
+    #main article#work {
+        width: 85rem;
+        max-width: 95vw;
+        padding-left: 3.5rem;
+        padding-right: 3.5rem;
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem 3rem;
+        /* vertical, horizontal */
+        align-items: start;
+    }
+
+    /* Hide the horizontal dividers since the grid gap provides clean empty space */
+    .projects-grid>.project-divider {
+        display: none !important;
+    }
+
+    /* Flex structure to make the boxes equal height and push tech stack to bottom */
+    .projects-grid .project-item {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .projects-grid .project-item .transparent-box {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .projects-grid .project-item .tech-stack-container {
+        margin-top: auto !important;
+        padding-top: 1.5rem;
+    }
+}
+
 /* The actual drop-in keyframe animation */
 @keyframes tetrisDrop {
     0% {
