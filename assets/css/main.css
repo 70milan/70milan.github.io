@@ -2665,3 +2665,37 @@ body.is-preload #footer {
 #main article {
     display: none;
 }
+
+/* GitHub Icon Pulse Effect for Project Titles */
+@keyframes githubRedPulse {
+    0% {
+        color: inherit;
+        transform: scale(1);
+    }
+
+    50% {
+        /* The reddish hover color often found in this template/icons */
+        color: rgba(226, 106, 106, 0.9);
+        transform: scale(1.15);
+    }
+
+    100% {
+        color: inherit;
+        transform: scale(1);
+    }
+}
+
+.project-section-header a .fa-github {
+    animation: githubRedPulse 2s infinite ease-in-out;
+    display: inline-block;
+    /* Required to allow CSS transform (scaling) */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hardcode hover reddish color in case the pulse stops when they hover */
+.project-section-header a:hover .fa-github {
+    color: rgba(226, 106, 106, 1);
+    transform: scale(1.2);
+    animation: none;
+    /* Let them pause it by hovering so they click peacefully */
+}
