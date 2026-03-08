@@ -57,12 +57,15 @@
         <div id="main">
 
             <!-- Mobile Project Navigator -->
-            <div class="mobile-nav">
-                <div class="mobile-nav-dot active" data-target="project-1" onclick="scrollToProject('project-1')">1
-                </div>
-                <div class="mobile-nav-dot" data-target="project-2" onclick="scrollToProject('project-2')">2</div>
-                <div class="mobile-nav-dot" data-target="project-3" onclick="scrollToProject('project-3')">3</div>
-                <div class="mobile-nav-dot" data-target="project-4" onclick="scrollToProject('project-4')">4</div>
+            <div class="mobile-nav" onclick="event.stopPropagation()">
+                <div class="mobile-nav-dot active" data-target="project-1"
+                    onclick="event.stopPropagation(); scrollToProject('project-1')">1</div>
+                <div class="mobile-nav-dot" data-target="project-2"
+                    onclick="event.stopPropagation(); scrollToProject('project-2')">2</div>
+                <div class="mobile-nav-dot" data-target="project-3"
+                    onclick="event.stopPropagation(); scrollToProject('project-3')">3</div>
+                <div class="mobile-nav-dot" data-target="project-4"
+                    onclick="event.stopPropagation(); scrollToProject('project-4')">4</div>
             </div>
             <!-- Project 1 -->
 
@@ -612,21 +615,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
             <script src="assets/js/util.js"></script>
             <script src="assets/js/main.js"></script>
             <script src="assets/js/tetris.js"></script>
-            <!--smooth scroll-->
-            <script>
-                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                    anchor.addEventListener('click', function (e) {
-                        e.preventDefault();
-                        const targetId = this.getAttribute('href').substring(1);
-                        const targetElement = document.getElementById(targetId);
-                        if (targetElement) {
-                            targetElement.scrollIntoView({
-                                behavior: 'smooth'
-                            });
-                        }
-                    });
-                });
-            </script>
+            <!--smooth scroll removed-->
             <script>
                 function toggleReadMore(descId, btn) {
                     const desc = document.getElementById(descId);
