@@ -314,9 +314,20 @@ html {
 .image-deck {
     position: relative;
     width: 100%;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     cursor: pointer;
     perspective: 1000px;
+}
+
+.image-deck::after {
+    content: "";
+    display: block;
+    width: 70%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    position: absolute;
+    bottom: -1.25rem;
+    left: 15%;
 }
 
 /* Maintain aspect ratio / placeholder for absolute children */
