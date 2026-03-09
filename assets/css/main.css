@@ -2708,6 +2708,104 @@ body.is-preload #footer {
     border-bottom: none !important;
 }
 
+/* ── Download Section ── */
+.download-section {
+    margin-top: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.55rem 1.3rem;
+    background: linear-gradient(135deg, rgba(99, 179, 237, 0.14), rgba(128, 90, 213, 0.14));
+    border: 1px solid rgba(99, 179, 237, 0.45);
+    border-radius: 8px;
+    color: #93c5fd;
+    font-size: 0.88em;
+    font-family: 'Hind', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-decoration: none !important;
+    transition: background 0.25s, box-shadow 0.25s, transform 0.2s, border-color 0.25s, color 0.2s;
+    box-shadow: 0 0 12px rgba(99, 179, 237, 0.12);
+    cursor: pointer;
+}
+
+.download-btn:hover {
+    background: linear-gradient(135deg, rgba(99, 179, 237, 0.28), rgba(128, 90, 213, 0.28));
+    border-color: rgba(99, 179, 237, 0.75);
+    box-shadow: 0 0 22px rgba(99, 179, 237, 0.35);
+    transform: translateY(-2px);
+    color: #bfdbfe;
+}
+
+.download-btn i {
+    font-size: 1em;
+}
+
+.download-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+}
+
+.platform-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.75rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    font-size: 0.75em;
+    color: rgba(255, 255, 255, 0.45);
+    font-family: 'Hind', sans-serif;
+    letter-spacing: 0.04em;
+}
+
+.platform-badge i {
+    font-size: 1em;
+    opacity: 0.7;
+}
+
+.download-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 2px solid rgba(99, 179, 237, 0.35);
+    border-radius: 0 8px 8px 0;
+    padding: 0.6rem 0.9rem;
+    font-size: 0.76em;
+    color: rgba(255, 255, 255, 0.45);
+    line-height: 1.6;
+    max-width: 520px;
+}
+
+.download-notice i {
+    color: rgba(99, 179, 237, 0.55);
+    font-size: 0.95em;
+    margin-top: 0.2em;
+    flex-shrink: 0;
+}
+
+.download-notice strong {
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 600;
+}
+
+.download-notice em {
+    color: rgba(147, 197, 253, 0.7);
+    font-style: normal;
+}
+
 .tech-stack-container.mt-15 {
     margin-top: 15px;
 }

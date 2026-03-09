@@ -131,6 +131,20 @@
                                 <span class="tech-pill"><i class="fa fa-lock"></i> Hardware Licensing</span>
                                 <span class="tech-pill"><i class="devicon-markdown-original"></i> Markdown</span>
                             </div>
+
+                            <!-- Download Section -->
+                            <div class="download-section">
+                                <div class="download-row">
+                                    <a id="download-btn-p1" href="https://github.com/mjulez70/realtimecontextengine/releases/latest" target="_blank" class="download-btn">
+                                        <i class="fa fa-download"></i>&nbsp;Download Latest Release
+                                    </a>
+                                    <span class="platform-badge"><i class="fa fa-windows"></i>&nbsp;Windows Only</span>
+                                </div>
+                                <div class="download-notice">
+                                    <i class="fa fa-shield"></i>
+                                    <span><strong>SmartScreen may prompt you</strong> &mdash; this app uses a local developer certificate. If Windows flags it, click <em>More info</em> &rarr; <em>Run anyway</em> to proceed.</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -569,6 +583,27 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
             <script src="assets/js/main.js"></script>
             <script src="assets/js/tetris.js"></script>
             <!--smooth scroll removed-->
+
+            <!-- Auto-resolve latest GitHub release download URL -->
+            <script>
+                (function () {
+                    var btn = document.getElementById('download-btn-p1');
+                    if (!btn) return;
+                    fetch('https://api.github.com/repos/mjulez70/realtimecontextengine/releases/latest')
+                        .then(function (r) { return r.json(); })
+                        .then(function (data) {
+                            var asset = (data.assets || []).find(function (a) {
+                                return a.name && a.name.toLowerCase().endsWith('.exe');
+                            });
+                            if (asset && asset.browser_download_url) {
+                                btn.href = asset.browser_download_url;
+                                btn.removeAttribute('target'); // download directly
+                                btn.setAttribute('download', asset.name);
+                            }
+                        })
+                        .catch(function () { /* fallback: keep releases/latest page link */ });
+                })();
+            </script>
 
 
 
