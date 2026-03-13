@@ -361,8 +361,8 @@ section {
 
 .year-badge {
     position: absolute;
-    bottom: -1.25rem;
-    right: -1.25rem;
+    bottom: 0.75rem;
+    right: 0.75rem;
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 1rem;
@@ -884,4 +884,112 @@ section {
     .about-cards {
         grid-template-columns: 1fr;
     }
+}
+
+/* ─── Project Details & Utilities ─── */
+.details-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+}
+
+.detail-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    padding: 0.4rem 0.85rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--text-sub);
+    transition: all 0.2s ease;
+}
+
+.detail-tag:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--purple-light);
+    color: var(--text);
+}
+
+.detail-tag i {
+    font-size: 0.9rem;
+    color: var(--purple-light);
+}
+
+.action-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem;
+    margin: 2rem 0 1.5rem;
+}
+
+.download-link {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(168, 85, 247, 0.05));
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 0.6rem 1.25rem;
+    border-radius: 0.6rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.download-link:hover {
+    background: rgba(168, 85, 247, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -10px rgba(168, 85, 247, 0.3);
+}
+
+.os-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-muted);
+    padding: 0.35rem 0.8rem;
+    border-radius: 9999px;
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.smartscreen-alert {
+    background: rgba(168, 85, 247, 0.02);
+    border-left: 2px solid var(--border);
+    padding: 0.85rem 1.1rem;
+    border-radius: 0.4rem;
+    margin-top: 1.25rem;
+    display: flex;
+    gap: 0.8rem;
+    align-items: flex-start;
+}
+
+.smartscreen-alert i {
+    color: var(--purple-light);
+    font-size: 1rem;
+    margin-top: 0.15rem;
+}
+
+.smartscreen-alert p {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin: 0 !important;
+}
+
+.smartscreen-alert span {
+    color: var(--text-sub);
+    font-weight: 600;
+}
+
+.smartscreen-alert .highlight {
+    color: var(--purple-light);
 }
