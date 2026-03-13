@@ -1,764 +1,298 @@
-<!DOCTYPE HTML>
-<!--
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+﻿<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title>Portfolio</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-    <noscript>
-        <link rel="stylesheet" href="assets/css/noscript.css" />
-    </noscript>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milan Barot — Data Engineer</title>
+    <meta name="description"
+        content="Senior Data Engineer specializing in Azure Databricks, AI Engineering, and mission-critical production pipelines.">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/enhanced-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 
-<body class="is-preload">
+<body>
 
-    <!-- Wrapper -->
-    <div id="wrapper">
+    <!-- Background Glows -->
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
 
-        <!-- Header -->
-        <header class="www" id="header">
+    <div class="page">
 
+        <!-- =====  NAVBAR  ===== -->
+        <nav class="navbar">
+            <div class="logo">MILAN<span class="dot">.</span></div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+            <div></div><!-- spacer for flex centering -->
+        </nav>
 
-            <div class="content">
-                <div class="inner">
-                    <h1 id="namee" class="interactive-header">Milan Barot</h1>
+        <!-- =====  HERO  ===== -->
+        <section class="hero" id="hero">
+            <div class="status-pill reveal-up">
+                <div class="pulse-dot"></div>
+                Ready for New Challenges
+            </div>
 
-                    <p><br />
-                        <span id="job-title" class="interactive-header">Data Engineer</span>
-                    </p>
+            <h1 class="hero-name reveal-up">
+                <span class="line1">MILAN</span>
+                <span class="line2">BAROT</span>
+            </h1>
+
+            <div class="hero-sub reveal-up">
+                <span class="typing-text typing-cursor"></span>
+            </div>
+
+            <a href="#contact" class="hero-cta reveal-up">Let's Talk</a>
+        </section>
+
+        <!-- =====  ABOUT  ===== -->
+        <section class="about-section" id="about">
+            <div class="about-grid">
+
+                <!-- Mascot Card -->
+                <div class="mascot-card gs-hover-3d reveal-up">
+                    <div class="mascot-inner">
+                        <div class="speech-bubble">Kon'nichiwa! 👋</div>
+                        <svg class="mascot-svg" viewBox="0 0 240 280" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Body -->
+                            <ellipse cx="120" cy="200" rx="70" ry="55" fill="#1a0f2e" />
+                            <!-- Head -->
+                            <circle cx="120" cy="130" r="72" fill="#fddcb5" />
+                            <!-- Hat -->
+                            <ellipse cx="120" cy="70" rx="68" ry="18" fill="#2d1b6e" />
+                            <rect x="52" y="48" width="136" height="30" rx="6" fill="#3a23a0" />
+                            <ellipse cx="120" cy="48" rx="48" ry="14" fill="#4e30c8" />
+                            <!-- Headphones -->
+                            <path d="M55 130 Q40 100 55 80" stroke="#3a23a0" stroke-width="10" fill="none"
+                                stroke-linecap="round" />
+                            <ellipse cx="50" cy="132" rx="14" ry="20" fill="#3a23a0" />
+                            <path d="M185 130 Q200 100 185 80" stroke="#3a23a0" stroke-width="10" fill="none"
+                                stroke-linecap="round" />
+                            <ellipse cx="190" cy="132" rx="14" ry="20" fill="#3a23a0" />
+                            <!-- Blush -->
+                            <ellipse cx="90" cy="155" rx="12" ry="7" fill="#f8a5c2" opacity="0.6" />
+                            <ellipse cx="150" cy="155" rx="12" ry="7" fill="#f8a5c2" opacity="0.6" />
+                            <!-- Eyes -->
+                            <circle cx="100" cy="130" r="9" fill="#1a0f2e" />
+                            <circle cx="140" cy="130" r="9" fill="#1a0f2e" />
+                            <circle cx="103" cy="127" r="3" fill="#fff" />
+                            <circle cx="143" cy="127" r="3" fill="#fff" />
+                            <!-- Smile -->
+                            <path d="M 105 158 Q 120 172 135 158" stroke="#7a3634" stroke-width="3.5" fill="none"
+                                stroke-linecap="round" />
+                            <!-- Chest purple light -->
+                            <circle cx="120" cy="188" r="6" fill="#A855F7" opacity="0.6" />
+                        </svg>
+                    </div>
+                    <div class="year-badge">
+                        <span class="num">6+</span>
+                        <span class="label">Years in Tech</span>
+                    </div>
                 </div>
-                <p>
-                    <i class="fa fa-map-marker" aria-hidden="true"></i>
-                    <span id="location-text">
-                        Washington Metropolitan Area
-                    </span>
+
+                <!-- Text Side -->
+                <div class="about-content">
+                    <div class="section-label">About Me</div>
+                    <h2 class="section-heading reveal-up">
+                        Building Data Systems<br>
+                        That Are <span class="accent">Fast & Reliable.</span>
+                    </h2>
+                    <p class="about-text reveal-up">
+                        Senior Data Engineer with 6+ years building mission-critical pipelines across healthcare, real
+                        estate, and telecom.
+                        At Blue Cross Blue Shield, I led the modernization of complex EDI and CMS workflows onto Azure
+                        Databricks—in regulated environments where data accuracy is non-negotiable.
+                        I've shipped 30+ production deployments and, most recently, extended that foundation into AI
+                        engineering with production LLM apps featuring sub-second streaming.
+                    </p>
+                    <div class="about-cards reveal-up">
+                        <div class="info-card gs-hover-3d">
+                            <div class="card-icon"><i class="fas fa-database"></i></div>
+                            <h4>Data Architecture</h4>
+                            <p>Query optimization and lakehouse design on Azure Databricks and AWS.</p>
+                        </div>
+                        <div class="info-card gs-hover-3d">
+                            <div class="card-icon"><i class="fas fa-robot"></i></div>
+                            <h4>AI Integration</h4>
+                            <p>Production LLM applications with RAG pipelines and sub-second TTFT.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====  SKILLS  ===== -->
+        <section class="skills-section" id="skills">
+            <div class="skills-header">
+                <div class="section-label" style="justify-content:center;">Tech Stack</div>
+                <h2 class="section-heading" style="text-align:center;">
+                    Technical <span class="accent">Expertise</span>
+                </h2>
+                <p>Specialized in scalable data engineering, cloud infrastructure, and AI-powered production systems.
                 </p>
             </div>
-            <nav>
-                <ul>
-                    <li>
-                        <a href="#work">Projects</a>
-                    </li>
-                    <li>
-                        <a href="#about">About</a>
-                    </li>
-                    <!--<li><a href="#elements">Elements</a></li>-->
-                </ul>
-            </nav>
-        </header>
 
-        <div id="main">
-
-            <!-- Mobile Project Navigator -->
-            <div class="mobile-nav">
-                <div class="mobile-nav-dot active" data-target="project-1"></div>
-                <div class="mobile-nav-dot" data-target="project-2"></div>
-                <div class="mobile-nav-dot" data-target="project-3"></div>
+            <div class="skills-grid">
+                <!-- Card 1: Languages -->
+                <div class="skill-card reveal-up gs-hover-3d">
+                    <div class="skill-icon-box"><i class="fas fa-terminal"></i></div>
+                    <h3>Languages</h3>
+                    <ul class="skill-list">
+                        <li><i class="devicon-python-plain colored"></i> Python (Data / AI)</li>
+                        <li><i class="devicon-azuresqldatabase-plain colored"></i> SQL (Databricks / Postgres)</li>
+                        <li><i class="devicon-javascript-plain colored"></i> JavaScript (Node.js)</li>
+                        <li><i class="devicon-bash-plain"></i> Bash / Shell</li>
+                    </ul>
+                </div>
+                <!-- Card 2: Cloud & Infra -->
+                <div class="skill-card reveal-up gs-hover-3d">
+                    <div class="skill-icon-box"><i class="fas fa-cloud"></i></div>
+                    <h3>Cloud & Infra</h3>
+                    <ul class="skill-list">
+                        <li><i class="devicon-azure-plain colored"></i> Azure Databricks / ADF</li>
+                        <li><i class="devicon-amazonwebservices-plain-wordmark colored"></i> AWS S3 / Lambda</li>
+                        <li><i class="devicon-docker-plain colored"></i> Docker / Kubernetes</li>
+                        <li><i class="devicon-github-original"></i> GitHub Actions / CI-CD</li>
+                    </ul>
+                </div>
+                <!-- Card 3: AI & Pipelines -->
+                <div class="skill-card reveal-up gs-hover-3d">
+                    <div class="skill-icon-box"><i class="fas fa-brain"></i></div>
+                    <h3>AI & Pipelines</h3>
+                    <ul class="skill-list">
+                        <li><i class="devicon-openai-plain"></i> LLM / RAG Pipelines</li>
+                        <li><i class="devicon-apacheairflow-plain colored"></i> Apache Airflow</li>
+                        <li><i class="fas fa-cubes" style="color:#A855F7;"></i> Dagster / Spark</li>
+                        <li><i class="devicon-pandas-original colored"></i> Pandas / PySpark</li>
+                    </ul>
+                </div>
             </div>
-            <!-- Project 1 -->
+        </section>
 
-
-            <article id="work" class="dark-article">
-                <div class="projects-grid">
-                    <!-- Project 1 -->
-                    <div class="project-item">
-                        <h2 id="project-1" class="project-section-header">
-                            <a href="https://github.com/70milan/RealTime_Context_Engine" target="_blank"
-                                class="no-border-link">RealTime Context Engine&nbsp;&nbsp;<i
-                                    class="fa fa-github"></i></a>
-                        </h2>
-                        <div class="image-deck">
-                            <div class="deck-nav prev"><i class="fa fa-chevron-left"></i></div>
-                            <div class="deck-nav next"><i class="fa fa-chevron-right"></i></div>
-                            <span class="image main"><img src="images/system_architecture_opt.jpg"
-                                    alt="system_architecture" /></span>
-                            <span class="image main"><img src="images/interview_assistant_main_interface.png"
-                                    alt="RealTime_Context_Engine" /></span>
-                        </div>
-                        <div class="transparent-box">
-                            <div class="desc-container">
-                                <p class="textalign desc-text" id="desc1">Interview Assistant (aka Job Bandit) is an
-                                    end-to-end orchestration and experience layer designed for the high-stakes
-                                    environment of technical interviews. Engineered with a Data Engineering first
-                                    mindset, the application manages the entire lifecycle of interview data—from
-                                    real-time screen/audio ingestion and high-fidelity RAG (Retrieval-Augmented
-                                    Generation) context enrichment to the delivery of optimized, low-latency streaming
-                                    responses.<br><br>
-                                    <b>Orchestration</b>: A seamless bridge between a versatile Electron desktop shell
-                                    and a high-performance FastAPI backend, ensuring local compute efficiency and secure
-                                    model interaction.<br><br>
-                                    <b>Advanced RAG Pipeline</b>: Dynamically grounds AI responses in user-specific
-                                    professional contexts by injecting resume data and real-time job requirements into
-                                    the LLM context window via automated data-layer mapping.<br><br>
-                                    <b>Unified Data Persistence</b>: Features a resilient session management system,
-                                    automated export pipelines for post-interview synthesis, and searchable historical
-                                    logs with MDX support for complex system design review.<br><br>
-                                    <b>Secure Licensing Layer</b>: Includes an integrated RSA-backed licensing system
-                                    that ensures professional-grade accessibility control and secure software
-                                    deployment.<br><br>
-                                    <b>The "Convo Tab" Experience</b>: A floating glassmorphism window provides
-                                    live-streaming AI insights, comprehensive performance telemetry (TTFT, token usage),
-                                    and cumulative cost tracking for total transparency.<br><br>
-                                    <b>Seamless Human-AI Interaction</b>: Adopts a minimalist, dark-mode-first aesthetic
-                                    with an intuitive "Snip-and-Solve" interaction model (Ctrl+K/S), enabling
-                                    instantaneous screen-based problem solving without breaking the user's flow.<br><br>
-                                    <b>High-Fidelity Feedback Loops</b>: Tracks live metrics such as Time-To-First-Token
-                                    (TTFT) to ensure the interface feels alive and responsive, aligning with the
-                                    precision required for complex engineering and product design interviews.
-                                </p>
-                                <button class="read-more-btn" data-target="desc1"><i
-                                        class="fa fa-chevron-down"></i></button>
-                            </div>
-
-                            <div class="tech-stack-container mt-15">
-                                <span class="tech-pill"><i class="devicon-python-plain"></i> Python</span>
-                                <span class="tech-pill"><i class="devicon-javascript-plain"></i> JavaScript</span>
-                                <span class="tech-pill"><i class="devicon-html5-plain"></i> HTML5</span>
-                                <span class="tech-pill"><i class="devicon-css3-plain"></i> CSS</span>
-                                <span class="tech-pill"><i class="devicon-sass-original"></i> SASS</span>
-                                <span class="tech-pill"><i class="devicon-electron-original"></i> Electron</span>
-                                <span class="tech-pill"><i class="fa fa-paint-brush"></i> Glassmorphism UI</span>
-                                <span class="tech-pill"><i class="fa fa-robot"></i> GPT-4</span>
-                                <span class="tech-pill"><i class="fa fa-robot"></i> GPT-5</span>
-                                <span class="tech-pill"><i class="fa fa-cogs"></i> OpenAI API</span>
-                                <span class="tech-pill"><i class="fa fa-lock"></i> Hardware Licensing</span>
-                                <span class="tech-pill"><i class="devicon-markdown-original"></i> Markdown</span>
-                            </div>
-
-                            <!-- Download Section -->
-                            <div class="download-section">
-                                <div class="download-row">
-                                    <a id="download-btn-p1" href="https://github.com/mjulez70/realtimecontextengine/releases/latest" target="_blank" class="download-btn">
-                                        <i class="fa fa-download"></i>&nbsp;Download Demo Release
-                                    </a>
-                                    <span class="platform-badge"><i class="fa fa-windows"></i>&nbsp;Windows Only</span>
-                                </div>
-                                <div class="download-notice">
-                                    <i class="fa fa-shield"></i>
-                                    <span><strong>SmartScreen may prompt you</strong> &mdash; this app uses a local developer certificate. If Windows flags it, click <em>More info</em> &rarr; <em>Run anyway</em> to proceed.</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-divider"></div>
-
-                    <!-- Project 2 -->
-                    <div class="project-item">
-                        <h2 id="project-2" class="project-section-header">
-                            <a href="https://github.com/70milan/Youtube_Spotify_Syncronization_Dagster" target="_blank"
-                                class="no-border-link">Cross-Platform Music Synchronization&nbsp;&nbsp;<i
-                                    class="fa fa-github"></i></a>
-                        </h2>
-
-                        <div class="image-deck">
-                            <div class="deck-nav prev"><i class="fa fa-chevron-left"></i></div>
-                            <div class="deck-nav next"><i class="fa fa-chevron-right"></i></div>
-                            <span class="image main"><img src="images/aa.JPG" alt="" /></span>
-                            <span class="image main"><img src="images/yt_sp_opt.jpg" alt="yt_sp" /></span>
-                        </div>
-
-                        <div class="transparent-box">
-                            <div class="desc-container">
-                                <p class="textalign desc-text" id="desc2">The &#8220;Monthly Music Sync&#8221; project
-                                    is
-                                    designed with the goal of
-                                    synchronizing a
-                                    user's liked songs between YouTube Music and Spotify platforms using Python and
-                                    relevant
-                                    APIs.
-                                    The ELT pipeline is built using Python, AWS S3, YouTube Data API, Spotify API, and
-                                    integrates
-                                    with third-party libraries such as spotipy and youtube_dl. The project retrieves
-                                    music data
-                                    from
-                                    YouTube Music and Spotify using their respective APIs and processes this data by
-                                    extracting
-                                    metadata and searching for corresponding tracks on Spotify. The processed data,
-                                    specifically
-                                    YouTube video IDs, are stored in an AWS S3 bucket for tracking synchronized
-                                    songs.<br>
-                                    The pipeline is automated to run monthly via Apache Airflow, ensuring periodic
-                                    synchronization
-                                    of liked songs.<br>
-                                    Future enhancements include further integration with Apache Airflow for automation,
-                                    development
-                                    of a React App for a user-friendly interface, and enhanced error handling
-                                    mechanisms.
-                                </p>
-                                <button class="read-more-btn" data-target="desc2"><i
-                                        class="fa fa-chevron-down"></i></button>
-                            </div>
-
-                            <div class="tech-stack-container mt-15">
-                                <span class="tech-pill"><i class="fa fa-music"></i> Spotipy</span>
-                                <span class="tech-pill"><i class="fa fa-youtube-play"></i> youtube_dl</span>
-                                <span class="tech-pill"><i class="devicon-pandas-original"></i> Pandas</span>
-                                <span class="tech-pill"><i class="devicon-plotly-plain"></i> Plotly</span>
-                                <span class="tech-pill"><i class="devicon-python-plain"></i> Python</span>
-                                <span class="tech-pill"><i class="devicon-amazonwebservices-original"></i> AWS S3</span>
-                                <span class="tech-pill"><i class="fa fa-youtube"></i> YouTube API</span>
-                                <span class="tech-pill"><i class="fa fa-spotify"></i> Spotify API</span>
-                                <span class="tech-pill"><i class="devicon-apacheairflow-plain"></i> Apache
-                                    Airflow</span>
-                                <span class="tech-pill"><i class="devicon-react-original"></i> React</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-divider"></div>
-
-                    <!-- Project 3 -->
-                    <div class="project-item">
-                        <h2 id="project-3" class="project-section-header">
-                            <a href="https://github.com/70milan/spotifynolib" target="_blank"
-                                class="no-border-link">Spotify User's "Liked Songs" Data exploration &amp;
-                                visualization&nbsp;&nbsp;<i class="fa fa-github"></i></a>
-                        </h2>
-                        <div class="image-deck">
-                            <div class="deck-nav prev"><i class="fa fa-chevron-left"></i></div>
-                            <div class="deck-nav next"><i class="fa fa-chevron-right"></i></div>
-                            <span class="image main"><img src="images/sp_1.png" alt="" /></span>
-                            <span class="image main"><img src="images/spotify_pipeline_opt.jpg" alt="" /></span>
-                        </div>
-
-                        <div class="transparent-box">
-                            <div class="desc-container">
-                                <p class="textalign desc-text" id="desc3">With the aim of retrieving the user's music
-                                    data via
-                                    Python's REST API and
-                                    staging it to the Postgres server, the ELT pipeline has been designed using a
-                                    combination of
-                                    Python, Postgres database, Dagster for automation, docker for containerization, and
-                                    Power BI
-                                    for
-                                    visualization.
-                                    The data is transformed in a number of ways using pandas to produce useful insights
-                                    that can
-                                    be
-                                    used to build PowerBI dashboards and visualizations.
-                                    With Dagster, the pipeline is automated to run every month.
-                                    The project's ultimate objective is to discover the user's monthly music preferences
-                                    by
-                                    analyzing particular characteristics, such as the recently released "audio-features"
-                                    by
-                                    Spotify.
-                                </p>
-                                <button class="read-more-btn" data-target="desc3"><i
-                                        class="fa fa-chevron-down"></i></button>
-                            </div>
-
-                            <div class="tech-stack-container mt-15">
-                                <span class="tech-pill"><i class="devicon-pandas-original"></i> Pandas</span>
-                                <span class="tech-pill"><i class="devicon-plotly-plain"></i> Plotly</span>
-                                <span class="tech-pill"><i class="fa fa-link"></i> urllib</span>
-                                <span class="tech-pill"><i class="fa fa-database"></i> pandasql</span>
-                                <span class="tech-pill"><i class="fa fa-exchange"></i> request</span>
-                                <span class="tech-pill"><i class="fa fa-cubes"></i> Dagster</span>
-                                <span class="tech-pill"><i class="devicon-docker-plain"></i> Docker Container</span>
-                                <span class="tech-pill"><i class="fa fa-bar-chart"></i> Power BI</span>
-                            </div>
-                        </div>
-                    </div>
-
-
+        <!-- =====  PROJECTS  ===== -->
+        <section class="projects-section" id="projects">
+            <div class="projects-header">
+                <div class="title-block">
+                    <div class="section-label">Strategic Projects</div>
+                    <h2 class="section-heading" style="margin-bottom:0;">
+                        Portfolio <span class="accent">Showcase</span>
+                    </h2>
                 </div>
-            </article><!-- About -->
-            <article id="about" class="dark-article">
-                <a href="https://www.linkedin.com/in/7mb16/" target="_blank">
-                    <h2 id="major">About me.</h2>
+                <a href="https://github.com/70milan?tab=repositories" target="_blank" class="gh-link">
+                    GitHub Repositories <i class="fas fa-arrow-right"></i>
                 </a>
-                <div class="transparent-box">
-                    <p class="textalign">I am a Data Engineer with 6+ years of experience specializing in the
-                        architecture and maintenance of high-stakes data pipelines within the healthcare, real estate,
-                        and telecom sectors. My expertise lies in bridging the gap between legacy
-                        infrastructure&#8212;like
-                        the complex EDI and CMS workflows I managed at Blue Cross Blue Shield&#8212;and modern
-                        cloud-native
-                        solutions using Azure Databricks and LLM orchestration.</p>
-                    <p class="textalign">I am a hands-on builder who values operational stability as much as innovation.
-                        I've led offshore teams through high-pressure recovery efforts and managed over 30 production
-                        deployments in environments where data accuracy is a regulatory requirement. I approach
-                        engineering with a product-focused mindset, recently developing custom AI-driven applications
-                        that utilize low-latency streaming and RSA security to solve real-world efficiency gaps.</p>
+            </div>
 
-                    <p class="textalign specific"><a href="assets/rog.pdf"><b id="resume">Here</b></a> is my
-                        downloadable resume.
-                    </p>
-
-                </div>
-                <br><br><br>
-                <!-- Tools and Technologies Label -->
-                <div id="tech-tetris-label" class="tech-label-reveal">
-                    Tools and Technologies:
-                </div>
-                <!-- Skills: neon tetris tech tiles (tech only) -->
-                <div id="tech-tetris" class="tech-tetris" aria-label="Technology tiles"></div>
-            </article><!-- Contact --><!-- Elements -->
-            <article id="elements">
-                <h2 class="major">Elements</h2>
-                <section>
-                    <h3 class="major">Text</h3>
-                    <p>This is<b>bold</b>and this is<strong>strong</strong>. This is<i>italic</i>and this
-                        is<em>emphasized</em>.
-                        This is<sup>superscript</sup>text and this is<sub>subscript</sub>text.
-                        This is<u>underlined</u>and this is code:<code>for (;;) { ... }</code>. Finally,<a href="#">this
-                            is a
-                            link</a>.</p>
-                    <hr />
-                    <h2>Heading Level 2</h2>
-                    <h3>Heading Level 3</h3>
-                    <h4>Heading Level 4</h4>
-                    <h5>Heading Level 5</h5>
-                    <h6>Heading Level 6</h6>
-                    <hr />
-                    <h4>Blockquote</h4>
-                    <blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus
-                        euismod.
-                        Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis
-                        volutpat ac
-                        adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit
-                        amet nullam
-                        adipiscing eu felis.</blockquote>
-                    <h4>Preformatted</h4>
-                    <pre><code>i = 0;
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-                </section>
-                <section>
-                    <h3 class="major">Lists</h3>
-                    <h4>Unordered</h4>
-                    <ul>
-                        <li>Dolor pulvinar etiam.</li>
-                        <li>Sagittis adipiscing.</li>
-                        <li>Felis enim feugiat.</li>
-                    </ul>
-                    <h4>Alternate</h4>
-                    <ul class="alt">
-                        <li>Dolor pulvinar etiam.</li>
-                        <li>Sagittis adipiscing.</li>
-                        <li>Felis enim feugiat.</li>
-                    </ul>
-                    <h4>Ordered</h4>
-                    <ol>
-                        <li>Dolor pulvinar etiam.</li>
-                        <li>Etiam vel felis viverra.</li>
-                        <li>Felis enim feugiat.</li>
-                        <li>Dolor pulvinar etiam.</li>
-                        <li>Etiam vel felis lorem.</li>
-                        <li>Felis enim et feugiat.</li>
-                    </ol>
-                    <h4>Actions</h4>
-                    <ul class="actions">
-                        <li>
-                            <a href="#" class="button primary">Default</a>
-                        </li>
-                        <li>
-                            <a href="#" class="button">Default</a>
-                        </li>
-                    </ul>
-                    <ul class="actions stacked">
-                        <li>
-                            <a href="#" class="button primary">Default</a>
-                        </li>
-                        <li>
-                            <a href="#" class="button">Default</a>
-                        </li>
-                    </ul>
-                </section>
-                <section>
-                    <h3 class="major">Table</h3>
-                    <h4>Default</h4>
-                    <div class="table-wrapper">
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Description</th>
-                                    <th>Price</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Item One</td>
-                                    <td>Ante turpis integer aliquet porttitor.</td>
-                                    <td>29.99</td>
-                                </tr>
-                                <tr>
-                                    <td>Item Two</td>
-                                    <td>Vis ac commodo adipiscing arcu aliquet.</td>
-                                    <td>19.99</td>
-                                </tr>
-                                <tr>
-                                    <td>Item Three</td>
-                                    <td>
-                                        Morbi faucibus arcu accumsan lorem.</td>
-                                    <td>29.99</td>
-                                </tr>
-                                <tr>
-                                    <td>Item Four</td>
-                                    <td>Vitae integer tempus condimentum.</td>
-                                    <td>19.99</td>
-                                </tr>
-                                <tr>
-                                    <td>Item Five</td>
-                                    <td>Ante turpis integer aliquet porttitor.</td>
-                                    <td>29.99</td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td colspan="2"></td>
-                                    <td>100.00</td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div>
-                    <h4>Alternate</h4>
-                    <div class="table-wrapper">
-                        <table class="alt">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Description</th>
-                                    <th>Price</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Item One</td>
-                                    <td>Ante turpis integer aliquet porttitor.</td>
-                                    <td>29.99</td>
-                                </tr>
-                                <tr>
-                                    <td>Item Two</td>
-                                    <td>Vis ac commodo adipiscing arcu aliquet.</td>
-                                    <td>19.99</td>
-                                </tr>
-                                <tr>
-                                    <td>Item Three</td>
-                                    <td>
-                                        Morbi faucibus arcu accumsan lorem.</td>
-                                    <td>29.99</td>
-                                </tr>
-                                <tr>
-                                    <td>Item Four</td>
-                                    <td>Vitae integer tempus condimentum.</td>
-                                    <td>19.99</td>
-                                </tr>
-                                <tr>
-                                    <td>Item Five</td>
-                                    <td>Ante turpis integer aliquet porttitor.</td>
-                                    <td>29.99</td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td colspan="2"></td>
-                                    <td>100.00</td>
-                                </tr>
-                            </tfoot>
-                        </table>
-                    </div>
-                </section>
-                <section>
-                    <h3 class="major">Buttons</h3>
-                    <ul class="actions">
-                        <li>
-                            <a href="#" class="button primary">Primary</a>
-                        </li>
-                        <li>
-                            <a href="#" class="button">Default</a>
-                        </li>
-                    </ul>
-                    <ul class="actions">
-                        <li>
-                            <a href="#" class="button">Default</a>
-                        </li>
-                        <li>
-                            <a href="#" class="button small">Small</a>
-                        </li>
-                    </ul>
-                    <ul class="actions">
-                        <li>
-                            <a href="#" class="button primary icon fa-download">Icon</a>
-                        </li>
-                        <li>
-                            <a href="#" class="button icon fa-download">Icon</a>
-                        </li>
-                    </ul>
-                    <ul class="actions">
-                        <li>
-                            <span class="button primary disabled">Disabled</span>
-                        </li>
-                        <li>
-                            <span class="button disabled">Disabled</span>
-                        </li>
-                    </ul>
-                </section>
-                <section>
-                    <h3 class="major">Form</h3>
-                    <form method="post" action="#">
-                        <div class="fields">
-                            <div class="field half">
-                                <label for="demo-name">Name</label>
-                                <input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
-                            </div>
-                            <div class="field half">
-                                <label for="demo-email">Email</label>
-                                <input type="email" name="demo-email" id="demo-email" value=""
-                                    placeholder="7milan16@gmail.com" />
-                            </div>
-                            <div class="field">
-                                <label for="demo-category">Category</label>
-                                <select name="demo-category" id="demo-category">
-                                    <option value="">-</option>
-                                    <option value="1">Manufacturing</option>
-                                    <option value="1">Shipping</option>
-                                    <option value="1">Administration</option>
-                                    <option value="1">Human Resources</option>
-                                </select>
-                            </div>
-                            <div class="field half">
-                                <input type="radio" id="demo-priority-low" name="demo-priority" checked>
-                                <label for="demo-priority-low">Low</label>
-                            </div>
-                            <div class="field half">
-                                <input type="radio" id="demo-priority-high" name="demo-priority">
-                                <label for="demo-priority-high">High</label>
-                            </div>
-                            <div class="field half">
-                                <input type="checkbox" id="demo-copy" name="demo-copy">
-                                <label for="demo-copy">Email me a copy</label>
-                            </div>
-                            <div class="field half">
-                                <input type="checkbox" id="demo-human" name="demo-human" checked>
-                                <label for="demo-human">Not a robot</label>
-                            </div>
-                            <div class="field">
-                                <label for="demo-message">Message</label>
-                                <textarea name="demo-message" id="demo-message" placeholder="Enter your message"
-                                    rows="6"></textarea>
-                            </div>
+            <div class="projects-grid">
+                <!-- Project 1 — wide -->
+                <div class="project-card wide gs-hover-3d reveal-up">
+                    <div class="project-visual">
+                        <img src="images/system_architecture_opt.jpg" alt="RealTime Context Engine">
+                        <div class="tag-row">
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">Electron</span>
+                            <span class="tech-tag">OpenAI</span>
                         </div>
-                        <ul class="actions">
-                            <li><input type="submit" value="Send Message" class="primary" /></li>
-                            <li><input type="reset" value="Reset" /></li>
-                        </ul>
-                    </form>
-                </section>
-            </article>
-        </div><!-- Footer -->
-        <footer id="footer">
-            <ul class="icons">
-                <li><a href="https://www.linkedin.com/in/7mb16/" class="icon fa-linkedin" target="_blank">
-                        <span class="label">Linkedin</span></a></li>
-                <li><a href="mailto:7milan16@gmail.com,bmilan.6979@gmail.com" target="_blank"
-                        class="icon fa-envelope-o">
-                        <span class="label">Email</span></a></li>
-                <li><a href="https://github.com/70milan?tab=repositories" class="icon fa-github" target="_blank">
-                        <span class="label">Github</span></a></li>
-            </ul>
-            <p class="copyright"></p>
-        </footer>
-        <footer id="footer">
-            <!--	<ul class="copyright"><li>&copy; Milan Barot</li></ul></footer></div><!-- BG <div id="bg"> -- >
-</div><!-- Scripts -->
-            <script src="assets/js/jquery.min.js"></script>
-            <script src="assets/js/browser.min.js"></script>
-            <script src="assets/js/breakpoints.min.js"></script>
-            <script src="assets/js/util.js"></script>
-            <script src="assets/js/main.js"></script>
-            <script src="assets/js/tetris.js"></script>
-            <!--smooth scroll removed-->
+                    </div>
+                    <div class="project-info">
+                        <h3>RealTime Context Engine</h3>
+                        <p>Real-time AI co-pilot for technical interviews. Pairs an Electron shell with a FastAPI
+                            backend to ingest live screen + audio, inject resume context via a custom RAG pipeline, and
+                            stream grounded answers with sub-second latency.</p>
+                        <div class="project-footer">
+                            <span class="impact-badge">Impact: Sub-second TTFT</span>
+                            <a href="https://github.com/70milan/RealTime_Context_Engine" target="_blank"
+                                class="ext-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                </div>
 
-            <!-- Auto-resolve latest GitHub release download URL -->
-            <script>
-                (function () {
-                    var btn = document.getElementById('download-btn-p1');
-                    if (!btn) return;
-                    fetch('https://api.github.com/repos/mjulez70/realtimecontextengine/releases/latest')
-                        .then(function (r) { return r.json(); })
-                        .then(function (data) {
-                            var asset = (data.assets || []).find(function (a) {
-                                return a.name && a.name.toLowerCase().endsWith('.exe');
-                            });
-                            if (asset && asset.browser_download_url) {
-                                btn.href = asset.browser_download_url;
-                                btn.removeAttribute('target'); // download directly
-                                btn.setAttribute('download', asset.name);
-                            }
-                        })
-                        .catch(function () { /* fallback: keep releases/latest page link */ });
-                })();
-            </script>
+                <!-- Project 2 -->
+                <div class="project-card gs-hover-3d reveal-up">
+                    <div class="project-visual">
+                        <img src="images/yt_sp_opt.jpg" alt="Cross-Platform Music Sync">
+                        <div class="tag-row">
+                            <span class="tech-tag">Airflow</span>
+                            <span class="tech-tag">AWS S3</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Cross-Platform Music Sync</h3>
+                        <p>Automated ELT pipeline keeping YouTube Music and Spotify libraries in sync. Persists state to
+                            S3 to prevent duplicates; runs monthly via Apache Airflow.</p>
+                        <div class="project-footer">
+                            <span class="impact-badge">Impact: 0 Manual Steps</span>
+                            <a href="https://github.com/70milan/Youtube_Spotify_Syncronization_Dagster" target="_blank"
+                                class="ext-link"><i class="fas fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Project 3 -->
+                <div class="project-card gs-hover-3d reveal-up">
+                    <div class="project-visual">
+                        <img src="images/spotify_pipeline_opt.jpg" alt="Spotify Analytics">
+                        <div class="tag-row">
+                            <span class="tech-tag">Dagster</span>
+                            <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">Docker</span>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Spotify Liked Songs Analytics</h3>
+                        <p>Analytics pipeline surfacing listening patterns from Spotify audio features. Staged to
+                            PostgreSQL, transformed with Pandas, and visualized in Power BI dashboards.</p>
+                        <div class="project-footer">
+                            <span class="impact-badge">Impact: Automated Monthly</span>
+                            <a href="https://github.com/70milan/spotifynolib" target="_blank" class="ext-link"><i
+                                    class="fas fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- =====  CONTACT  ===== -->
+        <div class="contact-section" id="contact">
+            <div class="contact-card reveal-up">
+                <h2>Let's <span class="accent">Collaborate.</span></h2>
+                <p class="sub">Open to technical discussions about data engineering and AI, as well as challenging
+                    collaboration opportunities.</p>
+                <a href="mailto:7milan16@gmail.com" class="email-btn">7milan16@gmail.com</a>
 
+                <div class="social-row">
+                    <a href="https://www.linkedin.com/in/7mb16/" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/70milan?tab=repositories" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </a>
+                    <a href="assets/rog.pdf" target="_blank" class="social-link">
+                        <i class="fas fa-file-pdf"></i>
+                        Resume
+                    </a>
+                </div>
 
-            <!-- Lightbox: fully self-contained, mobile + desktop with zoom -->
-            <script>
-                (function () {
-                    // Create overlay without touch-action:none so pinch-zoom works
-                    var overlay = document.createElement('div');
-                    overlay.id = 'lightbox-overlay';
-                    overlay.style.cssText = 'position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.92);z-index:99999;display:none;justify-content:center;align-items:center;cursor:zoom-out;transition:opacity 0.3s ease;opacity:0;-webkit-tap-highlight-color:transparent;';
-                    var lbImg = document.createElement('img');
-                    lbImg.id = 'lightbox-img';
-                    lbImg.style.cssText = 'max-width:90vw;max-height:90vh;border-radius:8px;box-shadow:0 0 40px rgba(0,0,0,0.9);object-fit:contain;transform:scale(0.92);transition:transform 0.3s cubic-bezier(0.175,0.885,0.32,1.275);-webkit-user-select:none;user-select:none;pointer-events:none;';
-                    overlay.appendChild(lbImg);
-                    document.body.appendChild(overlay);
+                <p class="footer-copy">© 2025 Milan Barot — Senior Data Engineer</p>
+            </div>
+        </div>
 
-                    var isOpen = false;
-                    var viewportMeta = document.querySelector('meta[name="viewport"]');
-                    var originalViewport = viewportMeta ? viewportMeta.content : '';
+    </div><!-- /page -->
 
-                    // Desktop pan/zoom state variables
-                    var deskScale = 1, deskX = 0, deskY = 0;
-                    var isPanning = false, panStart = { x: 0, y: 0 };
-                    var isDragging = false; // To distinguish clicks from pans
-
-                    // Open
-                    function openLightbox(src) {
-                        if (isOpen) return;
-                        isOpen = true;
-
-                        deskScale = 1; deskX = 0; deskY = 0;
-                        lbImg.style.transition = 'transform 0.3s cubic-bezier(0.175,0.885,0.32,1.275)';
-
-                        lbImg.src = src;
-                        overlay.style.display = 'flex';
-                        void overlay.offsetWidth;
-                        overlay.style.opacity = '1';
-                        lbImg.style.transform = 'translate(' + deskX + 'px, ' + deskY + 'px) scale(' + deskScale + ')';
-
-                        // Prevent background scrolling
-                        document.body.style.overflow = 'hidden';
-                        // Enable pinch-to-zoom (Mobile)
-                        if (viewportMeta) {
-                            viewportMeta.content = 'width=device-width, initial-scale=1, maximum-scale=5.0, user-scalable=yes';
-                        }
-                    }
-
-                    // Close
-                    function closeLightbox(e) {
-                        if (!isOpen) return;
-                        if (e) {
-                            e.preventDefault();
-                            e.stopImmediatePropagation();
-                        }
-                        isOpen = false;
-                        overlay.style.opacity = '0';
-                        lbImg.style.transition = 'transform 0.3s cubic-bezier(0.175,0.885,0.32,1.275)';
-                        lbImg.style.transform = 'translate(0px, 0px) scale(0.92)';
-                        document.body.style.overflow = '';
-                        // Restore original viewport (disable zoom)
-                        if (viewportMeta) {
-                            viewportMeta.content = originalViewport;
-                        }
-                        setTimeout(function () {
-                            overlay.style.display = 'none';
-                            lbImg.src = '';
-                        }, 300);
-                    }
-
-                    // Close on click (prevent closing if dragging on desktop)
-                    overlay.addEventListener('click', function (e) {
-                        if (isDragging) {
-                            e.preventDefault(); e.stopImmediatePropagation();
-                            isDragging = false;
-                            return;
-                        }
-                        closeLightbox(e);
-                    }, true);
-
-                    // --- Desktop Mouse Pan & Zoom ---
-                    overlay.addEventListener('wheel', function (e) {
-                        if (!isOpen) return;
-                        e.preventDefault(); // Stop native page scrolling
-                        var delta = Math.sign(e.deltaY) * -0.15;
-                        var newScale = deskScale + delta;
-                        deskScale = Math.max(1, Math.min(newScale, 5));
-                        if (deskScale === 1) { deskX = 0; deskY = 0; } // Reset pan
-                        lbImg.style.transition = 'none'; // Instant zoom
-                        lbImg.style.transform = 'translate(' + deskX + 'px, ' + deskY + 'px) scale(' + deskScale + ')';
-                    }, { passive: false });
-
-                    overlay.addEventListener('mousedown', function (e) {
-                        if (deskScale <= 1 || !isOpen || e.button !== 0) return; // Only pan if zoomed in and left click
-                        e.preventDefault();
-                        panStart = { x: e.clientX - deskX, y: e.clientY - deskY };
-                        isPanning = true;
-                        isDragging = false;
-                        overlay.style.cursor = 'grabbing';
-                    });
-
-                    window.addEventListener('mouseup', function () {
-                        if (!isPanning) return;
-                        isPanning = false;
-                        overlay.style.cursor = 'zoom-out';
-                        setTimeout(function () { isDragging = false; }, 50);
-                    });
-
-                    window.addEventListener('mousemove', function (e) {
-                        if (!isPanning || !isOpen) return;
-                        isDragging = true;
-                        e.preventDefault();
-                        deskX = (e.clientX - panStart.x);
-                        deskY = (e.clientY - panStart.y);
-                        lbImg.style.transition = 'none'; // Instant pan
-                        lbImg.style.transform = 'translate(' + deskX + 'px, ' + deskY + 'px) scale(' + deskScale + ')';
-                    }, { passive: false });
-
-                    // Attach ONLY click listeners to project images
-                    // Mobile browsers synthesize click from tap - no need for touchend
-                    function attachToImages() {
-                        var imgs = document.querySelectorAll('#work img, .image.main img');
-                        imgs.forEach(function (img) {
-                            if (img.dataset.lbAttached) return;
-                            img.dataset.lbAttached = '1';
-                            img.style.cursor = 'zoom-in';
-                            img.addEventListener('click', function (e) {
-                                e.preventDefault();
-                                e.stopImmediatePropagation();
-                                openLightbox(this.src);
-                            }, true);
-                        });
-                    }
-
-                    // Run immediately
-                    if (document.readyState === 'loading') {
-                        document.addEventListener('DOMContentLoaded', attachToImages);
-                    } else {
-                        attachToImages();
-                    }
-
-                    // Re-attach when articles show/hide
-                    window.addEventListener('hashchange', function () {
-                        setTimeout(attachToImages, 400);
-                    });
-                    var observer = new MutationObserver(function () { attachToImages(); });
-                    observer.observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['style', 'class'] });
-                    var pollCount = 0;
-                    var poller = setInterval(function () {
-                        attachToImages();
-                        pollCount++;
-                        if (pollCount > 20) clearInterval(poller);
-                    }, 500);
-                })();
-            </script>
+    <script src="assets/js/enhanced-logic.js"></script>
 </body>
 
 </html>

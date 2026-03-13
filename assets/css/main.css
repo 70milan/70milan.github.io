@@ -470,19 +470,15 @@ html {
 
 .transparent-box {
     background-color: rgba(0, 0, 0, 0.5);
-    /* Set transparent background color */
     padding: 20px;
-    /* Adjust padding as needed */
     border-radius: 10px;
-    /* Add border radius for rounded corners */
-    transition: background-color 0.3s;
-    /* Add transition for smoother color change */
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-/* Hover effect for the transparent box */
 .transparent-box:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-    /* Darken the background color on hover */
+    border-color: rgba(72, 240, 176, 0.25);
+    box-shadow: 0 0 20px rgba(72, 240, 176, 0.06);
 }
 
 
@@ -2771,4 +2767,88 @@ body.is-preload #footer {
 
 .tech-stack-container.mt-15 {
     margin-top: 15px;
+}
+
+/* Project context label */
+.project-meta {
+    text-align: center;
+    font-family: 'Hind', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(72, 240, 176, 0.6);
+    margin-bottom: 0.4rem;
+}
+
+/* Resume download button */
+.resume-btn {
+    display: inline-flex;
+    align-items: center;
+    margin-top: 1.25rem;
+    padding: 10px 22px;
+    border: 1px solid rgba(72, 240, 176, 0.4);
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.85);
+    font-family: 'Hind', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.resume-btn:hover {
+    background: rgba(72, 240, 176, 0.12);
+    border-color: rgba(72, 240, 176, 0.7);
+    color: #fff;
+}
+
+.resume-btn i {
+    margin-right: 4px;
+    font-size: 1.1em;
+}
+
+/* Accent color on project title hover */
+.project-section-header a:hover {
+    color: rgb(72, 240, 176) !important;
+}
+
+/* Image deck indicator dots */
+.deck-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 0.75rem;
+}
+
+.deck-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.deck-dot.active {
+    background: rgba(72, 240, 176, 0.7);
+    box-shadow: 0 0 6px rgba(72, 240, 176, 0.4);
+}
+
+/* Tech tile category labels (About section) */
+.tech-category-label {
+    width: 100%;
+    font-family: 'Hind', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.3);
+    margin-top: 1rem;
+    margin-bottom: 0.15rem;
+    padding-left: 2px;
+}
+
+.tech-category-label:first-child {
+    margin-top: 0;
 }

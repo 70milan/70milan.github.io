@@ -429,6 +429,12 @@
 		if (cards.length > 1) {
 			cards[behindIndex].classList.add('behind');
 		}
+
+		// Update deck dots
+		var dots = deck.parentElement.querySelectorAll('.deck-dot');
+		dots.forEach(function (d, i) {
+			d.classList.toggle('active', i === nextIndex);
+		});
 	};
 
 	window.scrollToProject = function (id) {
@@ -455,6 +461,18 @@
 				if (cards.length > 1) {
 					$(cards[1]).addClass('behind');
 				}
+			}
+
+			// Build indicator dots
+			if (cards.length > 1) {
+				var dotsContainer = document.createElement('div');
+				dotsContainer.className = 'deck-dots';
+				for (var i = 0; i < cards.length; i++) {
+					var dot = document.createElement('div');
+					dot.className = 'deck-dot' + (i === 0 ? ' active' : '');
+					dotsContainer.appendChild(dot);
+				}
+				this.parentElement.insertBefore(dotsContainer, this.nextSibling);
 			}
 
 			// Swipe handling
