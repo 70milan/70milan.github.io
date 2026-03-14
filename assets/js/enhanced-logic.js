@@ -85,4 +85,36 @@ document.addEventListener('DOMContentLoaded', () => {
         gsap.to('.blob-1', { x: x * 30, y: y * 20, duration: 2 });
         gsap.to('.blob-2', { x: -x * 25, y: -y * 20, duration: 2.5 });
     });
+
+    // ── GitHub Auto-Download Logic ──────────────────────────────
+    async function updateDownloadLink() {
+        const linkEl = document.getElementById('latest-release-link');
+        if (!linkEl) return;
+
+        try {
+            // Fetch latest release info from GitHub API
+            const response = await fetch('https://api.github.com/repos/mjulez70/realtimecontextengine/releases/latest');
+            if (!response.ok) throw new Error('GitHub API error');
+
+            const data = await response.json();
+
+            // Find the .exe asset
+            const exeAsset = data.assets.find(asset => asset.name.endsWith('.exe'));
+
+            if (exeAsset) {
+                // Update the link to the direct download URL
+                linkEl.href = exeAsset.browser_download_url;
+
+                // Optional: Show version number in text
+                const textNode = Array.from(linkEl.childNodes).find(n => n.nodeType === Node.TEXT_NODE && n.textContent.trim().includes('Download'));
+                if (textNode) {
+                    textNode.textContent = ` Download Release (${data.tag_name})`;
+                }
+            }
+        } catch (err) {
+            console.error('Failed to fetch latest release:', err);
+            // Fallback is already the standard release page link in HTML
+        }
+    }
+    updateDownloadLink();
 });
