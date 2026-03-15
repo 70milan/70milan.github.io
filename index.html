@@ -18,6 +18,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 
+
 <body>
 
     <!-- Background Glows -->
@@ -35,6 +36,11 @@
                 <li><a href="#projects">Projects</a></li>
             </ul>
             <div class="nav-spacer"></div><!-- spacer for flex centering -->
+            
+            <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle theme">
+            <i id="theme-icon" class="fa-regular fa-sun"></i>      
+        </button>
+
         </nav>
 
         <!-- =====  HERO  ===== -->
@@ -173,9 +179,8 @@
                     <ul class="skill-list">
                         <li><i class="fas fa-robot" style="color:#3B82F6;"></i> LLM / RAG Pipelines</li>
                         <li><i class="devicon-apacheairflow-plain colored"></i> Apache Airflow</li>
-                        <li><i class="fas fa-cubes" style="color:#3B82F6;"></i> Dagster / Spark</li>
-                        <li><i class="devicon-pandas-original colored"></i> Pandas / <i
-                                class="devicon-apachespark-plain colored"></i> PySpark</li>
+                        <li><i class="fas fa-cubes" style="color:#3B82F6;"></i> Dagster</li>
+                        <li><i class="devicon-apachespark-plain colored"></i> Pyspark / Pandas</li>
                     </ul>
                 </div>
             </div>
@@ -211,7 +216,7 @@
                         <p>Real-time AI co-pilot for technical interviews. Pairs an Electron shell with a FastAPI
                             backend to ingest live screen + audio, inject resume context via a custom RAG pipeline, and
                             stream grounded answers with sub-second latency.</p>
-                        <div class="details-grid">
+                        <!-- <div class="details-grid">
                             <div class="detail-tag"><i class="devicon-python-plain"></i> Python</div>
                             <div class="detail-tag"><i class="devicon-javascript-plain"></i> JavaScript</div>
                             <div class="detail-tag"><i class="devicon-html5-plain"></i> HTML5</div>
@@ -224,7 +229,7 @@
                             <div class="detail-tag"><i class="devicon-openai-plain"></i> OpenAI API</div>
                             <div class="detail-tag"><i class="fas fa-lock"></i> Hardware Licensing</div>
                             <div class="detail-tag"><i class="devicon-markdown-original"></i> Markdown</div>
-                        </div>
+                        </div> -->
                         <div class="action-row">
                             <a href="https://github.com/mjulez70/realtimecontextengine/releases/latest" target="_blank"
                                 class="download-link" id="latest-release-link">
@@ -328,6 +333,12 @@
 
     <script src="assets/js/enhanced-logic.js"></script>
     <script src="assets/js/image-popup.js"></script>
+    <script src="assets/js/theme-toggle.js"></script>
+    <script>
+    document.getElementById('theme-toggle').onclick = function() {
+ 
+    </script>
+
 </body>
 
 </html>
