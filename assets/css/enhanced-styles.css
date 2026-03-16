@@ -1088,36 +1088,236 @@ section {
     color: var(--purple-light);
 }
 
-.light-theme {
-  --bg: #f8fafc;
-  --bg-card: #ffffff;
-  --bg-card-hover: #f1f5f9;
-  --purple: #39eb25;
-  --purple-light: #38bdf8;
-  --purple-dim: rgba(37, 99, 235, 0.08);
-  --border: rgba(37, 99, 235, 0.12);
-  --text: #1e293b;
-  --text-muted: #64748b;
-  --text-sub: #475569;
+.theme-toggle-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    width: 2.25rem;
+    height: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-left: 1rem;
+    font-size: 1rem;
+    color: var(--text);
+    z-index: 1001;
 }
 
-.theme-toggle-btn {
-  background: var(--bg-card);
-  border: 1px solid;
-  border-radius: 500%;
-  width: 2rem;
-  height: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
-  cursor: pointer;
-  transition: background 0.2s, box-shadow 0.2s;
-  margin-left: 1rem;
-  font-size: 1.0rem;
-  color: var(--text);
-}
 .theme-toggle-btn:hover {
-  background: var(--bg-card-hover);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    background: var(--bg-card-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.3);
 }
+
+.light-theme {
+    /* 10. CSS Variables Structure (SaaS Specification) */
+    --bg: #F8F9FA;           /* Background & Surface Colors: Softer off-white */
+    --bg-card: #FFFFFF;
+    --bg-secondary: #F9FAFB; /* Footer & secondary sections */
+    --bg-tertiary: #F3F4F6;  /* Skills/tags */
+    
+    --purple: #2563EB;       /* Accent: Professional Blue */
+    --purple-light: #3B82F6;
+    --purple-dim: rgba(37, 99, 235, 0.05);
+    
+    --text: #1A1A1A;         /* Text & Contrast: Softened black for primary */
+    --text-muted: #4B5563;   /* Secondary text */
+    --text-sub: #6B7280;     /* Tertiary text */
+    
+    --border: #E5E7EB;       /* Borders & Dividers: Soft gray */
+    
+    /* 5. Shadows & Depth */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.03);
+    
+    --transition: all 0.2s ease; /* 8. Transition & Animation */
+}
+
+/* ─── Light Theme Overrides (SaaS Aesthetic) ─── */
+
+.light-theme body {
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7; /* 9. Line-height adjustment */
+}
+
+.light-theme .navbar {
+    background: #FFFFFF; /* 7. Navigation: pure white */
+    border: none;
+    border-bottom: 1px solid var(--border); /* 7. clean bottom border */
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+.light-theme .logo {
+    color: #1A1A1A;
+    letter-spacing: 0.01em; /* 9. Header letter-spacing */
+}
+
+.light-theme .nav-links a {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.light-theme .nav-links a:hover {
+    color: var(--purple);
+}
+
+.light-theme .theme-toggle-btn {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    color: #374151; /* 6. Icons: accessible gray */
+    box-shadow: var(--shadow-sm);
+}
+
+.light-theme .theme-toggle-btn:hover {
+    background: var(--bg-secondary);
+}
+
+.light-theme .section-heading {
+    color: #1A1A1A;
+    font-weight: 800; /* 9. Slightly reduced weight */
+    letter-spacing: 0.01em;
+}
+
+.light-theme .status-pill {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    color: #374151;
+}
+
+.light-theme .pulse-dot {
+    background: var(--purple);
+}
+
+.light-theme .hero-name .line1 {
+    color: #1A1A1A;
+}
+
+.light-theme .hero-sub {
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+.light-theme .hero-cta {
+    background: var(--purple); /* 3. Professional accent */
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* 3. Subtle shadow */
+    transition: var(--transition);
+}
+
+.light-theme .hero-cta:hover {
+    background: #1D4ED8; /* 3. Darken by 10-15% */
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.light-theme .mascot-card {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+}
+
+.light-theme .info-card,
+.light-theme .skill-card,
+.light-theme .project-card {
+    background: #FFFFFF;
+    border: 1px solid var(--border); /* 4. Soft 1px border */
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.light-theme .info-card:hover,
+.light-theme .skill-card:hover,
+.light-theme .project-card:hover {
+    box-shadow: var(--shadow-md); /* 5. Elevated depth */
+    border-color: #D1D5DB;
+}
+
+.light-theme .blob-1 {
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.04) 0%, transparent 70%);
+}
+
+.light-theme .blob-2 {
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.03) 0%, transparent 70%);
+}
+
+.light-theme .project-visual {
+    background: var(--bg-secondary) !important;
+}
+
+.light-theme .project-visual img {
+    border-bottom: 1px solid var(--border); /* 6. Project thumbnails border */
+    opacity: 0.95; /* 6. Subtle overlay effect */
+}
+
+.light-theme .tech-tag {
+    background: var(--bg-tertiary); /* 7. Background #F3F4F6 */
+    border: 1px solid var(--border);
+    color: #1F2937; /* 7. text #1F2937 */
+    font-weight: 600;
+}
+
+.light-theme .contact-card {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+}
+
+.light-theme .contact-section {
+    background: var(--bg-secondary); /* 7. Footer/secondary area */
+}
+
+.light-theme .email-btn {
+    border: 1px solid var(--border);
+    color: #1A1A1A;
+    background: #FFFFFF;
+}
+
+.light-theme .email-btn:hover {
+    background: var(--bg-secondary);
+    border-color: #D1D5DB;
+}
+
+.light-theme .social-row {
+    border-top: 1px solid var(--border);
+}
+
+.light-theme .social-link {
+    color: var(--text-muted);
+}
+
+.light-theme .social-link:hover {
+    color: var(--purple); /* 3. Link action color */
+}
+
+.light-theme .smartscreen-alert {
+    background: #FFFBEB; /* Soft warning yellow/white */
+    border-left: 3px solid #F59E0B;
+}
+
+.light-theme .download-link {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    color: var(--purple);
+}
+
+.light-theme .download-link:hover {
+    background: #F0F7FF;
+    border-color: var(--purple);
+}
+
+.light-theme .mascot-card::before,
+.light-theme .skill-card::after,
+.light-theme .contact-card::before,
+.light-theme .contact-card::after {
+    display: none; /* Remove harsh mesh effects for cleaner SAE look */
+}
+
+
+
