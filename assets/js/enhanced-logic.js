@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ── Typewriter ─────────────────────────────────────────────
     const typeStrings = [
         "Senior Data Engineer",
-        "AI / LLM Engineer",
+        "ETL Developer",
         "Azure Databricks Specialist",
         "Pipeline Architect",
         "Performance Optimizer"
