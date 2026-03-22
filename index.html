@@ -29,7 +29,7 @@
 
         <!-- =====  NAVBAR  ===== -->
         <nav class="navbar">
-            <div class="logo">MILAN<span class="dot">.</span></div>
+            <a href="#hero" class="logo" style="text-decoration:none; cursor:pointer;" aria-label="Go to top section">MILAN<span class="dot">.</span></a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -117,8 +117,8 @@
                     <p class="about-text reveal-up">
                         Senior Data Engineer with 6+ years building mission-critical pipelines across healthcare, real
                         estate, and telecom.
-                        At Blue Cross Blue Shield, I led the modernization of complex EDI and CMS workflows onto Azure
-                        Databricks—in regulated environments where data accuracy is non-negotiable.
+                        At Blue Cross Blue Shield, I led the deliveries and modernization of complex EDI and CMS workflows using Azure cloud and legacy infrastructure — 
+                        in regulated environments where data accuracy is non-negotiable.
                         I've shipped 30+ production deployments and, most recently, extended that foundation into AI
                         engineering with production LLM apps featuring sub-second streaming.
                     </p>
@@ -262,14 +262,15 @@
                     <div class="project-visual">
                     <img src="images/yt_sp_opt.jpg" alt="Cross-Platform Music Sync" class="popup-img" style="cursor: zoom-in;">
                         <div class="tag-row">
-                            <span class="tech-tag">Airflow</span>
+                            <span class="tech-tag">Dagster</span>
                             <span class="tech-tag">AWS S3</span>
+                            <span class="tech-tag">Python</span>
                         </div>
                     </div>
                     <div class="project-info">
                         <h3>Cross-Platform Music Sync</h3>
                         <p>Automated ELT pipeline keeping YouTube Music and Spotify libraries in sync. Persists state to
-                            S3 to prevent duplicates; runs monthly via Apache Airflow.</p>
+                            S3 to prevent duplicates; runs monthly via Dagster.</p>
                         <div class="project-footer">
                             <span class="impact-badge">Impact: 0 Manual Steps</span>
                             <a href="https://github.com/70milan/Youtube_Spotify_Syncronization_Dagster" target="_blank"
@@ -283,15 +284,16 @@
                     <div class="project-visual">
                     <img src="images/spotify_pipeline_opt.jpg" alt="Spotify Analytics" class="popup-img" style="cursor: zoom-in;">                        
                 <div class="tag-row">
-                            <span class="tech-tag">Dagster</span>
+                            <span class="tech-tag">Python</span>
                             <span class="tech-tag">Power BI</span>
+                            <span class="tech-tag">Airflow/Dagster</span>
                             <span class="tech-tag">Docker</span>
                         </div>
                     </div>
                     <div class="project-info">
                         <h3>Spotify Liked Songs Analytics</h3>
                         <p>Analytics pipeline surfacing listening patterns from Spotify audio features. Staged to
-                            PostgreSQL, transformed with Pandas, and visualized in Power BI dashboards.</p>
+                            PostgreSQL, transformed with Pandas, visualized in Power BI dashboards, and orchestrated with Airflow/Dagster within Docker containers.</p>
                         <div class="project-footer">
                             <span class="impact-badge">Impact: Automated Monthly</span>
                             <a href="https://github.com/70milan/spotifynolib" target="_blank" class="ext-link"><i
