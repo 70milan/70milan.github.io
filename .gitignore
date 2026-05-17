@@ -4,3 +4,5 @@ node_modules/
 assets/~$rog.docx
 .cache/
 .claude
+deploy_status.txt
+*-preview.html

@@ -1,6 +1,6 @@
 @echo off
-git checkout main
+git checkout master
 git add .
 git commit -m "Deploy: Visual Overhaul"
-git push origin main
+git push origin master
 echo DONE > deploy_status.txt
