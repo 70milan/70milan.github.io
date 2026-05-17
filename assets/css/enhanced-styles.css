@@ -322,7 +322,7 @@ section {
 
 .mascot-inner {
     position: relative;
-    width: 80%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -330,6 +330,16 @@ section {
 
 .mascot-svg {
     width: 100%;
+    animation: float 6s ease-in-out infinite;
+    position: relative;
+    z-index: 2;
+}
+
+.mascot-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 1.25rem;
     animation: float 6s ease-in-out infinite;
     position: relative;
     z-index: 2;
@@ -540,6 +550,7 @@ section {
     font-size: 1.1rem;
     width: 1.2rem;
     text-align: center;
+    color: var(--purple);
 }
 
 /* ─── Projects Section ─── */
@@ -715,25 +726,24 @@ section {
 
 .project-tech ul {
     list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem 1rem;
 }
 
 .project-tech li {
     display: flex;
     align-items: center;
-    gap: 0.65rem;
-    font-size: 0.86rem;
+    gap: 0.6rem;
+    font-size: 0.82rem;
     color: var(--text-sub);
 }
 
-.project-tech li::before {
-    content: '';
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: var(--purple);
+.project-tech li i {
+    font-size: 1.05rem;
+    width: 1.3rem;
+    text-align: center;
+    color: var(--purple);
     flex-shrink: 0;
 }
 
@@ -1145,27 +1155,27 @@ section {
 }
 
 .light-theme {
-    /* 10. CSS Variables Structure (SaaS Specification) */
-    --bg: #F8F9FA;           /* Background & Surface Colors: Softer off-white */
-    --bg-card: #FFFFFF;
-    --bg-secondary: #F9FAFB; /* Footer & secondary sections */
-    --bg-tertiary: #F3F4F6;  /* Skills/tags */
-    
-    --purple: #2563EB;       /* Accent: Professional Blue */
-    --purple-light: #3B82F6;
-    --purple-dim: rgba(37, 99, 235, 0.05);
-    
-    --text: #1A1A1A;         /* Text & Contrast: Softened black for primary */
-    --text-muted: #4B5563;   /* Secondary text */
-    --text-sub: #6B7280;     /* Tertiary text */
-    
-    --border: #E5E7EB;       /* Borders & Dividers: Soft gray */
-    
-    /* 5. Shadows & Depth */
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-    --shadow-md: 0 4px 6px rgba(0,0,0,0.05), 0 2px 4px rgba(0,0,0,0.03);
-    
-    --transition: all 0.2s ease; /* 8. Transition & Animation */
+    /* Warm cream palette — matches the paper backgrounds of project images */
+    --bg: #F1EDE2;           /* Main cream off-white background */
+    --bg-card: #FBFAF4;      /* Warm near-white cards, lifted off the cream */
+    --bg-secondary: #EAE5D7; /* Deeper cream for footer & secondary sections */
+    --bg-tertiary: #E6E0D0;  /* Skills/tags */
+
+    --purple: #4A3F32;       /* Accent: Espresso brown */
+    --purple-light: #4A3F32;
+    --purple-dim: rgba(74, 63, 50, 0.08);
+
+    --text: #2A2620;         /* Warm near-black for primary text */
+    --text-muted: #5C564A;   /* Secondary text */
+    --text-sub: #7C7565;     /* Tertiary text */
+
+    --border: #DED7C6;       /* Warm cream border */
+
+    /* Warm-tinted shadows so they sit naturally on cream */
+    --shadow-sm: 0 1px 3px rgba(60,50,30,0.07), 0 1px 2px rgba(60,50,30,0.04);
+    --shadow-md: 0 4px 10px rgba(60,50,30,0.08), 0 2px 4px rgba(60,50,30,0.04);
+
+    --transition: all 0.2s ease;
 }
 
 /* ─── Light Theme Overrides (SaaS Aesthetic) ─── */
@@ -1177,7 +1187,7 @@ section {
 }
 
 .light-theme .navbar {
-    background: #FFFFFF; /* 7. Navigation: pure white */
+    background: var(--bg-card); /* 7. Navigation: pure white */
     border: none;
     border-bottom: 1px solid var(--border); /* 7. clean bottom border */
     box-shadow: var(--shadow-sm);
@@ -1186,7 +1196,7 @@ section {
 }
 
 .light-theme .logo {
-    color: #1A1A1A;
+    color: var(--text);
     letter-spacing: 0.01em; /* 9. Header letter-spacing */
 }
 
@@ -1200,9 +1210,9 @@ section {
 }
 
 .light-theme .theme-toggle-btn {
-    background: #FFFFFF;
+    background: var(--bg-card);
     border: 1px solid var(--border);
-    color: #374151; /* 6. Icons: accessible gray */
+    color: var(--text-muted); /* 6. Icons: accessible gray */
     box-shadow: var(--shadow-sm);
 }
 
@@ -1211,7 +1221,7 @@ section {
 }
 
 .light-theme .section-heading {
-    color: #1A1A1A;
+    color: var(--text);
     font-weight: 800; /* 9. Slightly reduced weight */
     letter-spacing: 0.01em;
 }
@@ -1219,7 +1229,7 @@ section {
 .light-theme .status-pill {
     background: var(--bg-tertiary);
     border: 1px solid var(--border);
-    color: #374151;
+    color: var(--text-muted);
 }
 
 .light-theme .pulse-dot {
@@ -1227,7 +1237,7 @@ section {
 }
 
 .light-theme .hero-name .line1 {
-    color: #1A1A1A;
+    color: var(--text);
 }
 
 .light-theme .hero-sub {
@@ -1244,13 +1254,13 @@ section {
 }
 
 .light-theme .hero-cta:hover {
-    background: #1D4ED8; /* 3. Darken by 10-15% */
+    background: #352D24; /* darker espresso on hover */
     transform: translateY(-1px);
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .light-theme .mascot-card {
-    background: #FFFFFF;
+    background: var(--bg-card);
     border: 1px solid var(--border);
     box-shadow: var(--shadow-md);
 }
@@ -1258,7 +1268,7 @@ section {
 .light-theme .info-card,
 .light-theme .skill-card,
 .light-theme .project-card {
-    background: #FFFFFF;
+    background: var(--bg-card);
     border: 1px solid var(--border); /* 4. Soft 1px border */
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
@@ -1268,15 +1278,15 @@ section {
 .light-theme .skill-card:hover,
 .light-theme .project-card:hover {
     box-shadow: var(--shadow-md); /* 5. Elevated depth */
-    border-color: #D1D5DB;
+    border-color: #CFC6B0;
 }
 
 .light-theme .blob-1 {
-    background: radial-gradient(circle, rgba(37, 99, 235, 0.04) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(74, 63, 50, 0.05) 0%, transparent 70%);
 }
 
 .light-theme .blob-2 {
-    background: radial-gradient(circle, rgba(37, 99, 235, 0.03) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(74, 63, 50, 0.04) 0%, transparent 70%);
 }
 
 .light-theme .project-visual {
@@ -1291,12 +1301,12 @@ section {
 .light-theme .tech-tag {
     background: var(--bg-tertiary); /* 7. Background #F3F4F6 */
     border: 1px solid var(--border);
-    color: #1F2937; /* 7. text #1F2937 */
+    color: var(--text);
     font-weight: 600;
 }
 
 .light-theme .contact-card {
-    background: #FFFFFF;
+    background: var(--bg-card);
     border: 1px solid var(--border);
     box-shadow: var(--shadow-md);
 }
@@ -1307,13 +1317,13 @@ section {
 
 .light-theme .email-btn {
     border: 1px solid var(--border);
-    color: #1A1A1A;
-    background: #FFFFFF;
+    color: var(--text);
+    background: var(--bg-card);
 }
 
 .light-theme .email-btn:hover {
     background: var(--bg-secondary);
-    border-color: #D1D5DB;
+    border-color: #CFC6B0;
 }
 
 .light-theme .social-row {
@@ -1334,13 +1344,13 @@ section {
 }
 
 .light-theme .download-link {
-    background: #FFFFFF;
+    background: var(--bg-card);
     border: 1px solid var(--border);
     color: var(--purple);
 }
 
 .light-theme .download-link:hover {
-    background: #F0F7FF;
+    background: var(--bg-secondary);
     border-color: var(--purple);
 }
 
@@ -1352,4 +1362,4 @@ section {
 }
 
 
-
+

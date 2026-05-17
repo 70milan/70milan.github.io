@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Light Mode Accent Preview — Espresso vs Terracotta vs Ochre</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; }
+  .pane { padding: 3.5rem 2.5rem 4.5rem; }
+
+  /* shared cream surfaces */
+  .pane {
+    --bg:        #F1EDE2;
+    --card:      #FBFAF4;
+    --card-sec:  #EAE5D7;
+    --text:      #2A2620;
+    --text-sub:  #5C564A;
+    --text-mut:  #7C7565;
+    --border:    #DED7C6;
+    background: var(--bg);
+  }
+  /* ---- Option A: Espresso monochrome ---- */
+  .espresso { --accent: #4A3F32; --accent-text: #FBFAF4; }
+  /* ---- Option B: Terracotta ---- */
+  .terra    { --accent: #B5563D; --accent-text: #FBFAF4; }
+  /* ---- Option C: Muted ochre ---- */
+  .ochre    { --accent: #9A7526; --accent-text: #FBFAF4; }
+
+  .label { font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-mut); margin-bottom: 0.4rem; font-weight: 600; }
+  .pane h1 { color: var(--text); font-size: 2rem; margin-bottom: 2.6rem; font-weight: 700; }
+  .pane h1 .accent { color: var(--accent); }
+
+  .section-head { color: var(--text-mut); font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 0.6rem; }
+  .section-title { color: var(--text); font-size: 1.6rem; font-weight: 700; margin-bottom: 2rem; }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 1.25rem;
+    overflow: hidden; margin-bottom: 1.8rem;
+    box-shadow: 0 1px 3px rgba(60,50,30,0.07);
+    transition: box-shadow .25s, transform .25s;
+  }
+  .card:hover { box-shadow: 0 6px 16px rgba(60,50,30,0.12); transform: translateY(-3px); }
+  .card.wide { display: flex; }
+  .card.wide .visual { width: 44%; }
+  .card.wide .info { width: 56%; }
+
+  .visual { background: var(--card-sec); min-height: 200px; display: flex; align-items: center; justify-content: center; }
+  .visual .ph { color: var(--text-mut); font-size: 0.8rem; letter-spacing: 0.1em; }
+  .info { padding: 1.8rem; }
+  .info h3 { color: var(--text); font-size: 1.25rem; margin-bottom: 0.7rem; }
+  .info p { color: var(--text-sub); font-size: 0.92rem; margin-bottom: 1.2rem; }
+
+  .tech { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 1rem; margin-bottom: 1.3rem; }
+  .tech span { display: flex; align-items: center; gap: 0.5rem; font-size: 0.82rem; color: var(--text-sub); }
+  .tech span::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--accent); color: var(--accent-text);
+    padding: 0.62rem 1.15rem; border-radius: 0.6rem;
+    font-size: 0.86rem; font-weight: 600; cursor: pointer; border: none;
+  }
+  .btn:hover { filter: brightness(0.92); }
+
+  .footer-row { display: flex; align-items: center; justify-content: space-between; margin-top: 1.4rem; padding-top: 1.2rem; border-top: 1px solid var(--border); }
+  .badge {
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--accent) 28%, transparent);
+    color: var(--accent);
+    font-size: 0.72rem; font-weight: 600; padding: 0.28rem 0.8rem; border-radius: 999px;
+  }
+  .ext { color: var(--accent); font-size: 1rem; text-decoration: none; }
+  .linkrow { margin-top: 1rem; }
+  .linkrow a { color: var(--accent); font-size: 0.9rem; font-weight: 600; text-decoration: none; }
+  .linkrow a:hover { text-decoration: underline; }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; }
+  .divider { height: 2px; background: #cdc4ad; }
+</style>
+</head>
+<body>
+
+<!-- ===== A: ESPRESSO MONOCHROME ===== -->
+<div class="pane espresso">
+  <div class="label">Option A</div>
+  <h1>Espresso <span class="accent">Monochrome</span></h1>
+  <div class="section-head">Strategic Projects</div>
+  <div class="section-title">Portfolio Showcase</div>
+  <div class="card wide">
+    <div class="visual"><span class="ph">project image</span></div>
+    <div class="info">
+      <h3>Kalshi Custom Predictions</h3>
+      <p>Real-time data engineering pipeline identifying mispriced contracts through a Medallion architecture and RAG-driven inference.</p>
+      <div class="tech"><span>PySpark / Pandas</span><span>DuckDB / Delta Lake</span><span>ChromaDB / Groq LLM</span><span>Docker / FastAPI</span></div>
+      <button class="btn">&#9656;&nbsp; View Project</button>
+      <div class="footer-row"><span class="badge">Impact: Real-Time Alpha Signals</span><a class="ext" href="#">&#8599;</a></div>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="card"><div class="visual"><span class="ph">image</span></div>
+      <div class="info"><h3>RealTime Context Engine</h3><p>AI co-pilot pairing an Electron shell with a FastAPI backend.</p>
+        <div class="linkrow"><a href="#">View Project &#8599;</a></div>
+        <div class="footer-row"><span class="badge">Impact: Sub-second TTFT</span><a class="ext" href="#">&#8599;</a></div></div>
+    </div>
+    <div class="card"><div class="visual"><span class="ph">image</span></div>
+      <div class="info"><h3>Healthcare EDI Platform</h3><p>Consolidated EDI framework automating 35+ CMS file types.</p>
+        <div class="linkrow"><a href="#">View Project &#8599;</a></div>
+        <div class="footer-row"><span class="badge">Impact: 100% CMS Compliance</span></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== B: TERRACOTTA ===== -->
+<div class="pane terra">
+  <div class="label">Option B</div>
+  <h1>Terracotta <span class="accent">Accent</span></h1>
+  <div class="section-head">Strategic Projects</div>
+  <div class="section-title">Portfolio Showcase</div>
+  <div class="card wide">
+    <div class="visual"><span class="ph">project image</span></div>
+    <div class="info">
+      <h3>Kalshi Custom Predictions</h3>
+      <p>Real-time data engineering pipeline identifying mispriced contracts through a Medallion architecture and RAG-driven inference.</p>
+      <div class="tech"><span>PySpark / Pandas</span><span>DuckDB / Delta Lake</span><span>ChromaDB / Groq LLM</span><span>Docker / FastAPI</span></div>
+      <button class="btn">&#9656;&nbsp; View Project</button>
+      <div class="footer-row"><span class="badge">Impact: Real-Time Alpha Signals</span><a class="ext" href="#">&#8599;</a></div>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="card"><div class="visual"><span class="ph">image</span></div>
+      <div class="info"><h3>RealTime Context Engine</h3><p>AI co-pilot pairing an Electron shell with a FastAPI backend.</p>
+        <div class="linkrow"><a href="#">View Project &#8599;</a></div>
+        <div class="footer-row"><span class="badge">Impact: Sub-second TTFT</span><a class="ext" href="#">&#8599;</a></div></div>
+    </div>
+    <div class="card"><div class="visual"><span class="ph">image</span></div>
+      <div class="info"><h3>Healthcare EDI Platform</h3><p>Consolidated EDI framework automating 35+ CMS file types.</p>
+        <div class="linkrow"><a href="#">View Project &#8599;</a></div>
+        <div class="footer-row"><span class="badge">Impact: 100% CMS Compliance</span></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== C: MUTED OCHRE ===== -->
+<div class="pane ochre">
+  <div class="label">Option C</div>
+  <h1>Muted <span class="accent">Ochre</span></h1>
+  <div class="section-head">Strategic Projects</div>
+  <div class="section-title">Portfolio Showcase</div>
+  <div class="card wide">
+    <div class="visual"><span class="ph">project image</span></div>
+    <div class="info">
+      <h3>Kalshi Custom Predictions</h3>
+      <p>Real-time data engineering pipeline identifying mispriced contracts through a Medallion architecture and RAG-driven inference.</p>
+      <div class="tech"><span>PySpark / Pandas</span><span>DuckDB / Delta Lake</span><span>ChromaDB / Groq LLM</span><span>Docker / FastAPI</span></div>
+      <button class="btn">&#9656;&nbsp; View Project</button>
+      <div class="footer-row"><span class="badge">Impact: Real-Time Alpha Signals</span><a class="ext" href="#">&#8599;</a></div>
+    </div>
+  </div>
+  <div class="grid2">
+    <div class="card"><div class="visual"><span class="ph">image</span></div>
+      <div class="info"><h3>RealTime Context Engine</h3><p>AI co-pilot pairing an Electron shell with a FastAPI backend.</p>
+        <div class="linkrow"><a href="#">View Project &#8599;</a></div>
+        <div class="footer-row"><span class="badge">Impact: Sub-second TTFT</span><a class="ext" href="#">&#8599;</a></div></div>
+    </div>
+    <div class="card"><div class="visual"><span class="ph">image</span></div>
+      <div class="info"><h3>Healthcare EDI Platform</h3><p>Consolidated EDI framework automating 35+ CMS file types.</p>
+        <div class="linkrow"><a href="#">View Project &#8599;</a></div>
+        <div class="footer-row"><span class="badge">Impact: 100% CMS Compliance</span></div></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
