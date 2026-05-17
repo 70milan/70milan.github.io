@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Poppins:wght@300;400;500;600&display=swap');
 
 :root {
-    --bg: #161a27;
-    --bg-card: #13131a;
-    --bg-card-hover: #16161f;
-    --purple: #3bf6d7;
-    --purple-light: #20c4ee;
-    --purple-dim: rgba(59, 130, 246, 0.15);
-    --border: rgba(59, 130, 246, 0.2);
-    --text: #ffffff;
-    --text-muted: #6b7280;
-    --text-sub: #9ca3af;
+    --bg: #100f0e;
+    --bg-card: #1a1917;
+    --bg-card-hover: #211f1c;
+    --purple: #d4d0c8;
+    --purple-light: #d4d0c8;
+    --purple-dim: rgba(212, 208, 200, 0.08);
+    --border: rgba(255, 255, 255, 0.07);
+    --text: #f5f4f2;
+    --text-muted: #6a6862;
+    --text-sub: #908d88;
 }
 
 *,
@@ -45,7 +45,7 @@ body {
 .blob-1 {
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(212, 208, 200, 0.12) 0%, transparent 70%);
     top: -200px;
     left: -200px;
 }
@@ -53,7 +53,7 @@ body {
 .blob-2 {
     width: 500px;
     height: 500px;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(212, 208, 200, 0.08) 0%, transparent 70%);
     bottom: -150px;
     right: -150px;
 }
@@ -73,7 +73,7 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 9999px;
-    background: rgba(20, 20, 28, 0.85);
+    background: rgba(20, 19, 17, 0.85);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(255, 255, 255, 0.07);
@@ -167,15 +167,15 @@ section {
 
 @keyframes pulse {
     0% {
-        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+        box-shadow: 0 0 0 0 rgba(212, 208, 200, 0.7);
     }
 
     70% {
-        box-shadow: 0 0 0 8px rgba(59, 130, 246, 0);
+        box-shadow: 0 0 0 8px rgba(212, 208, 200, 0);
     }
 
     100% {
-        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+        box-shadow: 0 0 0 0 rgba(212, 208, 200, 0);
     }
 }
 
@@ -299,7 +299,7 @@ section {
 
 .mascot-card {
     aspect-ratio: 1;
-    background: #0d0d14;
+    background: #141210;
     border-radius: 2rem;
     border: 1px solid rgba(255, 255, 255, 0.06);
     display: flex;
@@ -314,7 +314,7 @@ section {
     position: absolute;
     width: 250px;
     height: 250px;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.25), transparent 70%);
+    background: radial-gradient(circle, rgba(212, 208, 200, 0.25), transparent 70%);
     bottom: -80px;
     right: -80px;
     border-radius: 50%;
@@ -494,7 +494,7 @@ section {
     position: absolute;
     width: 180px;
     height: 180px;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.12), transparent 70%);
+    background: radial-gradient(circle, rgba(212, 208, 200, 0.12), transparent 70%);
     bottom: -60px;
     right: -60px;
     border-radius: 50%;
@@ -625,17 +625,11 @@ section {
     overflow: hidden;
 }
 
-/* Purple tinted backgrounds for project visuals */
-.project-card:nth-child(1) .project-visual {
-    background: #0a0a0f;
-}
-
-.project-card:nth-child(2) .project-visual {
-    background: #0f1422;
-}
-
+/* Neutral warm backgrounds for project visuals */
+.project-card:nth-child(1) .project-visual,
+.project-card:nth-child(2) .project-visual,
 .project-card:nth-child(3) .project-visual {
-    background: #131420;
+    background: #141210;
 }
 
 .project-card .project-visual img {
@@ -663,7 +657,7 @@ section {
 
 .project-visual-icon {
     font-size: 4rem;
-    color: rgba(59, 130, 246, 0.3);
+    color: rgba(212, 208, 200, 0.3);
 }
 
 .tag-row {
@@ -703,6 +697,44 @@ section {
     font-size: 0.85rem;
     line-height: 1.6;
     margin-bottom: 1.25rem;
+}
+
+.project-tech {
+    margin-bottom: 1.4rem;
+}
+
+.project-tech .tech-label {
+    display: block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.7rem;
+}
+
+.project-tech ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.project-tech li {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.86rem;
+    color: var(--text-sub);
+}
+
+.project-tech li::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--purple);
+    flex-shrink: 0;
 }
 
 .project-footer {
@@ -750,7 +782,7 @@ section {
 }
 
 .contact-card {
-    background: #13131a;
+    background: #1a1917;
     border: 1px solid rgba(255, 255, 255, 0.07);
     border-radius: 2rem;
     padding: 5rem 4rem;
@@ -764,7 +796,7 @@ section {
     position: absolute;
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.18), transparent 70%);
+    background: radial-gradient(circle, rgba(212, 208, 200, 0.18), transparent 70%);
     bottom: -150px;
     left: -150px;
     border-radius: 50%;
@@ -776,7 +808,7 @@ section {
     position: absolute;
     width: 350px;
     height: 350px;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.12), transparent 70%);
+    background: radial-gradient(circle, rgba(212, 208, 200, 0.12), transparent 70%);
     top: -120px;
     right: -100px;
     border-radius: 50%;
@@ -1018,14 +1050,14 @@ section {
     flex-wrap: wrap;
     align-items: center;
     gap: 1.25rem;
-    margin: 2rem 0 1.5rem;
+    margin: 0 0 1.25rem;
 }
 
 .download-link {
     display: flex;
     align-items: center;
     gap: 0.6rem;
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(59, 130, 246, 0.05));
+    background: linear-gradient(135deg, rgba(212, 208, 200, 0.15), rgba(212, 208, 200, 0.05));
     border: 1px solid var(--border);
     color: var(--text);
     padding: 0.6rem 1.25rem;
@@ -1037,9 +1069,9 @@ section {
 }
 
 .download-link:hover {
-    background: rgba(59, 130, 246, 0.2);
+    background: rgba(212, 208, 200, 0.2);
     transform: translateY(-2px);
-    box-shadow: 0 10px 20px -10px rgba(59, 130, 246, 0.3);
+    box-shadow: 0 10px 20px -10px rgba(212, 208, 200, 0.3);
 }
 
 .os-badge {
@@ -1056,7 +1088,7 @@ section {
 }
 
 .smartscreen-alert {
-    background: rgba(59, 130, 246, 0.02);
+    background: rgba(212, 208, 200, 0.02);
     border-left: 2px solid var(--border);
     padding: 0.85rem 1.1rem;
     border-radius: 0.4rem;
