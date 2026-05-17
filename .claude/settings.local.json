@@ -1,7 +1,12 @@
 {
   "permissions": {
     "allow": [
-      "PowerShell(Get-Item *)"
+      "PowerShell(Get-Item *)",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\milan\\\\Downloads\\\\proj_img\" -Force | ForEach-Object { $_.Name })",
+      "PowerShell(Get-ChildItem \"C:\\\\Data Engineering\\\\70milan.github.io\\\\images\" | Select-Object Name, @{N='KB';E={[math]::Round\\($_.Length/1KB,0\\)}} | Sort-Object Name)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)"
     ]
   }
 }

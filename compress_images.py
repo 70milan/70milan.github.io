@@ -42,4 +42,13 @@ def compress_dir(directory):
                 print(f"Error processing {filename}: {e}")
 
 if __name__ == '__main__':
-    compress_dir('c:\\Data Engineering\\70milan.github.io\\images')
+    compress_dir('C:\\Users\\milan\\Downloads\\proj_img')
+
+
+
+
+
+
+
+
+

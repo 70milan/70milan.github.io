@@ -1,3 +1,5 @@
 .gemini/
 *.log
 node_modules/
+assets/rog.pdf
+assets/~$rog.docx
